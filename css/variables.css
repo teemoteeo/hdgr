@@ -1,0 +1,37 @@
+/* variables.css - Design tokens for HDGR */
+
+:root {
+  /* Colors */
+  --color-bg: #FAF8F5;
+  --color-text: #0A0A0A;
+  --color-text-muted: #6B6B6B;
+  --color-border: rgba(10, 10, 10, 0.12);
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-mono: "ABC Marfa Mono", "Courier New", monospace;
+
+  --text-body: 13px;
+  --text-small-title: 15px;
+  --text-section: 18px;
+  --text-page: 26px;
+
+  --line-height: 1.5;
+  --line-height-tight: 1.2;
+
+  /* Spacing */
+  --space-4: 16px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Layout */
+  --container-max: 1400px;
+  --header-height: 56px;
+
+  /* Transitions */
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.4s ease;
+}

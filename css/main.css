@@ -1,0 +1,37 @@
+/* main.css - Entry point. Imports all partials and adds page-specific overrides. */
+
+@import 'reset.css';
+@import 'variables.css';
+@import 'typography.css';
+@import 'layout.css';
+@import 'components.css';
+
+/* ── Grid Background ─────────────────────────────────────────────────────── */
+/*
+  Subtle engineering-paper grid applied to the body.
+  Four gradient layers: major lines at 80px, minor subdivisions at 20px.
+  Colors are low-opacity so the grid reads as texture, not structure.
+*/
+
+body {
+  background-color: var(--color-bg);
+}
+
+/* ── Page-Level Spacing ──────────────────────────────────────────────────── */
+/*
+  The hero occupies 100vh so subsequent sections clear the viewport.
+  No padding-top on body needed—sections manage their own spacing.
+*/
+
+/* ── Header Blending ─────────────────────────────────────────────────────── */
+/*
+  When the page is not at the top (handled via JS class if needed),
+  the header can receive a background. For now, it sits transparent
+  over the hero image—the dark image provides sufficient contrast.
+*/
+
+/* ── No-JS Fallback ──────────────────────────────────────────────────────── */
+/*
+  This build is pure HTML/CSS. Scroll-based header state changes
+  are deferred to a later phase.
+*/

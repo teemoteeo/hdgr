@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HDGR — Architecture studio based in Warsaw. Architectural projects, visualizations, interior design, and real estate development.">
+  <title>HDGR — Architecture</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────────── -->
+  <!--
+    Fixed at top. Transparent over the hero (white text reads against
+    the dark building photograph). Logo left, nav right.
+  -->
+  <header>
+    <div class="logo">HDGR</div>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ── Menu Overlay ───────────────────────────────────────────────────── -->
+  <div class="menu-overlay">
+    <div class="menu-header">
+      <div class="logo">HDGR</div>
+      <button class="menu-close" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="#">Studio</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Publications</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- ── 1. Hero ──────────────────────────────────────────────────────── -->
+  <!--
+    100vh fullscreen image. object-position: center top keeps the
+    building facade + sky in frame rather than cropping to ground level.
+    Text overlays the center of the image.
+  -->
+  <section class="hero">
+    <img
+      src="visualizations/facade.jpg"
+      alt="HDGR Architecture — facade visualisation"
+    >
+    <div class="hero-content">
+      <h1>HDGR</h1>
+      <p>Design & Development</p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <svg width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L18 18L35 1" stroke="white" stroke-width="2.5"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ── 2. Introduction ──────────────────────────────────────────────── -->
+  <!--
+    Two-column layout: 30% text / 70% image.
+    Text lists services; image provides visual anchor.
+  -->
+  <section class="introduction" id="about">
+    <div class="container">
+
+      <div class="intro-text">
+
+        <div class="services-block">
+          <h2>Design Services</h2>
+          <ul class="tree-list">
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Architectural projects</span>
+            </li>
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Visualizations</span>
+            </li>
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Interior design</span>
+            </li>
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Landscape</span>
+            </li>
+            <li class="tree-item tree-item-last">
+              <span class="tree-branch">└──</span>
+              <span class="tree-content">Urbanistic</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="services-block">
+          <h2>Real Estate Development</h2>
+          <ul class="tree-list">
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Portfolio</span>
+            </li>
+            <li class="tree-item">
+              <span class="tree-branch">├──</span>
+              <span class="tree-content">Buyer Support</span>
+            </li>
+            <li class="tree-item tree-item-last">
+              <span class="tree-branch">└──</span>
+              <span class="tree-content">Archive / Sold</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /intro-text -->
+
+      <div class="intro-carousel">
+        <div class="carousel-track">
+          <div class="carousel-item"><img src="visualizations/facade.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/a8a92cde-f972-4072-994d-53b854fe4da9.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/1c6828cb-d869-4d99-b3a0-c5948006f274.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/3704f21a-9be0-4e78-a303-2737be094885.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/38605eda-e9f6-4426-8e0f-911a3e01f315.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/4faf5c7d-c525-40b2-ac5f-a18458bdceb6.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/5b86251f-e627-46d3-85c5-2ff0888530cc.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/66b92148-fe28-4ee2-9579-0297191683d7.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/6f1f2eee-d401-447e-8a90-f433a2075275.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/879440b1-9c6a-4e95-b7bd-794e2f9e3dac.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/998dae6d-d80c-43ad-add9-f371da0b26e1.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/ab43ea28-dfe7-4eab-9b6b-27f87e7ad745.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/b40218f2-a705-4de4-bb8b-144ef0155ee2.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/c6e0dbe5-55a2-4da8-815a-07322f0e1008.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/d15ace02-4b95-4e4e-a14c-df137e5d65a5.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/d1783b26-c05d-457f-90e6-8dfa022609dd.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/e62fd0f0-740e-4b49-9efc-663bfa13c5f9.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/facade.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/a8a92cde-f972-4072-994d-53b854fe4da9.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/1c6828cb-d869-4d99-b3a0-c5948006f274.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/3704f21a-9be0-4e78-a303-2737be094885.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/38605eda-e9f6-4426-8e0f-911a3e01f315.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/4faf5c7d-c525-40b2-ac5f-a18458bdceb6.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/5b86251f-e627-46d3-85c5-2ff0888530cc.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/66b92148-fe28-4ee2-9579-0297191683d7.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/6f1f2eee-d401-447e-8a90-f433a2075275.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/879440b1-9c6a-4e95-b7bd-794e2f9e3dac.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/998dae6d-d80c-43ad-add9-f371da0b26e1.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/ab43ea28-dfe7-4eab-9b6b-27f87e7ad745.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/b40218f2-a705-4de4-bb8b-144ef0155ee2.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/c6e0dbe5-55a2-4da8-815a-07322f0e1008.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/d15ace02-4b95-4e4e-a14c-df137e5d65a5.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/d1783b26-c05d-457f-90e6-8dfa022609dd.jpg" alt="HDGR visualization"></div>
+          <div class="carousel-item"><img src="visualizations/e62fd0f0-740e-4b49-9efc-663bfa13c5f9.jpg" alt="HDGR visualization"></div>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ── 3. Featured Projects ─────────────────────────────────────────── -->
+  <!--
+    3-column grid of project cards. Each card: image (4:3 aspect ratio)
+    + project title below. Hover scales image subtly.
+  -->
+  <section class="projects">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Featured projects</h2>
+        <a href="#" class="view-all">View all projects &rarr;</a>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Brick House -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Brick House/show1.jpg"
+              alt="Brick House"
+            >
+            <h3>Brick House</h3>
+          </a>
+        </article>
+
+        <!-- Design Museum -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Design Museum/show2.jpg"
+              alt="Design Museum"
+            >
+            <h3>Design Museum</h3>
+          </a>
+        </article>
+
+        <!-- Housing Unit -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Housing Unit/show3.jpg"
+              alt="Housing Unit"
+            >
+            <h3>Housing Unit</h3>
+          </a>
+        </article>
+
+        <!-- Microhome -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Microhome/show4.jpg"
+              alt="Microhome"
+            >
+            <h3>Microhome</h3>
+          </a>
+        </article>
+
+        <!-- Primary School -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Primary school/show5.jpg"
+              alt="Primary School"
+            >
+            <h3>Primary School</h3>
+          </a>
+        </article>
+
+        <!-- Zero-house -->
+        <article class="project-card">
+          <a href="#">
+            <img
+              src="projects/Zero-house/show6.jpg"
+              alt="Zero-house"
+            >
+            <h3>Zero-house</h3>
+          </a>
+        </article>
+
+      </div><!-- /projects-grid -->
+
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ── 4. Footer ────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <h3>HDGR</h3>
+        </div>
+
+        <div class="footer-contact">
+
+          <div>
+            <h4>Get in touch</h4>
+            <p>Warsaw, Poland</p>
+            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+          </div>
+
+          <div>
+            <h4>Follow us</h4>
+            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+        </div><!-- /footer-contact -->
+
+      </div><!-- /footer-content -->
+
+      <div class="footer-bottom">
+        <small>&copy; HDGR 2026</small>
+      </div>
+
+    </div><!-- /container -->
+  </footer>
+
+
+  <script src="js/menu.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* typography.css - Font faces and text styles */
+
+/* ── Font Faces ─────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'ABC Marfa Mono';
+  src: url('../fonts/ABCMarfaMono-Regular-Trial.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Marfa Mono';
+  src: url('../fonts/ABCMarfaMono-RegularItalic-Trial.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Marfa Mono';
+  src: url('../fonts/ABCMarfaMono-Medium-Trial.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ABC Marfa Mono';
+  src: url('../fonts/ABCMarfaMono-Light-Trial.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Base Typography ─────────────────────────────────────────────────────── */
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ── Heading Scale ───────────────────────────────────────────────────────── */
+
+h1 {
+  font-size: var(--text-page);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: var(--text-small-title);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: var(--line-height);
+}
+
+h3 {
+  font-size: var(--text-body);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: var(--line-height);
+}
+
+h4 {
+  font-size: var(--text-body);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: var(--line-height);
+}
+
+small {
+  font-size: var(--text-body);
+  line-height: var(--line-height);
+}
+
+/* ── Link Base ───────────────────────────────────────────────────────────── */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.6;
+}
