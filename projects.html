@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HDGR — Architecture studio based in Warsaw. Architectural projects, visualizations, interior design, and real estate development.">
-  <title>HDGR — Architecture</title>
+  <meta name="description" content="HDGR — All projects. Architectural projects, visualizations, interior design, and real estate development.">
+  <title>HDGR — Projects</title>
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 
 <body>
 
   <!-- ── Header ──────────────────────────────────────────────────────── -->
-  <!--
-    Fixed at top. Transparent over the hero (white text reads against
-    the dark building photograph). Logo left, nav right.
-  -->
-  <header>
+  <header class="header-dark">
     <a href="index.html" class="logo">HDGR</a>
     <button class="menu-toggle" aria-label="Open menu">
       <span></span>
@@ -37,8 +31,8 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="#">Careers</a></li>
         <li><a href="#">News</a></li>
         <li><a href="#">Contact</a></li>
@@ -47,82 +41,20 @@
   </div>
 
 
-  <!-- ── 1. Hero ──────────────────────────────────────────────────────── -->
-  <!--
-    100vh fullscreen image. object-position: center top keeps the
-    building facade + sky in frame rather than cropping to ground level.
-    Text overlays the center of the image.
-  -->
-  <section class="hero">
-    <div class="hero-services">
-      <div class="studio-label">EST. — Warsaw, PL</div>
-      <div class="services-block">
-        <h2>Design Services</h2>
-        <ul class="tree-list">
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <span class="tree-content">Architectural projects</span>
-          </li>
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <a href="visualizations.html" class="tree-content">Visualizations</a>
-          </li>
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <span class="tree-content">Interior design</span>
-          </li>
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <span class="tree-content">Landscape</span>
-          </li>
-          <li class="tree-item tree-item-last">
-            <span class="tree-branch">└──</span>
-            <span class="tree-content">Urbanistic</span>
-          </li>
-        </ul>
-      </div>
-      <div class="services-block">
-        <h2>Real Estate Development</h2>
-        <ul class="tree-list">
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <span class="tree-content">Portfolio</span>
-          </li>
-          <li class="tree-item">
-            <span class="tree-branch">├──</span>
-            <span class="tree-content">Buyer Support</span>
-          </li>
-          <li class="tree-item tree-item-last">
-            <span class="tree-branch">└──</span>
-            <span class="tree-content">Archive / Sold</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <img
-      src="visualizations/facade.jpg"
-      alt="HDGR Architecture — facade visualisation"
-    >
-    <div class="hero-content">
-      <h1>HDGR</h1>
-      <p>Design & Development</p>
-    </div>
-  </section>
-
-
-  <!-- ── 2. Projects ─────────────────────────────────────────────────── -->
-  <section class="projects">
+  <!-- ── Projects Archive ───────────────────────────────────────────── -->
+  <section class="projects-archive">
     <div class="container">
 
-      <!-- TEMP COPY -->
-      <div class="projects-statement">
-        <p><span class="statement-label">MISJA</span>Deliver timeless architecture to everyone — respectful development — redefine standards</p>
-        <p><span class="statement-label">WIZJA</span>People-first studio with timeless design — age with dignity — set new standards</p>
+      <div class="section-header">
+        <h2>All Projects</h2>
+        <span class="project-count">(06)</span>
       </div>
 
-      <div class="section-header">
-        <h2>Featured projects</h2>
-        <a href="projects.html" class="view-all">View all projects &rarr;</a>
+      <div class="projects-filter">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Residential</button>
+        <button class="filter-btn">Public</button>
+        <button class="filter-btn">Interior</button>
       </div>
 
       <div class="projects-masonry">
@@ -191,13 +123,45 @@
           </a>
         </article>
 
+        <!-- Primary School -->
+        <article class="project-card">
+          <a href="projects/primary-school.html">
+            <div class="project-card-img">
+              <img src="projects/Primary school/show5.jpg" alt="Primary School">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Primary School</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-type">Warsaw — Public</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Zero-house -->
+        <article class="project-card">
+          <a href="projects/zero-house.html">
+            <div class="project-card-img">
+              <img src="projects/Zero-house/show6.jpg" alt="Zero-house">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Zero-house</h3>
+                <span class="project-year">2022</span>
+              </div>
+              <p class="project-type">Warsaw — Residential</p>
+            </div>
+          </a>
+        </article>
+
       </div><!-- /projects-masonry -->
 
     </div><!-- /container -->
   </section>
 
 
-  <!-- ── 4. Footer ────────────────────────────────────────────────────── -->
+  <!-- ── Footer ────────────────────────────────────────────────────── -->
   <footer>
     <div class="container">
 
@@ -234,7 +198,5 @@
 
 
   <script src="js/menu.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/hero-animation.js"></script>
 </body>
 </html>

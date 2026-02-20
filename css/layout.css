@@ -32,49 +32,55 @@ header {
 
 .hero {
   position: relative;
+  height: 200vh;
+}
+
+.hero-services {
+  position: sticky;
+  top: 0;
   height: 100vh;
-  clip-path: inset(0); /* Clips fixed-position children to hero bounds */
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: var(--space-12);
+  pointer-events: auto;
 }
 
 .hero img {
-  position: absolute;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  object-position: center 20%; /* Shows more of the building */
+  object-position: center 20%;
+  border-radius: 0;
+  clip-path: inset(0% round 0px);
+  will-change: clip-path;
+  display: block;
+  margin-top: -100vh;
+  z-index: 1;
 }
 
 .hero-content {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  top: 25%;
   left: var(--space-12);
   transform: translateY(-50%);
-  text-align: left;
-  z-index: 10;
+  z-index: 2;
   color: var(--color-white);
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: var(--space-8);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  pointer-events: none;
 }
 
 /* ── Introduction ────────────────────────────────────────────────────────── */
 
 .introduction {
-  padding: calc(var(--space-16) * 2) 0 var(--space-16);
+  padding: var(--space-16) 0;
 }
 
 .introduction .container {
   display: grid;
-  grid-template-columns: 30% 1fr;
   gap: var(--space-16);
-  align-items: start;
 }
 
 .intro-text {
@@ -97,7 +103,7 @@ header {
 
 .carousel-item {
   flex-shrink: 0;
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -124,10 +130,32 @@ header {
   margin-bottom: var(--space-8);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* ── Projects Masonry ────────────────────────────────────────────────────── */
+
+.projects-masonry {
+  columns: 2;
+  column-gap: 24px;
+}
+
+.projects-masonry .project-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+/* ── Projects Archive (projects.html) ───────────────────────────────────── */
+
+.projects-archive {
+  padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
+}
+
+.projects-archive .section-header {
+  margin-bottom: var(--space-4);
+}
+
+.project-count {
+  font-size: var(--text-body);
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
 }
 
 /* ── Footer ──────────────────────────────────────────────────────────────── */
