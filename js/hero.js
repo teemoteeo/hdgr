@@ -31,9 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroEl = document.querySelector('[data-hero]');
   if (!heroEl) return;
 
-  // Mobile: nessuna animazione
+  // Mobile: layout statico, solo header dark state
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (isMobile) return;
+  if (isMobile) {
+    const mobileHeader = document.querySelector('header');
+    if (mobileHeader) {
+      const threshold = window.innerHeight * 0.45;
+      window.addEventListener('scroll', () => {
+        mobileHeader.classList.toggle('header-dark', window.scrollY > threshold);
+      }, { passive: true });
+    }
+    return;
+  }
 
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
