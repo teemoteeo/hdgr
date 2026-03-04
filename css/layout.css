@@ -407,6 +407,28 @@ footer {
 
 @media (max-width: 768px) {
 
+  /* Previene overflow orizzontale globale */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* ── Header: sempre scuro su mobile ────────────────────── */
+
+  header {
+    background: var(--color-bg) !important;
+    border-bottom-color: var(--color-border) !important;
+  }
+
+  header .logo,
+  body:has([data-hero]) header .logo {
+    color: var(--color-text) !important;
+    opacity: 1 !important;
+  }
+
+  header .menu-toggle span {
+    background: var(--color-text) !important;
+  }
+
   /* ── Hero: layout statico ──────────────────────────────── */
 
   .hero {
@@ -414,7 +436,7 @@ footer {
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .hero-inner {
@@ -422,7 +444,7 @@ footer {
     height: auto !important;
     width: 100% !important;
     display: block !important;
-    overflow: visible !important;
+    overflow: hidden !important;
     -webkit-transform: none !important;
     transform: none !important;
     margin: 0 !important;
@@ -434,7 +456,7 @@ footer {
     position: relative !important;
     display: block;
     width: 100% !important;
-    height: 58vh;
+    height: 55vh;
     margin: 0 !important;
     padding: 0;
     top: auto !important;
@@ -443,6 +465,7 @@ footer {
     left: auto !important;
     -webkit-clip-path: none !important;
     clip-path: none !important;
+    overflow: hidden !important;
   }
 
   .hero-img-wrap img {
@@ -452,8 +475,8 @@ footer {
   /* Services: sotto l'immagine, sovrappone leggermente */
   .hero-left {
     position: relative !important;
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
     height: auto;
     margin-top: calc(-1 * var(--space-8));
     padding: var(--space-8);
@@ -473,14 +496,16 @@ footer {
     transform: none !important;
   }
 
-  /* Nav logo: sempre visibile su mobile */
-  body:has([data-hero]) header .logo {
-    opacity: 1 !important;
-  }
-
   /* Scroll hint: nascosto */
   .hero-scroll-hint {
     display: none;
+  }
+
+  /* ── Container: full-width con padding minimo su mobile ─── */
+
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-4);
   }
 
   /* ── Projects: 2 colonne su mobile ────────────────────── */
@@ -493,7 +518,7 @@ footer {
     margin-bottom: var(--space-4);
   }
 
-  /* ── Statement (Misja/Wizja): allineato a destra ─────── */
+  /* ── Statement (Misja/Wizja): allineato al margine destro */
   .projects-statement p {
     text-align: right;
   }
