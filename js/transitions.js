@@ -8,9 +8,8 @@
  *   Exit:  curtain slides DOWN from top    (yPercent: -100 → 0)
  *   Enter: curtain slides DOWN off screen  (yPercent: 0 → 100)
  *
- * sessionStorage keys:
- *   prev-url  — URL stored on every pageExit, used by pageBack()
- *   back-nav  — flag set by pageBack(), read + cleared by pageEnter()
+ * Uses history.back() so the destination is always correct.
+ * pageshow listener handles bfcache restores (modern browsers).
  */
 
 const PageTransitions = {
@@ -23,6 +22,12 @@ const PageTransitions = {
     if (!this.curtain) return;
 
     this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // bfcache: page restored from memory after history.back() —
+    // DOMContentLoaded does NOT fire again, but pageshow does.
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) this.pageEnter();
+    });
 
     this.pageEnter();
     this.bindLinks();
@@ -39,7 +44,7 @@ const PageTransitions = {
     sessionStorage.removeItem('back-nav');
 
     if (isBack) {
-      // Back: curtain slides DOWN off screen, revealing page from top
+      // Back: curtain slides DOWN off screen
       gsap.to(this.curtain, {
         yPercent: 100,
         duration: 0.5,
@@ -47,7 +52,7 @@ const PageTransitions = {
         onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
       });
     } else {
-      // Forward: curtain slides UP off screen, revealing page from bottom
+      // Forward: curtain slides UP off screen
       gsap.to(this.curtain, {
         yPercent: -100,
         duration: 0.5,
@@ -61,15 +66,11 @@ const PageTransitions = {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
-    // Store current URL so pageBack() knows where to return
-    sessionStorage.setItem('prev-url', window.location.href);
-
     if (this.prefersReducedMotion) {
       window.location.href = url;
       return;
     }
 
-    // Curtain slides UP from bottom to cover screen
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
@@ -82,22 +83,20 @@ const PageTransitions = {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
-    // Fallback: go up one directory toward index
-    const url = sessionStorage.getItem('prev-url') || '../index.html';
     sessionStorage.setItem('back-nav', '1');
 
     if (this.prefersReducedMotion) {
-      window.location.href = url;
+      history.back();
       return;
     }
 
-    // Snap curtain above screen, then slide DOWN to cover
+    // Curtain enters from top, then navigate back in history
     gsap.set(this.curtain, { yPercent: -100 });
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
       ease: 'expo.in',
-      onComplete: () => { window.location.href = url; }
+      onComplete: () => { history.back(); }
     });
   },
 
