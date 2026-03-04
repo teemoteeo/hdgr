@@ -38,13 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
 
-  const imgWrap   = document.querySelector('[data-hero-img-wrap]');
-  const heroImg   = document.querySelector('[data-hero-img]');
-  const heroLogo  = document.querySelector('[data-hero-logo]');
-  const navLogo   = document.querySelector('[data-hero-logo-nav]');
-  const services  = document.querySelector('[data-hero-services]');
-  const heroLeft  = document.querySelector('[data-hero-left]');
-  const header    = document.querySelector('header');
+  const imgWrap    = document.querySelector('[data-hero-img-wrap]');
+  const heroImg    = document.querySelector('[data-hero-img]');
+  const heroLogo   = document.querySelector('[data-hero-logo]');
+  const navLogo    = document.querySelector('[data-hero-logo-nav]');
+  const services   = document.querySelector('[data-hero-services]');
+  const heroLeft   = document.querySelector('[data-hero-left]');
+  const header     = document.querySelector('header');
+  const scrollHint = document.querySelector('[data-hero-scroll-hint]');
 
   const prefersReducedMotion =
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroImg) gsap.set(heroImg, { scale: 1 });
     if (imgWrap) gsap.set(imgWrap, { top: 100, right: 50, bottom: 100, left: '33.333%' });
     if (services) gsap.set(services, { opacity: 1, pointerEvents: 'auto' });
+    if (scrollHint) gsap.set(scrollHint, { opacity: 0 });
     if (navLogo) navLogo.style.opacity = '1';
     if (heroLogo) gsap.set(heroLogo, { opacity: 0 });
     return;
@@ -135,6 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.6,
         ease: 'none'
       }, 0.4);
+    }
+
+    // Scroll hint: appare con services, svanisce prima della fine
+    if (scrollHint) {
+      shrinkTl
+        .to(scrollHint, { opacity: 1, duration: 0.25, ease: 'none' }, 0.35)
+        .to(scrollHint, { opacity: 0, duration: 0.2,  ease: 'none' }, 0.75);
     }
 
     let controlTween = null;

@@ -387,6 +387,31 @@
   transform: translateX(8px);
 }
 
+/* ── Scroll hint arrow ─────────────────────────────────── */
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  color: var(--color-white);
+}
+
+.hero-scroll-hint span {
+  display: block;
+  font-size: var(--step-0);
+  letter-spacing: 0.1em;
+  animation: scroll-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
 /* Page Curtain (transition overlay) */
 
 .page-curtain {
