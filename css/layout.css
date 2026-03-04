@@ -410,28 +410,32 @@ footer {
   /* ── Hero: layout statico ──────────────────────────────── */
 
   .hero {
-    height: auto;
-    margin: 0;
-    padding: 0;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
   .hero-inner {
-    position: relative;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-    margin: 0;
-    padding: 0;
+    position: relative !important;
+    height: auto !important;
+    width: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Immagine: order 1, tocca bordo superiore e destro, nessun margin */
+  /* Immagine: primo nel DOM, full-width */
   .hero-img-wrap {
     position: relative !important;
-    order: 1;
-    width: 100%;
+    display: block;
+    width: 100% !important;
     height: 58vh;
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
     top: auto !important;
     right: auto !important;
@@ -445,10 +449,10 @@ footer {
     transform: none !important;
   }
 
-  /* Services: order 2, sovrappone leggermente l'immagine sopra */
+  /* Services: sotto l'immagine, sovrappone leggermente */
   .hero-left {
-    position: relative;
-    order: 2;
+    position: relative !important;
+    display: block;
     width: 100%;
     height: auto;
     margin-top: calc(-1 * var(--space-8));
