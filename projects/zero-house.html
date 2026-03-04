@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HDGR — Zero-house. Residential project in Warsaw.">
+  <title>HDGR — Zero-house</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header-dark">
+    <a href="../index.html" class="logo">HDGR</a>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <div class="menu-header">
+      <a href="../index.html" class="logo">HDGR</a>
+      <button class="menu-close" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../visualizations.html">Visualizations</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <a href="../projects.html" class="project-back">&larr; Projects</a>
+    <img src="Zero-house/show6.webp" alt="Zero-house exterior view" fetchpriority="high" decoding="async">
+    <div class="project-hero-overlay"></div>
+    <div class="project-hero-content">
+      <h1 class="project-hero-title">Zero-house</h1>
+      <p class="project-hero-year">2022</p>
+    </div>
+  </section>
+
+
+  <!-- Project Body -->
+  <section class="project-body">
+    <div class="container">
+
+      <div class="project-info">
+        <div class="project-meta">
+          <div class="meta-item">
+            <h4>Year</h4>
+            <p>2022</p>
+          </div>
+          <div class="meta-item">
+            <h4>Type</h4>
+            <p>Residential</p>
+          </div>
+          <div class="meta-item">
+            <h4>Location</h4>
+            <p>Warsaw, Poland</p>
+          </div>
+          <div class="meta-item">
+            <h4>Area</h4>
+            <p>160 m²</p>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <p>Zero-house is a low-energy dwelling prototype where compact massing, envelope performance, and passive gains work as one system.</p>
+          <p>Material clarity and structural restraint reinforce a calm domestic environment designed for long-term adaptability.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <figure class="gallery-full">
+          <img src="Zero-house/f7c79abc-f1e0-4e0f-b8d6-40a60f74c64f.webp" alt="Zero-house exterior perspective" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="gallery-pair">
+          <figure>
+            <img src="Zero-house/91020937-2445-4ae5-885a-8fd870bbd904_rw_1920.webp" alt="Zero-house facade articulation" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="Zero-house/1cb6be74-ea1e-4c27-859b-863f3aab6ec3.webp" alt="Zero-house sectional concept" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <figure class="gallery-full">
+          <img src="Zero-house/ba4f17f9-3564-41d3-8459-89bafe9d9de2_rw_1920.webp" alt="Zero-house garden elevation" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Next Project (circular → back to Brick House) -->
+  <section class="next-project">
+    <a href="brick-house.html">
+      <div class="container">
+        <span class="next-project-label">Next Project</span>
+        <span class="next-project-name">Brick House</span>
+        <span class="next-project-arrow">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <h3>HDGR</h3>
+        </div>
+
+        <div class="footer-contact">
+
+          <div>
+            <h4>Get in touch</h4>
+            <p>Warsaw, Poland</p>
+            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+          </div>
+
+          <div>
+            <h4>Follow us</h4>
+            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+        </div><!-- /footer-contact -->
+
+      </div><!-- /footer-content -->
+
+      <div class="footer-bottom">
+        <small>&copy; HDGR 2026</small>
+      </div>
+
+    </div><!-- /container -->
+  </footer>
+
+
+  <div class="page-curtain" aria-hidden="true"></div>
+  <script src="../js/transitions.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

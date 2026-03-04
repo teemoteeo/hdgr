@@ -1,0 +1,17 @@
+# System
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude
+.claude/
+
+# Reference folder
+reference/
+
+# Markdown docs
+*.md
+
+# Editor
+.vscode/
+.idea/

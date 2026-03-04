@@ -1,0 +1,75 @@
+/* reset.css - Minimal browser normalization
+ *
+ * CROSS-PLATFORM FIXES:
+ * - font-optical-sizing: auto for better rendering across engines
+ * - overflow-y: scroll + scrollbar-width: none prevents layout shift (Win/Linux)
+ * - @supports (-webkit-appearance) overrides font-smoothing to "auto" on WebKit
+ *   because "antialiased" renders ABC Marfa Mono too thin on macOS Core Text
+ * - -webkit-user-drag: none prevents ghost drag on Safari
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+@supports (-webkit-appearance: none) {
+  body {
+    -webkit-font-smoothing: auto;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  border-radius: 0;
+  -webkit-user-drag: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Link base styles (color, text-decoration, transition) in typography.css */

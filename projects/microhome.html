@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HDGR — Microhome. Compact residential project in Warsaw.">
+  <title>HDGR — Microhome</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header-dark">
+    <a href="../index.html" class="logo">HDGR</a>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <div class="menu-header">
+      <a href="../index.html" class="logo">HDGR</a>
+      <button class="menu-close" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../visualizations.html">Visualizations</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <a href="../projects.html" class="project-back">&larr; Projects</a>
+    <img src="Microhome/show4.webp" alt="Microhome exterior view" fetchpriority="high" decoding="async">
+    <div class="project-hero-overlay"></div>
+    <div class="project-hero-content">
+      <h1 class="project-hero-title">Microhome</h1>
+      <p class="project-hero-year">2023</p>
+    </div>
+  </section>
+
+
+  <!-- Project Body -->
+  <section class="project-body">
+    <div class="container">
+
+      <div class="project-info">
+        <div class="project-meta">
+          <div class="meta-item">
+            <h4>Year</h4>
+            <p>2023</p>
+          </div>
+          <div class="meta-item">
+            <h4>Type</h4>
+            <p>Residential</p>
+          </div>
+          <div class="meta-item">
+            <h4>Location</h4>
+            <p>Warsaw, Poland</p>
+          </div>
+          <div class="meta-item">
+            <h4>Area</h4>
+            <p>35 m²</p>
+          </div>
+        </div>
+
+        <div class="project-description">
+          <p>Microhome focuses on essential domestic comfort within a compact footprint, using modular geometry and built-in storage.</p>
+          <p>Natural light and material continuity extend perceived volume while preserving clear boundaries for work, rest, and gathering.</p>
+        </div>
+      </div>
+
+      <div class="project-gallery">
+        <figure class="gallery-full">
+          <img src="Microhome/AKSO ANGIELSKIE.webp" alt="Microhome axonometric layout" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="gallery-pair">
+          <figure>
+            <img src="Microhome/rzuty.webp" alt="Microhome floor plan" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="Microhome/wnętrze 1.webp" alt="Microhome interior atmosphere" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <figure class="gallery-full">
+          <img src="Microhome/wnętrze 2.webp" alt="Microhome interior material detail" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Next Project -->
+  <section class="next-project">
+    <a href="primary-school.html">
+      <div class="container">
+        <span class="next-project-label">Next Project</span>
+        <span class="next-project-name">Primary School</span>
+        <span class="next-project-arrow">&rarr;</span>
+      </div>
+    </a>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <h3>HDGR</h3>
+        </div>
+
+        <div class="footer-contact">
+
+          <div>
+            <h4>Get in touch</h4>
+            <p>Warsaw, Poland</p>
+            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+          </div>
+
+          <div>
+            <h4>Follow us</h4>
+            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+        </div><!-- /footer-contact -->
+
+      </div><!-- /footer-content -->
+
+      <div class="footer-bottom">
+        <small>&copy; HDGR 2026</small>
+      </div>
+
+    </div><!-- /container -->
+  </footer>
+
+
+  <div class="page-curtain" aria-hidden="true"></div>
+  <script src="../js/transitions.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+</html>

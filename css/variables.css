@@ -1,0 +1,57 @@
+/* variables.css - Design tokens (Utopia fluid scale) */
+
+:root {
+  /* Palette */
+  --color-bg:         #FAF8F5;
+  --color-text:       #0A0A0A;
+  --color-text-muted: #6B6B6B;
+  --color-border:     rgba(10, 10, 10, 0.12);
+  --color-white:      #FFFFFF;
+  --color-overlay:    #0A0A0A;
+
+  /* Font */
+  --font-mono: "ABC Marfa Mono", "Courier New", monospace;
+
+  /* Utopia fluid type (360px -> 1600px, 14px -> 17px, ratio 1.2 -> 1.25) */
+  --step--2: clamp(0.6076rem, 0.5866rem + 0.0934vw, 0.68rem);
+  --step--1: clamp(0.7292rem, 0.6941rem + 0.1559vw, 0.85rem);
+  --step-0:  clamp(0.875rem,  0.8206rem + 0.2419vw, 1.0625rem);
+  --step-1:  clamp(1.05rem,   0.9693rem + 0.3589vw, 1.3281rem);
+  --step-2:  clamp(1.26rem,   1.1438rem + 0.5163vw, 1.6602rem);
+  --step-3:  clamp(1.512rem,  1.3485rem + 0.7267vw, 2.0752rem);
+  --step-4:  clamp(1.8144rem, 1.5881rem + 1.0059vw, 2.594rem);
+  --step-5:  clamp(2.1773rem, 1.868rem  + 1.3745vw, 3.2425rem);
+
+  /* Aliases */
+  --text-body:        var(--step--1);
+  --text-small-title: var(--step-0);
+  --text-section:     var(--step-1);
+  --text-page:        var(--step-2);
+
+  /* Spacing fluid */
+  --space-4:  clamp(0.75rem,  0.65rem + 0.5vw,  1.25rem);
+  --space-8:  clamp(1.25rem,  1rem    + 1vw,    2.25rem);
+  --space-12: clamp(2rem,     1.5rem  + 1.5vw,  3.25rem);
+  --space-16: clamp(2.5rem,   1.75rem + 2vw,    4.5rem);
+  --space-20: clamp(3rem,     2.25rem + 2.5vw,  5.5rem);
+
+  /* Layout */
+  --container-max: min(90vw, 1400px);
+  --header-height: clamp(3rem, 2.5rem + 1vw, 3.75rem);
+
+  /* Z-index scale */
+  --z-header:  100;
+  --z-menu:    200;
+  --z-curtain: 9999;
+
+  /* Easing */
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-expo-in:  cubic-bezier(0.7, 0, 0.84, 0);
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Line heights */
+  --line-height: 1.58;
+  --line-height-tight: 1.18;
+  --line-height-relaxed: 1.7;
+}
