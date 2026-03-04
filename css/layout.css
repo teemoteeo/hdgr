@@ -100,6 +100,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 .hero-services {
   opacity: 0;
   pointer-events: none;
+  transform: translateY(-20%);
 }
 
 .hero-location {
