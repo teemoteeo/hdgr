@@ -407,10 +407,12 @@ footer {
 
 @media (max-width: 768px) {
 
-  /* ── Hero: layout statico, nessuna animazione ──────────── */
+  /* ── Hero: layout statico ──────────────────────────────── */
 
   .hero {
     height: auto;
+    margin: 0;
+    padding: 0;
   }
 
   .hero-inner {
@@ -419,14 +421,18 @@ footer {
     display: flex;
     flex-direction: column;
     overflow: visible;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Immagine: primo elemento, altezza fissa */
+  /* Immagine: order 1, tocca bordo superiore e destro, nessun margin */
   .hero-img-wrap {
     position: relative !important;
     order: 1;
     width: 100%;
-    height: 55vh;
+    height: 58vh;
+    margin: 0;
+    padding: 0;
     top: auto !important;
     right: auto !important;
     bottom: auto !important;
@@ -439,19 +445,19 @@ footer {
     transform: none !important;
   }
 
-  /* Colonna sinistra: secondo elemento, full width */
+  /* Services: order 2, sovrappone leggermente l'immagine sopra */
   .hero-left {
     position: relative;
     order: 2;
     width: 100%;
     height: auto;
+    margin-top: calc(-1 * var(--space-8));
     padding: var(--space-8);
-    padding-top: var(--space-8);
     background: var(--color-bg);
-    z-index: 1;
+    z-index: 2;
   }
 
-  /* Logo grande: nascosto su mobile (nav logo prende il suo posto) */
+  /* Logo grande: nascosto su mobile */
   .hero-logo {
     display: none;
   }
@@ -473,8 +479,22 @@ footer {
     display: none;
   }
 
-  /* ── Altri layout mobile ───────────────────────────────── */
-  .projects-masonry { columns: 1; }
+  /* ── Projects: 2 colonne su mobile ────────────────────── */
+  .projects-masonry {
+    columns: 2;
+    column-gap: var(--space-4);
+  }
+
+  .projects-masonry .project-card {
+    margin-bottom: var(--space-4);
+  }
+
+  /* ── Statement (Misja/Wizja): allineato a destra ─────── */
+  .projects-statement p {
+    text-align: right;
+  }
+
+  /* ── Altri layout mobile ──────────────────────────────── */
   .project-info { grid-template-columns: 1fr; }
   .project-meta { grid-template-columns: 1fr 1fr; }
   .gallery-pair { grid-template-columns: 1fr; }
