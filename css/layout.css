@@ -244,6 +244,12 @@ body:has([data-hero]) header.header-dark .logo {
   text-transform: uppercase;
   color: var(--color-white);
   transition: opacity var(--transition-base);
+  /* button reset */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .project-back:hover {
