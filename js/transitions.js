@@ -35,6 +35,9 @@ const PageTransitions = {
   },
 
   pageEnter() {
+    // Always reset — page is interactive again (fixes bfcache restore with isAnimating = true)
+    this.isAnimating = false;
+
     if (this.prefersReducedMotion) {
       gsap.set(this.curtain, { yPercent: 100 });
       return;
