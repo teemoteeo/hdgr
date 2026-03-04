@@ -1,15 +1,16 @@
 /* transitions.js - Page transition system (curtain overlay)
  *
- * Every navigation triggers a dark curtain that slides up (exit)
- * then slides away on the new page (enter).
+ * FORWARD navigation (link click):
+ *   Exit:  curtain slides UP from bottom   (yPercent: 100 → 0)
+ *   Enter: curtain slides UP off screen    (yPercent: 0 → -100)
  *
- * Curtain starts covering the page (CSS translateY(0%)),
- * so there is never a flash of content before the reveal.
+ * BACK navigation (.project-back button):
+ *   Exit:  curtain slides DOWN from top    (yPercent: -100 → 0)
+ *   Enter: curtain slides DOWN off screen  (yPercent: 0 → 100)
  *
- * Timing:
- *   Exit from hero page (index.html): 0.6s
- *   Exit from other pages: 0.4s
- *   Enter (all pages): 0.5s
+ * sessionStorage keys:
+ *   prev-url  — URL stored on every pageExit, used by pageBack()
+ *   back-nav  — flag set by pageBack(), read + cleared by pageEnter()
  */
 
 const PageTransitions = {
@@ -23,9 +24,9 @@ const PageTransitions = {
 
     this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Curtain already covers page via CSS — just reveal
     this.pageEnter();
     this.bindLinks();
+    this.bindBackButtons();
   },
 
   pageEnter() {
@@ -34,23 +35,64 @@ const PageTransitions = {
       return;
     }
 
-    gsap.to(this.curtain, {
-      yPercent: -100,
-      duration: 0.5,
-      ease: 'power3.out',
-      onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
-    });
+    const isBack = sessionStorage.getItem('back-nav') === '1';
+    sessionStorage.removeItem('back-nav');
+
+    if (isBack) {
+      // Back: curtain slides DOWN off screen, revealing page from top
+      gsap.to(this.curtain, {
+        yPercent: 100,
+        duration: 0.5,
+        ease: 'power3.out',
+        onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
+      });
+    } else {
+      // Forward: curtain slides UP off screen, revealing page from bottom
+      gsap.to(this.curtain, {
+        yPercent: -100,
+        duration: 0.5,
+        ease: 'power3.out',
+        onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
+      });
+    }
   },
 
   pageExit(url, duration = 0.4) {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
+    // Store current URL so pageBack() knows where to return
+    sessionStorage.setItem('prev-url', window.location.href);
+
     if (this.prefersReducedMotion) {
       window.location.href = url;
       return;
     }
 
+    // Curtain slides UP from bottom to cover screen
+    gsap.to(this.curtain, {
+      yPercent: 0,
+      duration,
+      ease: 'expo.in',
+      onComplete: () => { window.location.href = url; }
+    });
+  },
+
+  pageBack(duration = 0.4) {
+    if (this.isAnimating) return;
+    this.isAnimating = true;
+
+    // Fallback: go up one directory toward index
+    const url = sessionStorage.getItem('prev-url') || '../index.html';
+    sessionStorage.setItem('back-nav', '1');
+
+    if (this.prefersReducedMotion) {
+      window.location.href = url;
+      return;
+    }
+
+    // Snap curtain above screen, then slide DOWN to cover
+    gsap.set(this.curtain, { yPercent: -100 });
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
@@ -71,6 +113,12 @@ const PageTransitions = {
         const isHeroPage = !!document.querySelector('[data-hero]');
         this.pageExit(href, isHeroPage ? 0.6 : 0.4);
       });
+    });
+  },
+
+  bindBackButtons() {
+    document.querySelectorAll('.project-back').forEach(btn => {
+      btn.addEventListener('click', () => this.pageBack());
     });
   }
 };
