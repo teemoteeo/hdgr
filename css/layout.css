@@ -470,6 +470,7 @@ footer {
 
   .hero-img-wrap img {
     transform: none !important;
+    object-position: 30% 20% !important;
   }
 
   /* Services: sotto l'immagine, sovrappone leggermente */
