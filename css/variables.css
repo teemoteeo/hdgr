@@ -10,7 +10,7 @@
   --color-overlay:    #0A0A0A;
 
   /* Font */
-  --font-mono: "ABC Marfa Mono", "Courier New", monospace;
+  --font-mono: "Space Mono", monospace;
 
   /* Utopia fluid type (360px -> 1600px, 14px -> 17px, ratio 1.2 -> 1.25) */
   --step--2: clamp(0.6076rem, 0.5866rem + 0.0934vw, 0.68rem);
@@ -37,7 +37,7 @@
 
   /* Layout */
   --container-max: min(90vw, 1400px);
-  --header-height: clamp(3rem, 2.5rem + 1vw, 3.75rem);
+  --header-height: clamp(3.75rem, 3.125rem + 1.25vw, 4.6875rem);
 
   /* Z-index scale */
   --z-header:  100;

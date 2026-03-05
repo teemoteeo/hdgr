@@ -93,6 +93,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   text-transform: uppercase;
   opacity: 0.7;
   margin-top: 0.4em;
+  text-align: center;
 }
 
 /* ── Services ───────────────────────────────────────────── */
@@ -114,7 +115,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 }
 
 .hero-services-group {
-  margin-bottom: var(--space-8);
+  margin-bottom: calc(var(--space-8) * 4 / 3);
 }
 
 .hero-services-title {
@@ -123,7 +124,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-text);
-  margin-bottom: var(--space-4);
+  margin-bottom: calc(var(--space-4) * 2 / 3);
 }
 
 /* Tree branch layout — imitates ├── and └── connectors */
@@ -209,12 +210,12 @@ body:has([data-hero]) header.header-dark .logo {
 
 .projects-masonry {
   columns: 2;
-  column-gap: var(--space-8);
+  column-gap: var(--space-12);
 }
 
 .projects-masonry .project-card {
   break-inside: avoid;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-12);
 }
 
 .projects-archive {
@@ -236,14 +237,14 @@ body:has([data-hero]) header.header-dark .logo {
 /* Project Hero (detail pages) */
 
 .project-back {
-  position: absolute;
+  position: fixed;
   top: calc(var(--header-height) + var(--space-4));
   left: var(--space-12);
-  z-index: 2;
-  font-size: var(--text-body);
+  z-index: 200;
+  font-size: var(--step-0);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-white);
+  color: var(--color-text);
   transition: opacity var(--transition-base);
   /* button reset */
   background: none;
@@ -561,4 +562,14 @@ footer {
   .next-project a { transition: none; }
   .next-project-label { transition: none; }
   .next-project-arrow { transition: none; }
+}
+
+.section-header--centered {
+  justify-content: center;
+}
+
+.section-header--centered h2 {
+  text-align: center;
+  font-size: calc(var(--text-small-title) * 3);
+  margin-bottom: calc(var(--space-4) * 1.5);
 }

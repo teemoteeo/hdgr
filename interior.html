@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HDGR — Architecture studio based in Warsaw. Architectural projects, visualizations, interior design, and real estate development.">
-  <title>HDGR — Architecture</title>
+  <meta name="description" content="HDGR — Interior Design. Residential and commercial interior projects by HDGR Architecture, Warsaw.">
+  <title>HDGR — Interior Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 
 <body>
 
   <!-- Header -->
-  <header>
-    <a href="index.html" class="logo" data-hero-logo-nav><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR">
+  <header class="header-dark">
+    <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR">
   <g transform="translate(0,1536) scale(0.1,-0.1)">
     <path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/>
   </g>
@@ -27,6 +26,7 @@
       <span></span>
       <span></span>
     </button>
+    <button class="project-back">← Go back</button>
   </header>
 
   <!-- Menu Overlay -->
@@ -43,6 +43,7 @@
         <li><a href="#">About Us</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="visualizations.html">Visualizations</a></li>
+        <li><a href="interior.html" class="active">Interior Design</a></li>
         <li><a href="#">Careers</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -50,126 +51,109 @@
   </div>
 
 
-  <!-- 1. Hero -->
-  <section class="hero" data-hero>
-    <div class="hero-inner">
-
-      <!-- Wrapper immagine (inizia fullscreen, si riduce su scroll) -->
-      <div class="hero-img-wrap" data-hero-img-wrap>
-        <img src="visualizations/facade.webp" alt="Architectural facade rendering" loading="eager" fetchpriority="high" data-hero-img>
-        <div class="hero-overlay"></div>
-      </div>
-
-      <!-- Colonna sinistra: logo grande + services (nascosti inizialmente) -->
-      <div class="hero-left" data-hero-left>
-        <h1 class="hero-logo" data-hero-logo>HDGR<span class="hero-subtitle">Design & Development</span></h1>
-        <div class="hero-services" data-hero-services>
-          <p class="hero-location">Warsaw, PL</p>
-
-          <div class="hero-services-group">
-            <h3 class="hero-services-title">Design Services</h3>
-            <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="projects.html">Architectural projects</a></li>
-              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
-              <li class="tree-branch tree-last"><a href="interior.html">Interior design</a></li>
-            </ul>
-          </div>
-
-          <div class="hero-services-group">
-            <h3 class="hero-services-title">Real Estate Development</h3>
-            <ul class="hero-services-tree">
-              <li class="tree-branch">Portfolio</li>
-              <li class="tree-branch">Buyer Support</li>
-              <li class="tree-branch tree-last">Archive / Sold</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Scroll hint -->
-      <div class="hero-scroll-hint" data-hero-scroll-hint aria-hidden="true">
-        <span>↓</span>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- 2. Projects -->
-  <section class="projects">
+  <!-- Interior Projects -->
+  <section class="projects-archive">
     <div class="container">
 
-      <div class="projects-statement">
-        <p>Design That Lasts.<br>Development That Matters.</p>
-      </div>
-
-      <div class="section-header">
-        <h2>Featured projects</h2>
-        <a href="projects.html" class="view-all">View all projects &rarr;</a>
+      <div class="section-header section-header--centered">
+        <h2>Interior Design</h2>
+        <span class="project-count">(06)</span>
       </div>
 
       <div class="projects-masonry">
 
-        <!-- Brick House -->
+        <!-- Beskid Niski -->
         <article class="project-card">
-          <a href="projects/brick-house.html">
+          <a href="interior/beskid-niski.html">
             <div class="project-card-img" style="aspect-ratio: 3/4">
-              <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy" decoding="async">
+              <img src="interior design/BESKID NISKI/BESKID NISKI - RENDER 1 ANTRESOLA V4.webp" alt="Beskid Niski" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
               <div class="project-card-title">
-                <h3>Brick House</h3>
-                <span class="project-year">2023</span>
-              </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Design Museum -->
-        <article class="project-card">
-          <a href="projects/design-museum.html">
-            <div class="project-card-img" style="aspect-ratio: 16/10">
-              <img src="projects/Design Museum/show2.webp" alt="Design Museum" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Design Museum</h3>
-                <span class="project-year">2022</span>
-              </div>
-              <p class="project-type">Warsaw — Public</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Housing Unit -->
-        <article class="project-card">
-          <a href="projects/housing-unit.html">
-            <div class="project-card-img" style="aspect-ratio: 4/5">
-              <img src="projects/Housing Unit/show3.webp" alt="Housing Unit" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Housing Unit</h3>
+                <h3>Beskid Niski</h3>
                 <span class="project-year">2024</span>
               </div>
-              <p class="project-type">Warsaw — Residential</p>
+              <p class="project-type">Residential Interior</p>
             </div>
           </a>
         </article>
 
-        <!-- Microhome -->
+        <!-- BOH -->
         <article class="project-card">
-          <a href="projects/microhome.html">
+          <a href="interior/boh.html">
             <div class="project-card-img" style="aspect-ratio: 16/10">
-              <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy" decoding="async">
+              <img src="interior design/boh/INTERIOR 1.webp" alt="BOH" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
               <div class="project-card-title">
-                <h3>Microhome</h3>
-                <span class="project-year">2023</span>
+                <h3>BOH</h3>
+                <span class="project-year">—</span>
               </div>
-              <p class="project-type">Warsaw — Residential</p>
+              <p class="project-type">Interior</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Deante Łazienka -->
+        <article class="project-card">
+          <a href="interior/deante-lazienka.html">
+            <div class="project-card-img" style="aspect-ratio: 4/5">
+              <img src="interior design/DEANTE ŁAZIENKA/IMG_2111.webp" alt="Deante Łazienka" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Deante Łazienka</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-type">Bathroom Interior</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Gdańsk Lawendowe Wzgórze -->
+        <article class="project-card">
+          <a href="interior/gdansk-lawendowe.html">
+            <div class="project-card-img" style="aspect-ratio: 16/10">
+              <img src="interior design/GDAŃSK LAWENDOWE WZGÓRZE/LAWENDOWE WZGÓRZE - WIZKA SYPIALNIA 1.webp" alt="Gdańsk Lawendowe Wzgórze" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Gdańsk Lawendowe Wzgórze</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-type">Residential Interior</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Komorów -->
+        <article class="project-card">
+          <a href="interior/komorow.html">
+            <div class="project-card-img" style="aspect-ratio: 3/4">
+              <img src="interior design/KOMORÓW/KOMORÓW KUCHNIA - WIZKA 1.webp" alt="Komorów" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Komorów</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-type">Kitchen Interior</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Warszawa Wilanów -->
+        <article class="project-card">
+          <a href="interior/warszawa-wilanow.html">
+            <div class="project-card-img" style="aspect-ratio: 4/5">
+              <img src="interior design/WARSZAWA WILANÓW/Salon 1 Final 1.webp" alt="Warszawa Wilanów" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Warszawa Wilanów</h3>
+                <span class="project-year">2024</span>
+              </div>
+              <p class="project-type">Residential Interior</p>
             </div>
           </a>
         </article>
@@ -177,7 +161,7 @@
       </div><!-- /projects-masonry -->
 
     </div><!-- /container -->
-  </section>
+  </section><!-- /projects-archive -->
 
 
   <!-- Footer -->
@@ -219,8 +203,6 @@
   <div class="page-curtain" aria-hidden="true"></div>
   <script src="js/transitions.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/hero.js"></script>
   <script src="js/logo-type.js"></script>
-  <script src="js/flipboard.js"></script>
 </body>
 </html>

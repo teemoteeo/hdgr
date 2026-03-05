@@ -88,18 +88,21 @@ const PageTransitions = {
 
     sessionStorage.setItem('back-nav', '1');
 
+    // Fallback: se non c'è storia nel browser, vai a index.html
+    const hasHistory = window.history.length > 1;
+    const goBack = () => hasHistory ? history.back() : (window.location.href = 'index.html');
+
     if (this.prefersReducedMotion) {
-      history.back();
+      goBack();
       return;
     }
 
-    // Curtain enters from top, then navigate back in history
     gsap.set(this.curtain, { yPercent: -100 });
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
       ease: 'expo.in',
-      onComplete: () => { history.back(); }
+      onComplete: goBack
     });
   },
 

@@ -9,6 +9,9 @@
   text-transform: uppercase;
   color: var(--color-white);
   transition: opacity var(--transition-base), color var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logo:hover {
@@ -136,7 +139,8 @@
 .menu-overlay.active .menu-nav li:nth-child(6) { transition-delay: 0.35s; }
 
 .menu-nav a {
-  font-size: var(--text-section);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text);
@@ -166,7 +170,7 @@
   opacity: 0.5;
 }
 
-/* Projects Statement (MISJA / WIZJA) */
+/* Projects Statement */
 
 .projects-statement {
   margin-bottom: var(--space-16);
@@ -174,26 +178,12 @@
 }
 
 .projects-statement p {
-  font-size: var(--step-0);
+  font-size: var(--step-3);
   font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
   color: var(--color-text);
-  text-align: right;
-}
-
-.projects-statement p + p {
-  margin-top: var(--space-4);
-}
-
-.statement-label {
-  font-size: var(--text-body);
-  color: var(--color-text-muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-right: var(--space-4);
-  display: inline-block;
-  min-width: 60px;
+  text-align: left;
 }
 
 /* Project Card */
@@ -387,6 +377,25 @@
   transform: translateX(8px);
 }
 
+/* Logo type animation */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.logo-type {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: currentColor;
+  overflow: hidden;
+  display: inline-block;
+}
+
 /* ── Scroll hint arrow ─────────────────────────────────── */
 
 .hero-scroll-hint {
@@ -421,4 +430,83 @@
   z-index: var(--z-curtain);
   transform: translateY(0%);
   pointer-events: none;
+}
+
+/* Lightbox */
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.95);
+  z-index: var(--z-curtain);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-8);
+  left: var(--space-8);
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: var(--text-section);
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-mono);
+  transition: opacity var(--transition-base);
+}
+
+.lightbox-close:hover {
+  opacity: 0.5;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: var(--text-section);
+  cursor: pointer;
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  transition: opacity var(--transition-base);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 0.5;
+}
+
+.lightbox-prev { left: var(--space-8); }
+.lightbox-next { right: var(--space-8); }
+
+/* Hero services tree — bump hover */
+.hero-services-tree .tree-branch {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: default;
+}
+
+.hero-services-tree .tree-branch:hover {
+  transform: translateX(6px);
+  opacity: 0.7;
 }
