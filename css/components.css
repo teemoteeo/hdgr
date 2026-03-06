@@ -56,8 +56,9 @@
   transition: opacity 0.4s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding-right: calc(var(--space-12) * 4);
 }
 
 .menu-overlay.active {
@@ -116,7 +117,7 @@
 
 .menu-nav ul {
   list-style: none;
-  text-align: center;
+  text-align: right;
 }
 
 .menu-nav li {
@@ -139,8 +140,8 @@
 .menu-overlay.active .menu-nav li:nth-child(6) { transition-delay: 0.35s; }
 
 .menu-nav a {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text);
@@ -396,31 +397,6 @@
   display: inline-block;
 }
 
-/* ── Scroll hint arrow ─────────────────────────────────── */
-
-.hero-scroll-hint {
-  position: absolute;
-  bottom: var(--space-8);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  opacity: 0;
-  pointer-events: none;
-  color: var(--color-white);
-}
-
-.hero-scroll-hint span {
-  display: block;
-  font-size: var(--step-0);
-  letter-spacing: 0.1em;
-  animation: scroll-bounce 1.4s ease-in-out infinite;
-}
-
-@keyframes scroll-bounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(10px); }
-}
-
 /* Page Curtain (transition overlay) */
 
 .page-curtain {
@@ -509,4 +485,68 @@
 .hero-services-tree .tree-branch:hover {
   transform: translateX(6px);
   opacity: 0.7;
+}
+
+/* ── Studio Quote ── */
+.studio-quote {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.studio-quote blockquote {
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── About Us ── */
+.about {
+  padding: var(--space-20) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-intro {
+  max-width: 480px;
+  margin-bottom: var(--space-12);
+  opacity: 0.6;
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-8);
+}
+
+.about-member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: var(--color-border);
+  margin-bottom: var(--space-4);
+}
+
+.about-member h3 {
+  font-size: var(--step-0);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about-role {
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
 }
