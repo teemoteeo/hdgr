@@ -179,12 +179,16 @@
 }
 
 .projects-statement p {
-  font-size: var(--step-3);
+  font-size: var(--step-2);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: 0.04em;
   color: var(--color-text);
   text-align: left;
+}
+
+.projects-statement p + p {
+  margin-top: var(--space-8);
 }
 
 /* Project Card */
@@ -490,7 +494,6 @@
 /* ── Studio Quote ── */
 .studio-quote {
   padding: var(--space-20) 0;
-  border-top: 1px solid var(--color-border);
 }
 
 .studio-quote blockquote {
@@ -506,7 +509,6 @@
 /* ── About Us ── */
 .about {
   padding: var(--space-20) 0;
-  border-top: 1px solid var(--color-border);
 }
 
 .about-intro {
@@ -521,6 +523,10 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: var(--space-8);
+}
+
+.about-row {
+  display: contents;
 }
 
 .about-member {
@@ -549,4 +555,22 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.5;
+}
+
+.projects-quote {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  padding: calc(var(--space-20) * 0.5) 0;
+}
+
+.projects-quote blockquote {
+  font-size: var(--step-2);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+  margin: 0;
 }

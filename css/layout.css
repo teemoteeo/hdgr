@@ -156,6 +156,23 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   content: '└──';
 }
 
+/* ── Hero Statement ─────────────────────────────────────── */
+
+.hero-statement {
+  position: absolute;
+  bottom: calc(var(--space-8) * 0.5);
+  left: calc((100vw - var(--container-max)) / 2 + var(--space-12));
+  font-size: var(--step-3);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  opacity: 0;
+  margin: 0;
+  z-index: 4;
+  white-space: nowrap;
+}
+
 /* ── Wrapper immagine ───────────────────────────────────── */
 
 .hero-img-wrap {
@@ -197,8 +214,14 @@ body:has([data-hero]) header.header-dark .logo {
 
 /* ─── PROJECTS SECTION ────────────────────────────────────────────── */
 
+.statement-design { display: none; }
+
+.mobile-quote {
+  display: none;
+}
+
 .projects {
-  padding: var(--space-16) 0;
+  padding: calc(var(--space-16) * 0.7) 0 var(--space-16);
 }
 
 .section-header {
@@ -382,7 +405,6 @@ body:has([data-hero]) header.header-dark .logo {
 
 footer {
   padding: var(--space-16) 0 var(--space-8);
-  border-top: 1px solid var(--color-border);
 }
 
 .footer-content {
@@ -401,7 +423,6 @@ footer {
 
 .footer-bottom {
   padding-top: var(--space-8);
-  border-top: 1px solid var(--color-border);
 }
 
 /* ─── MOBILE ──────────────────────────────────────────────────────── */
@@ -474,7 +495,7 @@ footer {
     height: 55vh !important;
     max-width: none !important;
     object-fit: cover !important;
-    object-position: 30% 20% !important;
+    object-position: 30% 10% !important;
     transform: none !important;
     display: block !important;
   }
@@ -527,7 +548,65 @@ footer {
 
   /* ── Statement (Misja/Wizja): allineato al margine destro */
   .projects-statement p {
-    text-align: right;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    white-space: normal;
+    text-align: left;
+  }
+
+  .projects-statement p + p {
+    margin-top: var(--space-4);
+  }
+
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    overflow: visible;
+  }
+
+  .about-row {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .about-row--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-row--two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .about-photo {
+    aspect-ratio: 1/1;
+  }
+
+  .hero-statement { display: none; }
+  .statement-design { display: block; }
+
+
+  .projects-quote {
+    display: none;
+  }
+
+  .mobile-quote {
+    display: block;
+    padding: var(--space-12) 0;
+    text-align: center;
+  }
+
+  .mobile-quote blockquote {
+    font-size: var(--step-1);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    color: var(--color-text);
+    margin: 0;
   }
 
   /* ── Altri layout mobile ──────────────────────────────── */

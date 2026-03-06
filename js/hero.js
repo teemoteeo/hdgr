@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroLogo   = document.querySelector('[data-hero-logo]');
   const navLogo    = document.querySelector('[data-hero-logo-nav]');
   const services   = document.querySelector('[data-hero-services]');
+  const statement  = document.querySelector('[data-hero-statement]');
   const heroLeft   = document.querySelector('[data-hero-left]');
   const header     = document.querySelector('header');
   const scrollHint = document.querySelector('[data-hero-scroll-hint]');
@@ -139,9 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 0);
 
-    // Services fade-in (parte a 40% della timeline)
-    if (services) {
-      shrinkTl.to(services, {
+    // Services + statement fade-in (parte a 40% della timeline)
+    const fadeTargets = [services, statement].filter(Boolean);
+    if (fadeTargets.length) {
+      shrinkTl.to(fadeTargets, {
         opacity: 1,
         duration: 0.6,
         ease: 'none'
