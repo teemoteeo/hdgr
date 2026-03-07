@@ -14,7 +14,7 @@
 
   const CITIES = [
     { city: 'Warsaw',   code: 'PL' },
-    { city: 'Valencia', code: 'SP' },
+    { city: 'Valencia', code: 'ESP' },
     { city: 'Shanghai', code: 'CN' }
   ];
 
