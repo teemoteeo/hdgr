@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HDGR — Property Portfolio. Residential and commercial investment opportunities.">
+  <title>HDGR — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header-dark">
+    <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR"><g transform="translate(0,1536) scale(0.1,-0.1)"><path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/></g></svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-side">
+      <button class="project-back">← Go back</button>
+    </div>
+  </header>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <div class="menu-header">
+      <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR"><g transform="translate(0,1536) scale(0.1,-0.1)"><path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/></g></svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+      <button class="menu-close" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="projects.html">Investment Opportunities</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- Portfolio Listings -->
+  <section class="portfolio-archive">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Property Portfolio</h2>
+        <span class="project-count">(06)</span>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <!-- Card 01 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--available">Available</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 01</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 1, Warsaw</p>
+            <div class="portfolio-card-meta">
+              <span>Residential</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 02 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--available">Available</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 02</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 2, Warsaw</p>
+            <div class="portfolio-card-meta">
+              <span>Commercial</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--sold">Sold</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 03</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 3, Kraków</p>
+            <div class="portfolio-card-meta">
+              <span>Residential</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 04 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--development">In Development</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 04</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 4, Warsaw</p>
+            <div class="portfolio-card-meta">
+              <span>Mixed Use</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 05 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--available">Available</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 05</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 5, Gdańsk</p>
+            <div class="portfolio-card-meta">
+              <span>Commercial</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 06 -->
+        <article class="portfolio-card">
+          <div class="portfolio-card-img">
+            <div class="portfolio-card-placeholder"></div>
+            <span class="portfolio-status portfolio-status--development">In Development</span>
+          </div>
+          <div class="portfolio-card-body">
+            <div class="portfolio-card-header">
+              <h3>Property 06</h3>
+              <span class="portfolio-price">€ —</span>
+            </div>
+            <p class="portfolio-address">ul. Placeholder 6, Warsaw</p>
+            <div class="portfolio-card-meta">
+              <span>Residential</span>
+              <span>— m²</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /portfolio-grid -->
+
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>HDGR</h3>
+        </div>
+        <div class="footer-contact">
+          <div>
+            <h4>Get in touch</h4>
+            <p>Warsaw, Poland</p>
+            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+          </div>
+          <div>
+            <h4>Follow us</h4>
+            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; HDGR 2026</small>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="page-curtain" aria-hidden="true"></div>
+  <script src="js/transitions.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/logo-type.js"></script>
+</body>
+</html>

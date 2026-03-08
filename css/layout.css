@@ -39,8 +39,8 @@ header .logo {
 header.header-dark .logo { color: var(--color-text); }
 
 header .logo svg {
-  width: 20px;
-  height: 30px;
+  width: 40px;
+  height: 60px;
   flex-shrink: 0;
 }
 
@@ -116,13 +116,11 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   display: block;
   font-size: var(--step--2);
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0.7;
   margin-top: 0.4em;
-  text-align: center;
 }
-
 /* ── Services ───────────────────────────────────────────── */
 
 .hero-services {
@@ -241,12 +239,6 @@ body:has([data-hero]) header.header-dark .logo {
 
 /* ─── PROJECTS SECTION ────────────────────────────────────────────── */
 
-.statement-design { display: none; }
-
-.mobile-quote {
-  display: none;
-}
-
 .projects {
   padding: calc(var(--space-16) * 0.7) 0 var(--space-16);
 }
@@ -269,34 +261,55 @@ body:has([data-hero]) header.header-dark .logo {
 }
 
 .projects-archive {
-  padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
+  padding: calc(var(--header-height) + var(--space-20)) 0 var(--space-16);
 }
 
 .projects-archive .section-header {
   margin-bottom: var(--space-4);
 }
 
+.projects-archive .section-header h2 {
+  font-size: var(--step-1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
 .project-count {
-  font-size: var(--text-body);
+  font-size: var(--step-1);
   color: var(--color-text-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 /* ─── PROJECT DETAIL ──────────────────────────────────────────────── */
 
-/* Project Hero (detail pages) */
-
-.project-back {
+.nav-side {
   position: fixed;
   top: calc(var(--header-height) + var(--space-4));
   left: var(--space-12);
   z-index: 200;
-  font-size: var(--step-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-nav {
+  position: fixed;
+  top: calc(var(--header-height) + var(--space-4));
+  left: var(--space-12);
+  z-index: 150;
+  padding: 0;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+.project-back {
+  font-size: var(--step--1);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--btn-color, var(--color-text));
   transition: opacity var(--transition-base);
-  /* button reset */
   background: none;
   border: none;
   padding: 0;
@@ -307,6 +320,141 @@ body:has([data-hero]) header.header-dark .logo {
 .project-back:hover {
   opacity: 0.5;
 }
+
+.project-nav.is-light .project-back {
+  --btn-color: var(--color-white);
+}
+
+.project-nav.is-dark .project-back {
+  --btn-color: var(--color-text);
+}
+
+.nav-side-links {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-4) * 0.5);
+}
+
+.nav-side-link {
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: opacity var(--transition-base);
+  text-decoration: none;
+}
+
+.nav-side-link:hover {
+  opacity: 0.5;
+}
+
+/* ─── PROJECT DETAIL — BC Architects layout ──────────────────────── */
+
+.project-page {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+}
+
+.project-page-inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  align-items: start;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Sidebar */
+.project-sidebar {
+  position: sticky;
+  top: var(--header-height);
+  padding: var(--space-8) var(--space-8) var(--space-16) var(--space-12);
+  height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.project-sidebar-title {
+  font-size: var(--step-2);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.project-sidebar-year {
+  font-size: var(--step--1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.project-sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.project-sidebar-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-sidebar-meta-item h4 {
+  font-size: var(--step--2);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.project-sidebar-meta-item p {
+  font-size: var(--step--1);
+  letter-spacing: 0.03em;
+  color: var(--color-text);
+}
+
+.project-sidebar-description {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.project-sidebar-description p {
+  font-size: var(--step--1);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+}
+
+.project-sidebar-description p + p {
+  margin-top: var(--space-4);
+}
+
+/* Image grid */
+.project-image-grid {
+  padding: var(--space-8);
+  columns: 2;
+  column-gap: var(--space-4);
+}
+
+.project-image-grid figure {
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+}
+
+.project-image-grid figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── INTERIOR DESIGN / LEGACY PROJECT LAYOUT ────────────────────── */
 
 .project-hero {
   position: relative;
@@ -359,8 +507,6 @@ body:has([data-hero]) header.header-dark .logo {
   opacity: 0.7;
 }
 
-/* Project Body (detail pages) */
-
 .project-body {
   padding: var(--space-16) 0;
 }
@@ -401,8 +547,6 @@ body:has([data-hero]) header.header-dark .logo {
 .project-description p + p {
   margin-top: var(--space-4);
 }
-
-/* Project Gallery */
 
 .project-gallery {
   display: flex;
@@ -583,17 +727,6 @@ footer {
     margin-bottom: var(--space-4);
   }
 
-  /* ── Statement (Misja/Wizja): allineato al margine destro */
-  .projects-statement p {
-    font-size: clamp(1rem, 5vw, 1.3rem);
-    white-space: normal;
-    text-align: left;
-  }
-
-  .projects-statement p + p {
-    margin-top: var(--space-4);
-  }
-
   .about-grid {
     display: flex;
     flex-direction: row;
@@ -639,33 +772,66 @@ footer {
     aspect-ratio: 1/1;
   }
 
-  .hero-statement { display: none; }
-  .statement-design { display: block; }
-
-
-  .projects-quote {
-    display: none;
-  }
-
-  .mobile-quote {
-    display: block;
-    padding: var(--space-12) 0;
-    text-align: center;
-  }
-
-  .mobile-quote blockquote {
+  .studio-statement p {
     font-size: var(--step-1);
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    line-height: 1.2;
-    color: var(--color-text);
-    margin: 0;
   }
 
-  /* ── Altri layout mobile ──────────────────────────────── */
+  /* ── Logo SVG size ────────────────────────────────────── */
+  header .logo svg {
+    width: 28px;
+    height: 42px;
+  }
+
+  header .logo-type {
+    display: inline-block !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+
+  /* ── Menu overlay centered ────────────────────────────── */
+  .menu-overlay {
+    align-items: center !important;
+    justify-content: center !important;
+    padding-right: 0 !important;
+    padding: 0 var(--space-8) !important;
+  }
+
+  .menu-nav ul {
+    text-align: center !important;
+  }
+
+  .menu-nav a {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  }
+
+  .projects-archive {
+    padding-top: calc(var(--header-height) + var(--space-20));
+  }
+
+
+  /* ── Project detail mobile ────────────────────────────── */
+  .project-page-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .project-sidebar {
+    position: relative;
+    top: auto;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .project-image-grid {
+    columns: 1;
+  }
+
+  /* ── Interior / legacy project layout mobile ─────────── */
   .project-info { grid-template-columns: 1fr; }
   .project-meta { grid-template-columns: 1fr 1fr; }
   .gallery-pair { grid-template-columns: 1fr; }
+
+  /* ── Altri layout mobile ──────────────────────────────── */
   .footer-content { grid-template-columns: 1fr; }
   .footer-contact { grid-template-columns: 1fr; }
 }

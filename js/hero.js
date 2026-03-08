@@ -27,6 +27,19 @@
  *   - ignoreMobileResize: true
  */
 
+function matchSubtitleWidth() {
+  const title = document.querySelector('.hero-title-text');
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (!title || !subtitle) return;
+  const titleWidth = title.getBoundingClientRect().width;
+  subtitle.style.width = titleWidth + 'px';
+  subtitle.style.display = 'flex';
+  subtitle.style.justifyContent = 'flex-start';
+}
+
+document.fonts.ready.then(matchSubtitleWidth);
+window.addEventListener('resize', matchSubtitleWidth);
+
 document.addEventListener('DOMContentLoaded', () => {
   const heroEl = document.querySelector('[data-hero]');
   if (!heroEl) return;
@@ -204,3 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+

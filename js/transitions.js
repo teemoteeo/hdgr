@@ -32,6 +32,7 @@ const PageTransitions = {
     this.pageEnter();
     this.bindLinks();
     this.bindBackButtons();
+    this.initBackButtonColor();
   },
 
   pageEnter() {
@@ -125,6 +126,31 @@ const PageTransitions = {
     document.querySelectorAll('.project-back').forEach(btn => {
       btn.addEventListener('click', () => this.pageBack());
     });
+  },
+
+  initBackButtonColor() {
+    const nav = document.querySelector('.project-nav');
+    const body = document.querySelector('.project-body');
+    if (!nav || !body) return;
+
+    nav.classList.add('is-light');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          nav.classList.remove('is-light');
+          nav.classList.add('is-dark');
+        } else {
+          nav.classList.remove('is-dark');
+          nav.classList.add('is-light');
+        }
+      });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -95% 0px'
+    });
+
+    observer.observe(body);
   }
 };
 

@@ -26,13 +26,19 @@
       <span></span>
       <span></span>
     </button>
-    <button class="project-back">← Go back</button>
+    <div class="nav-side">
+      <button class="project-back">← Go back</button>
+      <div class="nav-side-links">
+        <a href="visualizations.html" class="nav-side-link">Visualizations</a>
+        <a href="interior.html" class="nav-side-link">Interior Design</a>
+      </div>
+    </div>
   </header>
 
   <!-- Menu Overlay -->
   <div class="menu-overlay">
     <div class="menu-header">
-      <a href="index.html" class="logo">HDGR</a>
+      <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR"><g transform="translate(0,1536) scale(0.1,-0.1)"><path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/></g></svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
       <button class="menu-close" aria-label="Close menu">
         <span></span>
         <span></span>
@@ -54,132 +60,61 @@
     <div class="container">
 
       <div class="section-header section-header--centered">
-        <h2>All Projects</h2>
+        <h2>Architectural Projects</h2>
         <span class="project-count">(07)</span>
       </div>
 
-      <div class="projects-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="residential">Residential</button>
-        <button class="filter-btn" data-filter="public">Public</button>
-      </div>
+      <div class="projects-axo-grid">
 
-      <div class="projects-masonry">
-
-        <!-- Brick House -->
-        <article class="project-card" data-type="residential">
+        <article class="axo-card">
           <a href="projects/brick-house.html">
-            <div class="project-card-img" style="aspect-ratio: 3/4">
-              <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy" decoding="async">
+            <div class="axo-card-img">
+              <img src="axo/brickhouse.webp" alt="Brick House" loading="lazy" decoding="async">
             </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Brick House</h3>
-                <span class="project-year">2023</span>
+            <div class="axo-card-info">
+              <div class="axo-card-title">Brick House</div>
+              <div class="axo-card-meta">
+                <span class="axo-year">2023</span>
+                <span class="axo-location">Warsaw</span>
+                <span class="axo-type">Residential</span>
               </div>
-              <p class="project-type">Warsaw — Residential</p>
             </div>
           </a>
         </article>
 
-        <!-- Design Museum -->
-        <article class="project-card" data-type="public">
-          <a href="projects/design-museum.html">
-            <div class="project-card-img" style="aspect-ratio: 16/10">
-              <img src="projects/Design Museum/show2.webp" alt="Design Museum" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Design Museum</h3>
-                <span class="project-year">2022</span>
-              </div>
-              <p class="project-type">Warsaw — Public</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Housing Unit -->
-        <article class="project-card" data-type="residential">
-          <a href="projects/housing-unit.html">
-            <div class="project-card-img" style="aspect-ratio: 4/5">
-              <img src="projects/Housing Unit/show3.webp" alt="Housing Unit" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Housing Unit</h3>
-                <span class="project-year">2024</span>
-              </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Microhome -->
-        <article class="project-card" data-type="residential">
+        <article class="axo-card">
           <a href="projects/microhome.html">
-            <div class="project-card-img" style="aspect-ratio: 16/10">
-              <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy" decoding="async">
+            <div class="axo-card-img">
+              <img src="axo/microhouse.webp" alt="Microhome" loading="lazy" decoding="async">
             </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Microhome</h3>
-                <span class="project-year">2023</span>
+            <div class="axo-card-info">
+              <div class="axo-card-title">Microhome</div>
+              <div class="axo-card-meta">
+                <span class="axo-year">2023</span>
+                <span class="axo-location">Warsaw</span>
+                <span class="axo-type">Residential</span>
               </div>
-              <p class="project-type">Warsaw — Residential</p>
             </div>
           </a>
         </article>
 
-        <!-- Primary School -->
-        <article class="project-card" data-type="public">
-          <a href="projects/primary-school.html">
-            <div class="project-card-img" style="aspect-ratio: 16/9">
-              <img src="projects/Primary school/show5.webp" alt="Primary School" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Primary School</h3>
-                <span class="project-year">2024</span>
-              </div>
-              <p class="project-type">Warsaw — Public</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Zero-house -->
-        <article class="project-card" data-type="residential">
-          <a href="projects/zero-house.html">
-            <div class="project-card-img" style="aspect-ratio: 1/1">
-              <img src="projects/Zero-house/show6.webp" alt="Zero-house" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Zero-house</h3>
-                <span class="project-year">2022</span>
-              </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
-
-
-        <!-- Nepal School -->
-        <article class="project-card" data-type="public">
+        <article class="axo-card">
           <a href="projects/nepal.html">
-            <div class="project-card-img" style="aspect-ratio: 4/3">
-              <img src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy" decoding="async">
+            <div class="axo-card-img">
+              <img src="axo/nepal.webp" alt="Nepal School" loading="lazy" decoding="async" style="transform: scale(1.4);">
             </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Nepal School</h3>
-                <span class="project-year">2024</span>
+            <div class="axo-card-info">
+              <div class="axo-card-title">Nepal School</div>
+              <div class="axo-card-meta">
+                <span class="axo-year">2024</span>
+                <span class="axo-location">Nepal</span>
+                <span class="axo-type">Public</span>
               </div>
-              <p class="project-type">Nepal — Public</p>
             </div>
           </a>
         </article>
 
-      </div><!-- /projects-masonry -->
+      </div><!-- /projects-axo-grid -->
 
     </div><!-- /container -->
   </section>

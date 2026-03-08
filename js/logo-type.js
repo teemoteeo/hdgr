@@ -5,7 +5,7 @@ if (window.innerWidth > 768) {
   const SPEED_TYPE = 20;
   const SPEED_ERASE = 10;
 
-  document.querySelectorAll('header .logo').forEach(logo => {
+  document.querySelectorAll('header .logo, .menu-header .logo').forEach(logo => {
     const span = logo.querySelector('.logo-type');
     if (!span) return;
 
