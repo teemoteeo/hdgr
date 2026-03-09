@@ -12,6 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 10px;
+  white-space: nowrap;
 }
 
 .logo:hover {
@@ -423,13 +425,6 @@
 
 /* Logo type animation */
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-}
-
 .logo-type {
   font-family: var(--font-mono);
   font-size: var(--text-body);
@@ -518,6 +513,12 @@
 
 .lightbox-prev { left: var(--space-8); }
 .lightbox-next { right: var(--space-8); }
+
+.project-card-img img,
+.project-gallery img,
+.project-info-img img {
+  cursor: pointer;
+}
 
 /* Hero services tree — bump hover */
 .hero-services-tree .tree-branch {
@@ -672,6 +673,7 @@
   padding: var(--space-4);
   display: block;
   mix-blend-mode: multiply;
+  filter: grayscale(100%);
   transition: opacity var(--transition-slow);
 }
 

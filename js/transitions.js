@@ -5,8 +5,8 @@
  *   Enter: curtain slides UP off screen    (yPercent: 0 → -100)
  *
  * BACK navigation (.project-back button):
- *   Exit:  curtain slides DOWN from top    (yPercent: -100 → 0)
- *   Enter: curtain slides DOWN off screen  (yPercent: 0 → 100)
+ *   No animation — history.back() + bfcache make curtain coordination unreliable.
+ *   Curtain is cleared instantly on enter.
  *
  * Uses history.back() so the destination is always correct.
  * pageshow listener handles bfcache restores (modern browsers).
@@ -39,31 +39,25 @@ const PageTransitions = {
     // Always reset — page is interactive again (fixes bfcache restore with isAnimating = true)
     this.isAnimating = false;
 
-    if (this.prefersReducedMotion) {
+    // Detect back navigation via two signals: sessionStorage (standard) + window.name (bfcache-safe)
+    const isBack = sessionStorage.getItem('back-nav') === '1' || window.name === 'hdgr-back';
+    sessionStorage.removeItem('back-nav');
+    if (window.name === 'hdgr-back') window.name = '';
+
+    if (this.prefersReducedMotion || isBack) {
+      // Kill any lingering bfcache-resumed tweens, then hide instantly
+      gsap.killTweensOf(this.curtain);
       gsap.set(this.curtain, { yPercent: 100 });
       return;
     }
 
-    const isBack = sessionStorage.getItem('back-nav') === '1';
-    sessionStorage.removeItem('back-nav');
-
-    if (isBack) {
-      // Back: curtain slides DOWN off screen
-      gsap.to(this.curtain, {
-        yPercent: 100,
-        duration: 0.5,
-        ease: 'power3.out',
-        onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
-      });
-    } else {
-      // Forward: curtain slides UP off screen
-      gsap.to(this.curtain, {
-        yPercent: -100,
-        duration: 0.5,
-        ease: 'power3.out',
-        onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
-      });
-    }
+    // Forward: curtain slides UP off screen
+    gsap.to(this.curtain, {
+      yPercent: -100,
+      duration: 0.5,
+      ease: 'power3.out',
+      onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
+    });
   },
 
   pageExit(url, duration = 0.4) {
@@ -75,36 +69,28 @@ const PageTransitions = {
       return;
     }
 
+    // Navigate immediately so the browser fetches the next page in parallel
+    // with the curtain animation. The arriving page's curtain (yPercent: 0 by CSS)
+    // covers the screen on entry, so pageEnter takes over cleanly.
+    window.location.href = url;
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
-      ease: 'expo.in',
-      onComplete: () => { window.location.href = url; }
+      ease: 'power2.in'
     });
   },
 
-  pageBack(duration = 0.4) {
+  pageBack() {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
+    // Set both signals: sessionStorage for fresh loads, window.name for bfcache restores
     sessionStorage.setItem('back-nav', '1');
+    window.name = 'hdgr-back';
 
-    // Fallback: se non c'è storia nel browser, vai a index.html
+    // Navigate immediately — no curtain animation for back nav
     const hasHistory = window.history.length > 1;
-    const goBack = () => hasHistory ? history.back() : (window.location.href = 'index.html');
-
-    if (this.prefersReducedMotion) {
-      goBack();
-      return;
-    }
-
-    gsap.set(this.curtain, { yPercent: -100 });
-    gsap.to(this.curtain, {
-      yPercent: 0,
-      duration,
-      ease: 'expo.in',
-      onComplete: goBack
-    });
+    hasHistory ? history.back() : (window.location.href = 'index.html');
   },
 
   bindLinks() {
@@ -123,7 +109,7 @@ const PageTransitions = {
   },
 
   bindBackButtons() {
-    document.querySelectorAll('.project-back').forEach(btn => {
+    document.querySelectorAll('.project-back, .project-back-fixed, .project-back-abs').forEach(btn => {
       btn.addEventListener('click', () => this.pageBack());
     });
   },

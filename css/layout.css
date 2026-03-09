@@ -244,8 +244,9 @@ body:has([data-hero]) header.header-dark .logo {
 }
 
 .section-header {
+  position: relative;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-8);
 }
@@ -261,11 +262,11 @@ body:has([data-hero]) header.header-dark .logo {
 }
 
 .projects-archive {
-  padding: calc(var(--header-height) + var(--space-20)) 0 var(--space-16);
+  padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-16);
 }
 
 .projects-archive .section-header {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-12);
 }
 
 .projects-archive .section-header h2 {
@@ -277,18 +278,57 @@ body:has([data-hero]) header.header-dark .logo {
 }
 
 .project-count {
-  font-size: var(--step-1);
+  font-size: var(--step--1);
   color: var(--color-text-muted);
   letter-spacing: 0.04em;
+  margin-left: var(--space-4);
 }
 
 /* ─── PROJECT DETAIL ──────────────────────────────────────────────── */
 
-.nav-side {
+.project-back-fixed {
   position: fixed;
-  top: calc(var(--header-height) + var(--space-4));
-  left: var(--space-12);
+  top: calc(var(--header-height) + var(--space-12) * 0.5625);
+  left: calc(var(--space-8) * 0.5);
   z-index: 200;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.project-back-fixed:hover {
+  opacity: 0.5;
+}
+
+.project-back-scroll {
+  display: block;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: var(--space-8);
+}
+
+.project-back-scroll:hover {
+  opacity: 0.5;
+}
+
+.nav-side {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -309,7 +349,6 @@ body:has([data-hero]) header.header-dark .logo {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--btn-color, var(--color-text));
-  transition: opacity var(--transition-base);
   background: none;
   border: none;
   padding: 0;
@@ -351,8 +390,27 @@ body:has([data-hero]) header.header-dark .logo {
 /* ─── PROJECT DETAIL — BC Architects layout ──────────────────────── */
 
 .project-page {
+  position: relative;
   padding-top: var(--header-height);
   min-height: 100vh;
+}
+
+.project-back-abs {
+  display: block;
+  text-align: left;
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.project-back-abs:hover {
+  opacity: 0.5;
 }
 
 .project-page-inner {
@@ -367,7 +425,7 @@ body:has([data-hero]) header.header-dark .logo {
 .project-sidebar {
   position: sticky;
   top: var(--header-height);
-  padding: var(--space-8) var(--space-8) var(--space-16) var(--space-12);
+  padding: calc(var(--space-16) * 0.5) var(--space-8) var(--space-16) calc(var(--space-12) * 0.5);
   height: calc(100vh - var(--header-height));
   overflow-y: auto;
   border-right: 1px solid var(--color-border);
@@ -452,6 +510,7 @@ body:has([data-hero]) header.header-dark .logo {
   width: 100%;
   height: auto;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 /* ─── INTERIOR DESIGN / LEGACY PROJECT LAYOUT ────────────────────── */
@@ -518,6 +577,18 @@ body:has([data-hero]) header.header-dark .logo {
   margin-bottom: var(--space-16);
 }
 
+.project-info-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.project-info-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .project-meta {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -575,7 +646,8 @@ body:has([data-hero]) header.header-dark .logo {
 /* ─── FOOTER ──────────────────────────────────────────────────────── */
 
 footer {
-  padding: var(--space-16) 0 var(--space-8);
+  padding: var(--space-20) 0 var(--space-8);
+  margin-top: var(--space-16);
 }
 
 .footer-content {
@@ -864,10 +936,10 @@ footer {
 
 .section-header--centered {
   justify-content: center;
+  margin-bottom: calc(var(--space-4) * 1.5);
 }
 
 .section-header--centered h2 {
   text-align: center;
   font-size: calc(var(--text-small-title) * 3);
-  margin-bottom: calc(var(--space-4) * 1.5);
 }

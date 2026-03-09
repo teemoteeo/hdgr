@@ -1,6 +1,8 @@
 let images = [];
 let currentIndex = 0;
 
+const GALLERY_SELECTORS = '.project-card-img img, .project-gallery img, .project-info-img img';
+
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 lightbox.innerHTML = `
@@ -11,10 +13,12 @@ lightbox.innerHTML = `
 `;
 document.body.appendChild(lightbox);
 
+const lightboxImg = lightbox.querySelector('.lightbox-img');
+
 function openLightbox(index) {
   currentIndex = index;
-  lightbox.querySelector('.lightbox-img').src = images[currentIndex].src;
-  lightbox.querySelector('.lightbox-img').alt = images[currentIndex].alt;
+  lightboxImg.src = images[currentIndex].src;
+  lightboxImg.alt = images[currentIndex].alt;
   lightbox.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -26,12 +30,12 @@ function closeLightbox() {
 
 function prev() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightbox.querySelector('.lightbox-img').src = images[currentIndex].src;
+  lightboxImg.src = images[currentIndex].src;
 }
 
 function next() {
   currentIndex = (currentIndex + 1) % images.length;
-  lightbox.querySelector('.lightbox-img').src = images[currentIndex].src;
+  lightboxImg.src = images[currentIndex].src;
 }
 
 lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
@@ -49,8 +53,15 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') next();
 });
 
-document.querySelectorAll('.project-card-img img').forEach((img, i) => {
-  images.push(img);
-  img.style.cursor = 'pointer';
-  img.addEventListener('click', () => openLightbox(i));
+// Event delegation — works regardless of when images are added to the DOM
+document.addEventListener('click', (e) => {
+  const img = e.target;
+  if (img.tagName !== 'IMG') return;
+  if (!img.closest('.project-card-img, .project-gallery, .project-info-img')) return;
+
+  images = Array.from(document.querySelectorAll(GALLERY_SELECTORS));
+  const index = images.indexOf(img);
+  if (index === -1) return;
+
+  openLightbox(index);
 });
