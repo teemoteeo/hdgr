@@ -69,16 +69,16 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 
 .hero-cursor {
   position: fixed;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
+  width: 20px;
+  height: 24px;
   background: var(--color-white);
   mix-blend-mode: difference;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(0, 0);
   opacity: 0;
   transition: opacity 0.15s ease;
   z-index: 9999;
+  clip-path: polygon(0% 0%, 0% 78%, 28% 58%, 44% 88%, 57% 82%, 41% 52%, 78% 52%);
 }
 
 .hero-cursor.is-visible {
@@ -121,6 +121,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 2;
@@ -128,9 +129,20 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   pointer-events: none;
 }
 
+.hero-new-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  user-select: none;
+}
+
 .hero-new-title {
   font-family: var(--font-mono);
-  font-size: clamp(5rem, 18vw, 18rem);
+  font-size: clamp(3.5rem, 12vw, 12rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -138,6 +150,18 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   line-height: 1;
   margin: 0;
   user-select: none;
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: var(--space-12);
+  transform: translateY(-50%);
+  z-index: 3;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .hero-new-scroll {
@@ -151,21 +175,25 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
   gap: 0;
   color: var(--color-white);
   mix-blend-mode: difference;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: pointer;
   z-index: 2;
   animation: hero-scroll-bounce 2s ease-in-out infinite;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .hero-new-scroll-label {
   font-family: var(--font-mono);
-  font-size: var(--step-0);
+  font-size: var(--step--2);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .hero-new-scroll-arrow {
   font-family: var(--font-mono);
-  font-size: var(--step-3);
+  font-size: var(--step-1);
   display: block;
   transform: rotate(90deg);
   margin-top: -0.4em;
@@ -181,37 +209,122 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 }
 
 /* ═══════════════════════════════════════════════════════
-   SERVICES PANEL — Static layout (ex hero, no animation)
+   HERO — Mobile base (flex column, static flow)
    ═══════════════════════════════════════════════════════ */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  height: calc(70vh + var(--header-height));
-  padding-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--space-12);
-  border-right: 1px solid var(--color-border);
+  padding: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
 }
 
 .hero-img-wrap {
+  order: -1;
+  position: relative;
+  width: 100%;
+  height: 55vh;
   overflow: hidden;
-  height: 70vh;
-  align-self: center;
+  flex-shrink: 0;
 }
 
-.hero-img-wrap img {
+/* ═══════════════════════════════════════════════════════
+   HERO — Desktop: fullscreen image shrinks on scroll
+   ═══════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+
+  .hero {
+    height: 200vh;
+    position: relative;
+    display: block;
+  }
+
+  .hero-inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: block;
+  }
+
+  .hero-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-12);
+    padding-top: calc((var(--header-height) + var(--space-12)) / 2);
+    padding-bottom: var(--space-20);
+    border-right: 1px solid var(--color-border);
+    border-top: none;
+    background: var(--color-bg);
+    z-index: 2;
+    opacity: 0;
+  }
+
+  .hero-img-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    height: auto;
+    order: 0;
+  }
+
+}
+
+/* Mobile: single image in normal flow */
+.hero-cycle-img {
+  display: none;
   width: 100%;
-  height: 100%;
+  height: 55vh;
   object-fit: cover;
   object-position: center 20%;
-  display: block;
   border-radius: 0;
+}
+
+.hero-cycle-img.is-active {
+  display: block;
+  opacity: 1;
+}
+
+/* Desktop: all images stacked absolutely, cross-fade */
+@media (min-width: 769px) {
+  .hero-cycle-img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .hero-cycle-img.is-active {
+    opacity: 1;
+  }
 }
 
 .hero-services {
@@ -284,14 +397,6 @@ body:has([data-hero-new]) header.header-dark {
 body:has([data-hero-new]) header.header-dark .logo { color: var(--color-text); }
 body:has([data-hero-new]) header.header-dark .menu-toggle span { background: var(--color-text); }
 
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .hero-img-wrap { height: 55vw; }
-  .hero-left { border-right: none; border-top: 1px solid var(--color-border); }
-}
 
 /* ─── PROJECTS SECTION ────────────────────────────────────────────── */
 
@@ -836,68 +941,44 @@ footer {
     background: var(--color-text) !important;
   }
 
-  /* ── Hero: layout statico ──────────────────────────────── */
+  /* ── Hero: force mobile layout ─────────────────────────── */
 
   .hero {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
+    padding-top: var(--header-height);
     display: flex !important;
     flex-direction: column !important;
-  }
-
-  .hero-inner {
-    position: relative !important;
     height: auto !important;
-    width: 100% !important;
-    display: block !important;
-    overflow: hidden !important;
-    -webkit-transform: none !important;
-    transform: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Immagine: primo nel DOM, full-width — position:static rimuove
-     completamente il posizionamento assoluto del desktop */
-  .hero-img-wrap {
-    order: -1 !important;
     position: static !important;
-    display: block !important;
-    width: 100% !important;
-    height: 55vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    -webkit-clip-path: none !important;
-    clip-path: none !important;
-    overflow: hidden !important;
   }
 
-  /* L'img era position:absolute inset:0 — su static non funziona,
-     si re-inserisce nel flusso normale */
-  .hero-img-wrap img {
+  .hero .hero-inner {
     position: static !important;
-    width: 100% !important;
-    height: 55vh !important;
-    max-width: none !important;
-    object-fit: cover !important;
-    object-position: 30% 10% !important;
-    transform: none !important;
-    display: block !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
   }
 
-  /* Services: sotto l'immagine, sovrappone leggermente */
-  .hero-left {
+  .hero .hero-img-wrap {
     position: relative !important;
-    display: block !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
     width: 100% !important;
-    height: auto;
-    margin-top: calc(-1 * var(--space-8));
-    padding: var(--space-8);
-    background: var(--color-bg);
-    z-index: 2;
+    height: 55vh !important;
+    order: -1 !important;
+    z-index: auto !important;
+  }
+
+  .hero .hero-left {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    z-index: auto !important;
   }
 
   /* Logo grande: nascosto su mobile */
@@ -905,11 +986,21 @@ footer {
     display: none;
   }
 
+  /* Services panel: always visible */
+  .hero-left {
+    opacity: 1 !important;
+  }
+
   /* Services: sempre visibili, nessun transform */
   .hero-services {
     opacity: 1 !important;
     pointer-events: auto;
     transform: none !important;
+  }
+
+  /* Explore button: hidden on mobile */
+  .hero-new-scroll {
+    display: none !important;
   }
 
   /* Scroll hint: nascosto */

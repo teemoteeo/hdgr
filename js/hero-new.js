@@ -15,6 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  /* ── Explore button ── */
+  const exploreBtn = heroEl.querySelector('[data-hero-explore]');
+  if (exploreBtn) {
+    exploreBtn.addEventListener('click', () => {
+      const start = window.scrollY;
+      const target = start + window.innerHeight;
+      const duration = 2400;
+      const startTime = performance.now();
+      function step(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        window.scrollTo(0, start + (target - start) * eased);
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
   /* ── Custom cursor ── */
   const cursor = document.createElement('div');
   cursor.className = 'hero-cursor';

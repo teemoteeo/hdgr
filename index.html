@@ -48,7 +48,7 @@
   </div>
 
 
-  <!-- 0. Hero New — mouse-driven image cycle -->
+  <!-- 0. Hero New — mouse-driven image cycle (temporarily hidden)
   <section class="hero-new" data-hero-new>
     <div class="hero-new-images">
       <img class="hero-new-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
@@ -59,46 +59,65 @@
     </div>
     <div class="hero-new-title-wrap">
       <h1 class="hero-new-title">HDGR</h1>
+      <p class="hero-new-subtitle">Design that Lasts, Development that Matters</p>
     </div>
-    <div class="hero-new-scroll">
+    <button class="hero-new-scroll" data-hero-explore>
       <span class="hero-new-scroll-label">Explore</span>
       <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
-    </div>
+    </button>
   </section>
+  -->
 
   <!-- 1. Hero -->
   <section class="hero" data-hero>
+    <div class="hero-inner">
 
-    <!-- Colonna sinistra: services -->
-    <div class="hero-left" data-hero-left>
-      <div class="hero-services" data-hero-services>
-        <p class="hero-location">Warsaw, PL</p>
+      <!-- Colonna sinistra: services -->
+      <div class="hero-left" data-hero-left>
+        <div class="hero-services" data-hero-services>
+          <p class="hero-location">Warsaw, PL</p>
 
-        <div class="hero-services-group">
-          <h3 class="hero-services-title">Design Services</h3>
-          <ul class="hero-services-tree">
-            <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
-            <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
-            <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
-          </ul>
-        </div>
+          <div class="hero-services-group">
+            <h3 class="hero-services-title">Design Services</h3>
+            <ul class="hero-services-tree">
+              <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
+              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
+              <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
+            </ul>
+          </div>
 
-        <div class="hero-services-group">
-          <h3 class="hero-services-title">Real Estate Development</h3>
-          <ul class="hero-services-tree">
-            <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
-            <li class="tree-branch">Buyer Support</li>
-            <li class="tree-branch tree-last">Investment Opportunities</li>
-          </ul>
+          <div class="hero-services-group">
+            <h3 class="hero-services-title">Real Estate Development</h3>
+            <ul class="hero-services-tree">
+              <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
+              <li class="tree-branch">Buyer Support</li>
+              <li class="tree-branch tree-last">Investment Opportunities</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Immagine destra -->
-    <div class="hero-img-wrap" data-hero-img-wrap>
-      <img src="visualizations/facade.webp" alt="Architectural facade rendering" loading="eager" fetchpriority="high" data-hero-img>
-    </div>
+      <button class="hero-new-scroll" data-hero-explore>
+        <span class="hero-new-scroll-label">Explore</span>
+        <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
+      </button>
 
+      <!-- Immagine destra -->
+      <div class="hero-img-wrap" data-hero-img-wrap>
+        <div class="hero-title" data-hero-title>
+          <h1 class="hero-new-title">HDGR</h1>
+          <p class="hero-new-subtitle">Design &amp; Development</p>
+        </div>
+        <img class="hero-cycle-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
+        <img class="hero-cycle-img" src="hero/02.webp" alt="" decoding="async" style="object-position: center top;">
+        <img class="hero-cycle-img" src="hero/03.webp" alt="" decoding="async">
+        <img class="hero-cycle-img" src="hero/04.webp" alt="" decoding="async">
+        <img class="hero-cycle-img" src="hero/05.webp" alt="" decoding="async">
+        <img class="hero-cycle-img" src="hero/06.webp" alt="" decoding="async">
+        <img class="hero-cycle-img" src="hero/07.webp" alt="" decoding="async">
+      </div>
+
+    </div>
   </section>
 
   <div class="studio-statement">
@@ -210,13 +229,13 @@
 
         <div class="about-row about-row--two">
           <div class="about-member">
-            <div class="about-photo"></div>
+            <div class="about-photo"><img src="team/leon.webp" alt="Leon" style="object-position: center 15%;"></div>
             <h3>Leon</h3>
             <span class="about-role">Business Development</span>
           </div>
 
           <div class="about-member">
-            <div class="about-photo"></div>
+            <div class="about-photo"><img src="team/franek.webp" alt="Franek"></div>
             <h3>Franek</h3>
             <span class="about-role">Finance</span>
           </div>
@@ -246,7 +265,7 @@
           <div>
             <h4>Get in touch</h4>
             <p>Warsaw, Poland</p>
-            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+            <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
           </div>
 
           <div>
@@ -265,7 +284,8 @@
 
   <div class="page-curtain" aria-hidden="true"></div>
   <script src="js/transitions.js"></script>
-  <script src="js/hero-new.js"></script>
+  <!-- <script src="js/hero-new.js"></script> -->
+  <script src="js/hero.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/logo-type.js"></script>
   <script src="js/flipboard.js"></script>
