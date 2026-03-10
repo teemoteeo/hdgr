@@ -26,8 +26,8 @@
       <span></span>
       <span></span>
     </button>
-    <button class="project-back-fixed">← Go back</button>
   </header>
+  <button class="project-back-fixed">← Go back</button>
 
   <!-- Menu Overlay -->
   <div class="menu-overlay">
@@ -40,14 +40,19 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#">About Us</a></li>
+        <li><a href="index.html#about">About Us</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Careers</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <div class="nav-side">
+    <div class="nav-side-links">
+      <a href="projects.html" class="nav-side-link">Architectural Projects</a>
+      <a href="visualizations.html" class="nav-side-link">Visualizations</a>
+    </div>
+  </div>
 
   <!-- Interior Projects -->
   <section class="projects-archive">
@@ -56,20 +61,14 @@
       <div class="section-header section-header--centered">
         <h2>Interior Design</h2>
         <span class="project-count">(05)</span>
-        <div class="nav-side">
-          <div class="nav-side-links">
-            <a href="projects.html" class="nav-side-link">Architectural Projects</a>
-            <a href="visualizations.html" class="nav-side-link">Visualizations</a>
-          </div>
-        </div>
       </div>
 
-      <div class="projects-masonry">
+      <div class="projects-masonry projects-masonry--columns">
 
         <!-- Beskid Niski -->
         <article class="project-card">
           <a href="interior/beskid-niski.html">
-            <div class="project-card-img" style="aspect-ratio: 3/4">
+            <div class="project-card-img">
               <img src="interior-design/beskid-niski/01.webp" alt="Beskid Niski" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -87,7 +86,7 @@
         <!-- Deante Łazienka -->
         <article class="project-card">
           <a href="interior/deante-lazienka.html">
-            <div class="project-card-img" style="aspect-ratio: 4/5">
+            <div class="project-card-img">
               <img src="interior-design/deante-lazienka/01.webp" alt="Deante Łazienka" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -103,7 +102,7 @@
         <!-- Gdańsk Lawendowe Wzgórze -->
         <article class="project-card">
           <a href="interior/gdansk-lawendowe.html">
-            <div class="project-card-img" style="aspect-ratio: 16/10">
+            <div class="project-card-img">
               <img src="interior-design/gdansk-lawendowe/06.webp" alt="Gdańsk Lawendowe Wzgórze" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -119,7 +118,7 @@
         <!-- Komorów -->
         <article class="project-card">
           <a href="interior/komorow.html">
-            <div class="project-card-img" style="aspect-ratio: 3/4">
+            <div class="project-card-img">
               <img src="interior-design/komorow/01.webp" alt="Komorów" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -135,7 +134,7 @@
         <!-- Warszawa Wilanów -->
         <article class="project-card">
           <a href="interior/warszawa-wilanow.html">
-            <div class="project-card-img" style="aspect-ratio: 4/5">
+            <div class="project-card-img">
               <img src="interior-design/warszawa-wilanow/04.webp" alt="Warszawa Wilanów" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -162,6 +161,9 @@
 
         <div class="footer-logo">
           <h3>HDGR</h3>
+          <div class="footer-bottom">
+            <small>&copy; HDGR 2026</small>
+          </div>
         </div>
 
         <div class="footer-contact">
@@ -181,10 +183,6 @@
         </div><!-- /footer-contact -->
 
       </div><!-- /footer-content -->
-
-      <div class="footer-bottom">
-        <small>&copy; HDGR 2026</small>
-      </div>
 
     </div><!-- /container -->
   </footer>

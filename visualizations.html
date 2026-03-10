@@ -26,8 +26,8 @@
       <span></span>
       <span></span>
     </button>
-    <button class="project-back-fixed">← Go back</button>
   </header>
+  <button class="project-back-fixed">← Go back</button>
 
   <!-- Menu Overlay -->
   <div class="menu-overlay">
@@ -40,14 +40,19 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#">About Us</a></li>
+        <li><a href="index.html#about">About Us</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Careers</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <div class="nav-side">
+    <div class="nav-side-links">
+      <a href="projects.html" class="nav-side-link">Architectural Projects</a>
+      <a href="interior.html" class="nav-side-link">Interior Design</a>
+    </div>
+  </div>
 
   <!-- Visualizations Archive -->
   <section class="projects-archive">
@@ -56,15 +61,9 @@
       <div class="section-header section-header--centered">
         <h2>Visualizations</h2>
         <span class="project-count">(21)</span>
-        <div class="nav-side">
-          <div class="nav-side-links">
-            <a href="projects.html" class="nav-side-link">Architectural Projects</a>
-            <a href="interior.html" class="nav-side-link">Interior Design</a>
-          </div>
-        </div>
       </div>
 
-      <div class="projects-masonry">
+      <div class="projects-masonry projects-masonry--columns">
 
         <article class="project-card"><div class="project-card-img"><img src="visualizations/first right.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/secondleft.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
@@ -77,7 +76,7 @@
         <article class="project-card"><div class="project-card-img"><img src="visualizations/3704f21a-9be0-4e78-a303-2737be094885.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/c6e0dbe5-55a2-4da8-815a-07322f0e1008.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/6f1f2eee-d401-447e-8a90-f433a2075275.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
-        <article class="project-card" style="break-before: column;"><div class="project-card-img"><img src="visualizations/secondright.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
+        <article class="project-card"><div class="project-card-img"><img src="visualizations/secondright.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/EXTERIOR 6.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/a8a92cde-f972-4072-994d-53b854fe4da9.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
         <article class="project-card"><div class="project-card-img"><img src="visualizations/38605eda-e9f6-4426-8e0f-911a3e01f315.webp" alt="HDGR visualization" loading="lazy" decoding="async"></div></article>
@@ -102,6 +101,9 @@
 
         <div class="footer-logo">
           <h3>HDGR</h3>
+          <div class="footer-bottom">
+            <small>&copy; HDGR 2026</small>
+          </div>
         </div>
 
         <div class="footer-contact">
@@ -121,10 +123,6 @@
         </div><!-- /footer-contact -->
 
       </div><!-- /footer-content -->
-
-      <div class="footer-bottom">
-        <small>&copy; HDGR 2026</small>
-      </div>
 
     </div><!-- /container -->
   </footer>

@@ -40,60 +40,70 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Careers</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </div>
 
 
+  <!-- 0. Hero New — mouse-driven image cycle -->
+  <section class="hero-new" data-hero-new>
+    <div class="hero-new-images">
+      <img class="hero-new-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
+      <img class="hero-new-img" src="hero/02.webp" alt="" decoding="async">
+      <img class="hero-new-img" src="hero/03.webp" alt="" decoding="async">
+      <img class="hero-new-img" src="hero/04.webp" alt="" decoding="async">
+      <img class="hero-new-img" src="hero/05.webp" alt="" decoding="async">
+    </div>
+    <div class="hero-new-title-wrap">
+      <h1 class="hero-new-title">HDGR</h1>
+    </div>
+    <div class="hero-new-scroll">
+      <span class="hero-new-scroll-label">Explore</span>
+      <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
+    </div>
+  </section>
+
   <!-- 1. Hero -->
   <section class="hero" data-hero>
-    <div class="hero-inner">
 
-      <!-- Wrapper immagine (inizia fullscreen, si riduce su scroll) -->
-      <div class="hero-img-wrap" data-hero-img-wrap>
-        <img src="visualizations/facade.webp" alt="Architectural facade rendering" loading="eager" fetchpriority="high" data-hero-img>
-        <div class="hero-overlay"></div>
-      </div>
+    <!-- Colonna sinistra: services -->
+    <div class="hero-left" data-hero-left>
+      <div class="hero-services" data-hero-services>
+        <p class="hero-location">Warsaw, PL</p>
 
-      <!-- Colonna sinistra: logo grande + services (nascosti inizialmente) -->
-      <div class="hero-left" data-hero-left>
-        <h1 class="hero-logo" data-hero-logo>
-          <span class="hero-title-text">HDGR</span>
-          <span class="hero-subtitle">Design & Development</span>
-        </h1>
-        <div class="hero-services" data-hero-services>
-          <p class="hero-location">Warsaw, PL</p>
+        <div class="hero-services-group">
+          <h3 class="hero-services-title">Design Services</h3>
+          <ul class="hero-services-tree">
+            <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
+            <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
+            <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
+          </ul>
+        </div>
 
-          <div class="hero-services-group">
-            <h3 class="hero-services-title">Design Services</h3>
-            <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="projects.html">Architectural projects</a></li>
-              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
-              <li class="tree-branch tree-last"><a href="interior.html">Interior design</a></li>
-            </ul>
-          </div>
-
-          <div class="hero-services-group">
-            <h3 class="hero-services-title">Real Estate Development</h3>
-            <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="portfolio.html">Portfolio</a></li>
-              <li class="tree-branch">Buyer Support</li>
-              <li class="tree-branch tree-last">Investment Opportunities</li>
-            </ul>
-          </div>
+        <div class="hero-services-group">
+          <h3 class="hero-services-title">Real Estate Development</h3>
+          <ul class="hero-services-tree">
+            <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
+            <li class="tree-branch">Buyer Support</li>
+            <li class="tree-branch tree-last">Investment Opportunities</li>
+          </ul>
         </div>
       </div>
-
     </div>
+
+    <!-- Immagine destra -->
+    <div class="hero-img-wrap" data-hero-img-wrap>
+      <img src="visualizations/facade.webp" alt="Architectural facade rendering" loading="eager" fetchpriority="high" data-hero-img>
+    </div>
+
   </section>
 
   <div class="studio-statement">
     <div class="container">
-      <p>Design That Lasts, Development That Matters</p>
+      <p><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
     </div>
   </div>
 
@@ -106,28 +116,12 @@
         <a href="projects.html" class="view-all">All projects &rarr;</a>
       </div>
 
-      <div class="projects-masonry">
+      <div class="projects-masonry projects-masonry--columns">
 
-        <!-- Brick House -->
-        <article class="project-card">
-          <a href="projects/brick-house.html">
-            <div class="project-card-img" style="aspect-ratio: 3/4">
-              <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Brick House</h3>
-                <span class="project-year">2023</span>
-              </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Nepal School -->
-        <article class="project-card project-card--col2">
+        <!-- Nepal School (col 1) -->
+        <article class="project-card" style="break-after: column;">
           <a href="projects/nepal.html">
-            <div class="project-card-img" style="aspect-ratio: 4/3">
+            <div class="project-card-img">
               <img src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -140,11 +134,26 @@
           </a>
         </article>
 
+        <!-- Brick House (col 2) -->
+        <article class="project-card">
+          <a href="projects/brick-house.html">
+            <div class="project-card-img">
+              <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-meta">
+              <div class="project-card-title">
+                <h3>Brick House</h3>
+                <span class="project-year">2023</span>
+              </div>
+              <p class="project-type">Warsaw — Residential</p>
+            </div>
+          </a>
+        </article>
 
-        <!-- Microhome -->
+        <!-- Microhome (col 2) -->
         <article class="project-card">
           <a href="projects/microhome.html">
-            <div class="project-card-img" style="aspect-ratio: 16/10">
+            <div class="project-card-img">
               <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy" decoding="async">
             </div>
             <div class="project-card-meta">
@@ -163,7 +172,7 @@
 
       <div class="studio-statement">
         <div class="container">
-          <p>&#8220;Building what Time Approves&#8221;</p>
+          <p><span class="comma-desktop">"</span>Building What Time Approves<span class="comma-desktop">"</span></p>
         </div>
       </div>
 
@@ -171,33 +180,30 @@
   </section>
 
   <!-- About Us -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
 
       <div class="section-header">
         <h2>About Us</h2>
       </div>
 
-      <p class="about-intro">A brief description of our team — placeholder text to be updated.</p>
+      <div class="about-intro">
+        <p>We’re a group of architects and entrepreneurs working across architecture, development, and real estate investment. At HDGR, we keep the entire process in-house, allowing ideas to move quickly from concept to reality. This approach gives us the freedom to question the established rules of the industry and redefine what real estate should be about.</p>
+        <p>At the core of what we do lies our deep belief in timeless architecture and ethical development. We aim to create places that remain beautiful and valuable long after trends pass, working with people who believe that good buildings should age well and matter for decades.</p>
+      </div>
 
       <div class="about-grid">
 
         <div class="about-row about-row--three">
           <div class="about-member">
-            <div class="about-photo"></div>
+            <div class="about-photo"><img src="team/juls.jpeg" alt="Julian"></div>
             <h3>Julian</h3>
             <span class="about-role">Designer</span>
           </div>
 
           <div class="about-member">
-            <div class="about-photo"></div>
+            <div class="about-photo"><img src="team/nina.jpeg" alt="Nina"></div>
             <h3>Nina</h3>
-            <span class="about-role">Designer</span>
-          </div>
-
-          <div class="about-member">
-            <div class="about-photo"></div>
-            <h3>Cezary</h3>
             <span class="about-role">Designer</span>
           </div>
         </div>
@@ -230,6 +236,9 @@
 
         <div class="footer-logo">
           <h3>HDGR</h3>
+          <div class="footer-bottom">
+            <small>&copy; HDGR 2026</small>
+          </div>
         </div>
 
         <div class="footer-contact">
@@ -250,18 +259,14 @@
 
       </div><!-- /footer-content -->
 
-      <div class="footer-bottom">
-        <small>&copy; HDGR 2026</small>
-      </div>
-
     </div><!-- /container -->
   </footer>
 
 
   <div class="page-curtain" aria-hidden="true"></div>
   <script src="js/transitions.js"></script>
+  <script src="js/hero-new.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/hero.js"></script>
   <script src="js/logo-type.js"></script>
   <script src="js/flipboard.js"></script>
 </body>
