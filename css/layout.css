@@ -177,8 +177,7 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 }
 
 @media (max-width: 768px) {
-  .hero-new { height: 100svh; cursor: auto; }
-  .hero-new-title { font-size: clamp(4rem, 22vw, 7rem); }
+  .hero-new { display: none; }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -346,6 +345,26 @@ body:has([data-hero-new]) header.header-dark .menu-toggle span { background: var
   flex: none;
   scroll-snap-align: unset;
   width: 100%;
+}
+
+/* 2-column natural-ratio masonry (visualizations, interior) */
+.projects-masonry--gallery {
+  display: block;
+  columns: 2;
+  column-gap: var(--space-8);
+  overflow-x: unset;
+  scroll-snap-type: unset;
+}
+
+.projects-masonry--gallery .project-card {
+  break-inside: avoid;
+  margin-bottom: var(--space-8);
+  flex: none;
+  width: 100%;
+}
+
+.projects-masonry--gallery .project-card-img img {
+  height: auto;
 }
 
 body:has(.projects-archive) {
@@ -807,6 +826,10 @@ footer {
 
   .logo-text {
     display: inline;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--step-1);
   }
 
   header .menu-toggle span {
@@ -821,6 +844,8 @@ footer {
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .hero-inner {
@@ -838,6 +863,7 @@ footer {
   /* Immagine: primo nel DOM, full-width — position:static rimuove
      completamente il posizionamento assoluto del desktop */
   .hero-img-wrap {
+    order: -1 !important;
     position: static !important;
     display: block !important;
     width: 100% !important;
@@ -898,13 +924,46 @@ footer {
     padding: 0 var(--space-4);
   }
 
+  /* ── Projects section top spacing ─────────────────────── */
+  .projects {
+    margin-top: var(--space-8);
+  }
+
   /* ── Projects: horizontal scroll su mobile ────────────── */
   .projects-masonry .project-card {
     flex: 0 0 clamp(240px, 75vw, 340px);
   }
 
   .projects-masonry--columns {
-    columns: 1;
+    display: flex;
+    flex-direction: row;
+    columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .projects-masonry--columns .project-card {
+    flex: 0 0 clamp(240px, 75vw, 340px);
+    width: auto;
+    break-inside: unset;
+    scroll-snap-align: start;
+  }
+
+  /* ── Gallery: 2-col natural masonry on mobile ──────────── */
+  .projects-masonry--gallery {
+    display: block !important;
+    columns: 2 !important;
+    column-gap: var(--space-4);
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+  }
+
+  .projects-masonry--gallery .project-card {
+    flex: none !important;
+    width: 100% !important;
+    break-inside: avoid;
+    scroll-snap-align: none;
   }
 
   .hero-services-group:last-child {
@@ -962,8 +1021,8 @@ footer {
 
   /* ── Logo SVG size ────────────────────────────────────── */
   header .logo svg {
-    width: 28px;
-    height: 42px;
+    width: 42px;
+    height: 63px;
   }
 
   header .logo-type {
