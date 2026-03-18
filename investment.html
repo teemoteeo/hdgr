@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HDGR — Investment Opportunities. Real estate investment structures for European, LatAm, and Asian investors.">
+  <title>HDGR — Investment Opportunities</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header-dark">
+    <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR"><g transform="translate(0,1536) scale(0.1,-0.1)"><path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/></g></svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+    <div class="lang-switcher" role="listbox" aria-label="Language">
+      <button class="lang-current">EN</button>
+      <ul class="lang-dropdown" role="list">
+        <li data-lang-option="en" role="option">EN</li>
+        <li data-lang-option="es" role="option">ES</li>
+        <li data-lang-option="pl" role="option">PL</li>
+        <li data-lang-option="zh" role="option">ZH</li>
+      </ul>
+    </div>
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <button class="project-back-fixed" data-i18n="btn.go-back">← Go back</button>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay">
+    <div class="menu-header">
+      <a href="index.html" class="logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 1024 1536" fill="currentColor" aria-label="HDGR"><g transform="translate(0,1536) scale(0.1,-0.1)"><path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/></g></svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+      <button class="menu-close" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a href="index.html#about"><span data-i18n="nav.about">About Us</span></a></li>
+        <li><a href="investment.html"><span data-i18n="nav.investment">Investment Opportunities</span></a></li>
+        <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
+        <li><a href="#"><span data-i18n="nav.contact">Contact</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Investment Opportunities -->
+  <section class="investment-opportunities">
+    <div class="container">
+
+      <div class="section-header section-header--centered">
+        <h2 data-i18n="section.investment">Investment Opportunities</h2>
+      </div>
+
+      <p class="investment-intro">
+        Investment structures differ depending on the origin of the investor and the target market.
+        Explore the pathway that fits your case.
+      </p>
+
+      <!-- Tab switcher -->
+      <div class="investment-tabs">
+        <button class="inv-tab is-active" data-tab="eu-eu">European investors in EU</button>
+        <button class="inv-tab" data-tab="latam-eu">LatAm investors in EU</button>
+        <button class="inv-tab" data-tab="asia-eu">Asian investors in EU</button>
+        <button class="inv-tab" data-tab="eu-latam">EU investors in LatAm/ASEAN</button>
+      </div>
+
+      <!-- Panel: European investors in EU -->
+      <div class="investment-panel is-active" data-panel="eu-eu">
+        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for European investors in EU">
+          <defs>
+            <marker id="arrow-eu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <!-- Row 1 -->
+          <rect x="10" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTOR</text>
+          <text x="110" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">CONSULTATION</text>
+
+          <line x1="210" y1="42" x2="248" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <rect x="250" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">OPPORTUNITY</text>
+          <text x="350" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PRESENTATION</text>
+
+          <line x1="450" y1="42" x2="488" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <rect x="490" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
+          <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
+          <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
+
+          <!-- Curve down from Proposal -->
+          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <!-- Row 2 (right to left) -->
+          <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
+          <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
+
+          <line x1="490" y1="172" x2="452" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <rect x="250" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">RESOURCE</text>
+          <text x="350" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">ACQUISITION</text>
+
+          <line x1="250" y1="172" x2="212" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <rect x="10" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">DEVELOPMENT</text>
+          <text x="110" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; EXECUTION</text>
+
+          <!-- Down from Development -->
+          <line x1="110" y1="194" x2="110" y2="248" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <!-- Row 3 -->
+          <rect x="10" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="55" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">EXIT</text>
+          <text x="55" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+
+          <rect x="120" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="165" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">HOLD</text>
+          <text x="165" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+
+          <line x1="210" y1="272" x2="248" y2="272" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+
+          <rect x="250" y="250" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPERTY</text>
+          <text x="350" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">MANAGEMENT</text>
+        </svg>
+      </div>
+
+      <!-- Panel: LatAm investors in EU -->
+      <div class="investment-panel" data-panel="latam-eu">
+        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for LatAm investors in EU">
+          <defs>
+            <marker id="arrow-latam" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect x="10" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTOR</text>
+          <text x="110" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">CONSULTATION</text>
+          <line x1="210" y1="42" x2="248" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="250" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">OPPORTUNITY</text>
+          <text x="350" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PRESENTATION</text>
+          <line x1="450" y1="42" x2="488" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="490" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
+          <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
+          <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
+          <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
+          <line x1="490" y1="172" x2="452" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="250" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">RESOURCE</text>
+          <text x="350" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">ACQUISITION</text>
+          <line x1="250" y1="172" x2="212" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="10" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">DEVELOPMENT</text>
+          <text x="110" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; EXECUTION</text>
+          <line x1="110" y1="194" x2="110" y2="248" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="10" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="55" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">EXIT</text>
+          <text x="55" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <rect x="120" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="165" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">HOLD</text>
+          <text x="165" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <line x1="210" y1="272" x2="248" y2="272" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <rect x="250" y="250" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPERTY</text>
+          <text x="350" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">MANAGEMENT</text>
+        </svg>
+      </div>
+
+      <!-- Panel: Asian investors in EU -->
+      <div class="investment-panel" data-panel="asia-eu">
+        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for Asian investors in EU">
+          <defs>
+            <marker id="arrow-asia" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect x="10" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTOR</text>
+          <text x="110" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">CONSULTATION</text>
+          <line x1="210" y1="42" x2="248" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="250" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">OPPORTUNITY</text>
+          <text x="350" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PRESENTATION</text>
+          <line x1="450" y1="42" x2="488" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="490" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
+          <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
+          <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
+          <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
+          <line x1="490" y1="172" x2="452" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="250" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">RESOURCE</text>
+          <text x="350" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">ACQUISITION</text>
+          <line x1="250" y1="172" x2="212" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="10" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">DEVELOPMENT</text>
+          <text x="110" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; EXECUTION</text>
+          <line x1="110" y1="194" x2="110" y2="248" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="10" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="55" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">EXIT</text>
+          <text x="55" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <rect x="120" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="165" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">HOLD</text>
+          <text x="165" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <line x1="210" y1="272" x2="248" y2="272" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <rect x="250" y="250" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPERTY</text>
+          <text x="350" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">MANAGEMENT</text>
+        </svg>
+      </div>
+
+      <!-- Panel: EU investors in LatAm/ASEAN -->
+      <div class="investment-panel" data-panel="eu-latam">
+        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for EU investors in LatAm/ASEAN">
+          <defs>
+            <marker id="arrow-eulatam" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
+            </marker>
+          </defs>
+          <rect x="10" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTOR</text>
+          <text x="110" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">CONSULTATION</text>
+          <line x1="210" y1="42" x2="248" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="250" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="38" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">OPPORTUNITY</text>
+          <text x="350" y="52" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PRESENTATION</text>
+          <line x1="450" y1="42" x2="488" y2="42" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="490" y="20" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
+          <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
+          <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
+          <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
+          <line x1="490" y1="172" x2="452" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="250" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">RESOURCE</text>
+          <text x="350" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">ACQUISITION</text>
+          <line x1="250" y1="172" x2="212" y2="172" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="10" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="110" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">DEVELOPMENT</text>
+          <text x="110" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; EXECUTION</text>
+          <line x1="110" y1="194" x2="110" y2="248" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="10" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="55" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">EXIT</text>
+          <text x="55" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <rect x="120" y="250" width="90" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="165" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">HOLD</text>
+          <text x="165" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">STRATEGY</text>
+          <line x1="210" y1="272" x2="248" y2="272" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <rect x="250" y="250" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text x="350" y="268" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPERTY</text>
+          <text x="350" y="281" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">MANAGEMENT</text>
+        </svg>
+      </div>
+
+      <p class="investment-cta">
+        <a href="portfolio.html">Click here</a> to explore available opportunities and begin crafting
+        an investment structure tailored to your goals and preferred markets.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-logo">
+          <h3>HDGR</h3>
+          <div class="footer-bottom">
+            <small>&copy; HDGR 2026</small>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+
+          <div>
+            <h4 data-i18n="footer.touch">Get in touch</h4>
+            <p>Warsaw, Poland</p>
+            <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
+          </div>
+
+          <div>
+            <h4 data-i18n="footer.follow">Follow us</h4>
+            <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+          <div class="contact-form-wrap">
+            <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
+            <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
+              <div class="contact-form-row">
+                <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
+                <input type="text" name="lastname" data-i18n-placeholder="form.lastname" placeholder="Last name">
+              </div>
+              <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Email">
+              <textarea name="message" rows="4" data-i18n-placeholder="form.message" placeholder="Message"></textarea>
+              <button type="submit" data-i18n="form.send">Send Inquiry</button>
+            </form>
+          </div>
+
+        </div><!-- /footer-contact -->
+
+      </div><!-- /footer-content -->
+
+    </div><!-- /container -->
+  </footer>
+
+
+  <div class="page-curtain" aria-hidden="true"></div>
+  <script src="js/transitions.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/logo-type.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script>
+    document.querySelectorAll('.inv-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.inv-tab').forEach(t => t.classList.remove('is-active'));
+        document.querySelectorAll('.investment-panel').forEach(p => p.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        const panel = document.querySelector('[data-panel="' + tab.dataset.tab + '"]');
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+  </script>
+</body>
+</html>
