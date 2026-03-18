@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content.addEventListener('transitionend', () => {
         content.style.maxHeight = '';
         content.style.overflow = '';
+        content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, { once: true });
     } else {
       content.style.maxHeight = content.scrollHeight + 'px';

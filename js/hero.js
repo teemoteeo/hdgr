@@ -138,9 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onLeaveBack: () => {
       if (header) header.classList.remove('header-dark');
+      // If already tweening to 0, let it finish — don't snap
+      if (controlTween && !controlTween.paused()) {
+        const target = controlTween.vars && controlTween.vars.progress;
+        if (target === 0) return;
+      }
       if (controlTween) { controlTween.kill(); controlTween = null; }
-      tl.progress(0);
-      imgWrap.style.willChange = 'auto';
+      imgWrap.style.willChange = 'top, right, bottom, left';
+      controlTween = gsap.to(tl, {
+        progress: 0,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          imgWrap.style.willChange = 'auto';
+          controlTween = null;
+        }
+      });
     }
   });
 
@@ -190,8 +203,17 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       onUpdate: (self) => {
         if (self.direction === -1) {
+          if (fadeTween && !fadeTween.paused()) {
+            const target = fadeTween.vars && fadeTween.vars.progress;
+            if (target === 0) return;
+          }
           if (fadeTween) { fadeTween.kill(); fadeTween = null; }
-          fadeTl.progress(self.progress);
+          fadeTween = gsap.to(fadeTl, {
+            progress: 0,
+            duration: 0.6,
+            ease: 'power3.inOut',
+            onComplete: () => { fadeTween = null; }
+          });
         }
       },
       onLeaveBack: () => {
