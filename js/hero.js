@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let controlTween = null;
+  let fadeTl = null;
+  let fadeTween = null;
 
   ScrollTrigger.create({
     trigger: heroEl,
@@ -116,9 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onUpdate: (self) => {
       if (self.direction === -1) {
+        if (controlTween && !controlTween.paused() &&
+            tl.progress() > 0 && tl.progress() < 1) {
+          const target = controlTween.vars && controlTween.vars.progress;
+          if (target === 0) return;
+        }
         if (controlTween) { controlTween.kill(); controlTween = null; }
         imgWrap.style.willChange = 'top, right, bottom, left';
-        tl.progress(self.progress);
+        controlTween = gsap.to(tl, {
+          progress: 0,
+          duration: 1.2,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            imgWrap.style.willChange = 'auto';
+            controlTween = null;
+          }
+        });
       }
     },
     onLeaveBack: () => {
@@ -129,13 +144,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  ScrollTrigger.addEventListener('scrollEnd', () => {
+    if (controlTween) return;
+    const p = tl.progress();
+    if (p <= 0 || p >= 1) return;
+    const snapTo = p < 0.5 ? 0 : 1;
+    controlTween = gsap.to(tl, {
+      progress: snapTo,
+      duration: 0.4,
+      ease: 'power3.inOut',
+      onComplete: () => {
+        imgWrap.style.willChange = 'auto';
+        controlTween = null;
+        if (snapTo === 0 && fadeTl) {
+          if (fadeTween) { fadeTween.kill(); }
+          fadeTween = gsap.to(fadeTl, {
+            progress: 0,
+            duration: 0.3,
+            ease: 'power3.inOut',
+            onComplete: () => { fadeTween = null; }
+          });
+        }
+      }
+    });
+  });
+
   /* ── Title + explore scroll-away ── */
   const fadeOutEls = [heroTitle, exploreBtnEl].filter(Boolean);
   if (fadeOutEls.length) {
-    const fadeTl = gsap.timeline({ paused: true });
+    fadeTl = gsap.timeline({ paused: true });
     fadeTl.to(fadeOutEls, { opacity: 0, y: -40, ease: 'none', duration: 1 });
-
-    let fadeTween = null;
 
     ScrollTrigger.create({
       trigger: heroEl,

@@ -155,13 +155,13 @@ header.header-dark .menu-toggle span { background: var(--color-text); }
 .hero-title {
   position: absolute;
   top: 50%;
-  left: var(--space-12);
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
   z-index: 3;
   mix-blend-mode: difference;
   pointer-events: none;
-  text-align: left;
-  white-space: nowrap;
 }
 
 .hero-new-scroll {
@@ -1093,9 +1093,11 @@ footer {
   }
 
   .about-grid .about-member {
-    flex: 0 0 58vw;
-    min-width: 58vw;
+    flex: 0 0 42vw;
+    min-width: 42vw;
   }
+
+  .hero + .studio-statement { display: none; }
 
   body {
     overflow-x: hidden;

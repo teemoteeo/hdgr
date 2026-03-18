@@ -45,13 +45,23 @@ const PageTransitions = {
     if (window.name === 'hdgr-back') window.name = '';
 
     if (this.prefersReducedMotion || isBack) {
-      // Kill any lingering bfcache-resumed tweens, then hide instantly
-      gsap.killTweensOf(this.curtain);
-      gsap.set(this.curtain, { yPercent: 100 });
+      // Direct style fallback — works even if GSAP not yet parsed
+      this.curtain.style.transition = 'none';
+      this.curtain.style.transform = 'translateY(100%)';
+      if (typeof gsap !== 'undefined') {
+        gsap.killTweensOf(this.curtain);
+        gsap.set(this.curtain, { yPercent: 100 });
+      }
       return;
     }
 
-    // Forward: curtain slides UP off screen
+    // Forward enter — also guard gsap
+    if (typeof gsap === 'undefined') {
+      this.curtain.style.transition = 'transform 0.5s ease';
+      this.curtain.style.transform = 'translateY(-100%)';
+      setTimeout(() => { this.curtain.style.transform = 'translateY(100%)'; }, 600);
+      return;
+    }
     gsap.to(this.curtain, {
       yPercent: -100,
       duration: 0.5,
