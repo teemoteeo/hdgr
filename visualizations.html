@@ -21,13 +21,22 @@
     <path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/>
   </g>
 </svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+    <div class="lang-switcher" role="listbox" aria-label="Language">
+      <button class="lang-current">EN</button>
+      <ul class="lang-dropdown" role="list">
+        <li data-lang-option="en" role="option">EN</li>
+        <li data-lang-option="es" role="option">ES</li>
+        <li data-lang-option="pl" role="option">PL</li>
+        <li data-lang-option="zh" role="option">ZH</li>
+      </ul>
+    </div>
     <button class="menu-toggle" aria-label="Open menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </header>
-  <button class="project-back-fixed">← Go back</button>
+  <button class="project-back-fixed" data-i18n="btn.go-back">← Go back</button>
 
   <!-- Menu Overlay -->
   <div class="menu-overlay">
@@ -40,9 +49,10 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="index.html#about">About Us</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html#about"><span data-i18n="nav.about">About Us</span></a></li>
+        <li><a href="investment.html"><span data-i18n="nav.investment">Investment Opportunities</span></a></li>
+        <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
+        <li><a href="#"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
   </div>
@@ -50,7 +60,7 @@
   <div class="nav-side">
     <div class="nav-side-links">
       <a href="projects.html" class="nav-side-link">Architectural Projects</a>
-      <a href="interior.html" class="nav-side-link">Interior Design</a>
+      <a href="interior.html" class="nav-side-link" data-i18n="section.interior">Interior Design</a>
     </div>
   </div>
 
@@ -59,7 +69,7 @@
     <div class="container">
 
       <div class="section-header section-header--centered">
-        <h2>Visualizations</h2>
+        <h2 data-i18n="section.visualizations">Visualizations</h2>
         <span class="project-count">(21)</span>
       </div>
 
@@ -109,15 +119,28 @@
         <div class="footer-contact">
 
           <div>
-            <h4>Get in touch</h4>
+            <h4 data-i18n="footer.touch">Get in touch</h4>
             <p>Warsaw, Poland</p>
-            <p><a href="mailto:contact@hdgr.com">contact@hdgr.com</a></p>
+            <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
           </div>
 
           <div>
-            <h4>Follow us</h4>
-            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+            <h4 data-i18n="footer.follow">Follow us</h4>
+            <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+          <div class="contact-form-wrap">
+            <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
+            <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
+              <div class="contact-form-row">
+                <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
+                <input type="text" name="lastname" data-i18n-placeholder="form.lastname" placeholder="Last name">
+              </div>
+              <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Email">
+              <textarea name="message" rows="4" data-i18n-placeholder="form.message" placeholder="Message"></textarea>
+              <button type="submit" data-i18n="form.send">Send Inquiry</button>
+            </form>
           </div>
 
         </div><!-- /footer-contact -->
@@ -133,5 +156,7 @@
   <script src="js/menu.js"></script>
   <script src="js/logo-type.js"></script>
   <script src="js/lightbox.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/contact-form.js"></script>
 </body>
 </html>

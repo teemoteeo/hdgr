@@ -22,6 +22,15 @@
     <path d="M2818 11609 c-17 -9 -18 -181 -18 -3379 0 -1862 4 -3371 9 -3374 14 -9 1423 -8 1433 2 4 4 9 560 11 1253 l2 1244 23 79 c65 232 241 442 456 546 506 245 1120 -45 1230 -582 14 -68 16 -225 16 -1307 0 -676 3 -1232 8 -1235 4 -2 328 -6 720 -8 625 -3 714 -1 722 12 6 9 10 1276 10 3377 0 3314 0 3362 -19 3373 -13 6 -254 10 -711 10 -457 0 -698 -4 -711 -10 -19 -10 -19 -34 -19 -1165 l0 -1155 -860 0 -860 0 0 1140 c0 843 -3 1146 -12 1165 l-11 25 -701 0 c-458 -1 -707 -4 -718 -11z"/>
   </g>
 </svg><span class="logo-type" aria-hidden="true"></span><span class="logo-text" aria-hidden="true">HDGR</span></a>
+    <div class="lang-switcher" role="listbox" aria-label="Language">
+      <button class="lang-current">EN</button>
+      <ul class="lang-dropdown" role="list">
+        <li data-lang-option="en" role="option">EN</li>
+        <li data-lang-option="es" role="option">ES</li>
+        <li data-lang-option="pl" role="option">PL</li>
+        <li data-lang-option="zh" role="option">ZH</li>
+      </ul>
+    </div>
     <button class="menu-toggle" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -40,33 +49,14 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about"><span data-i18n="nav.about">About Us</span></a></li>
+        <li><a href="investment.html"><span data-i18n="nav.investment">Investment Opportunities</span></a></li>
+        <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
+        <li><a href="#"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
   </div>
 
-
-  <!-- 0. Hero New — mouse-driven image cycle (temporarily hidden)
-  <section class="hero-new" data-hero-new>
-    <div class="hero-new-images">
-      <img class="hero-new-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
-      <img class="hero-new-img" src="hero/02.webp" alt="" decoding="async">
-      <img class="hero-new-img" src="hero/03.webp" alt="" decoding="async">
-      <img class="hero-new-img" src="hero/04.webp" alt="" decoding="async">
-      <img class="hero-new-img" src="hero/05.webp" alt="" decoding="async">
-    </div>
-    <div class="hero-new-title-wrap">
-      <h1 class="hero-new-title">HDGR</h1>
-      <p class="hero-new-subtitle">Design that Lasts, Development that Matters</p>
-    </div>
-    <button class="hero-new-scroll" data-hero-explore>
-      <span class="hero-new-scroll-label">Explore</span>
-      <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
-    </button>
-  </section>
-  -->
 
   <!-- 1. Hero -->
   <section class="hero" data-hero>
@@ -91,14 +81,14 @@
             <ul class="hero-services-tree">
               <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
               <li class="tree-branch">Buyer Support</li>
-              <li class="tree-branch tree-last">Investment Opportunities</li>
+              <li class="tree-branch tree-last"><a href="investment.html">Investment Opportunities</a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <button class="hero-new-scroll" data-hero-explore>
-        <span class="hero-new-scroll-label">Explore</span>
+        <span class="hero-new-scroll-label" data-i18n="btn.explore">Explore</span>
         <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
       </button>
 
@@ -106,7 +96,7 @@
       <div class="hero-img-wrap" data-hero-img-wrap>
         <div class="hero-title" data-hero-title>
           <h1 class="hero-new-title">HDGR</h1>
-          <p class="hero-new-subtitle">Design &amp; Development</p>
+          <p class="hero-new-subtitle" data-i18n="hero.subtitle">Design &amp; Development</p>
         </div>
         <img class="hero-cycle-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
         <img class="hero-cycle-img" src="hero/02.webp" alt="" decoding="async" style="object-position: center top;">
@@ -122,7 +112,7 @@
 
   <div class="studio-statement">
     <div class="container">
-      <p><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
+      <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
     </div>
   </div>
 
@@ -131,67 +121,72 @@
     <div class="container">
 
       <div class="section-header">
-        <h2>Award-Winning Projects</h2>
-        <a href="projects.html" class="view-all">All projects &rarr;</a>
+        <h2 data-i18n="section.projects">Award-Winning Projects</h2>
+        <a href="projects.html" class="view-all" data-i18n="btn.all-projects">All projects &rarr;</a>
       </div>
 
-      <div class="projects-masonry projects-masonry--columns">
+      <div class="projects-slides-wrap">
+        <div class="projects-slides">
 
-        <!-- Nepal School (col 1) -->
-        <article class="project-card" style="break-after: column;">
-          <a href="projects/nepal.html">
-            <div class="project-card-img">
-              <img src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Nepal School</h3>
-                <span class="project-year">2024</span>
+          <!-- Nepal School — con badge award -->
+          <article class="project-slide">
+            <a href="projects/nepal.html">
+              <div class="project-slide-img">
+                <img src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy">
+                <div class="project-slide-award">
+                  <span class="award-title">NEPAL SCHOOL CONTEST</span>
+                  <span class="award-sub">1ST PRICE ZURICH INSTITUT — 2025</span>
+                </div>
+                <div class="project-slide-quote">"This shi tuff" — Adolf Muller</div>
               </div>
-              <p class="project-type">Nepal — Public</p>
-            </div>
-          </a>
-        </article>
-
-        <!-- Brick House (col 2) -->
-        <article class="project-card">
-          <a href="projects/brick-house.html">
-            <div class="project-card-img">
-              <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Brick House</h3>
-                <span class="project-year">2023</span>
+              <div class="project-card-meta">
+                <div class="project-card-title">
+                  <h3>Nepal School</h3>
+                  <span class="project-year">2024</span>
+                </div>
+                <p class="project-type">Nepal — Public</p>
               </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
+            </a>
+          </article>
 
-        <!-- Microhome (col 2) -->
-        <article class="project-card">
-          <a href="projects/microhome.html">
-            <div class="project-card-img">
-              <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy" decoding="async">
-            </div>
-            <div class="project-card-meta">
-              <div class="project-card-title">
-                <h3>Microhome</h3>
-                <span class="project-year">2023</span>
+          <!-- Brick House -->
+          <article class="project-slide">
+            <a href="projects/brick-house.html">
+              <div class="project-slide-img">
+                <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy">
               </div>
-              <p class="project-type">Warsaw — Residential</p>
-            </div>
-          </a>
-        </article>
+              <div class="project-card-meta">
+                <div class="project-card-title">
+                  <h3>Brick House</h3>
+                  <span class="project-year">2023</span>
+                </div>
+                <p class="project-type">Warsaw — Residential</p>
+              </div>
+            </a>
+          </article>
 
+          <!-- Microhome -->
+          <article class="project-slide">
+            <a href="projects/microhome.html">
+              <div class="project-slide-img">
+                <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy">
+              </div>
+              <div class="project-card-meta">
+                <div class="project-card-title">
+                  <h3>Microhome</h3>
+                  <span class="project-year">2023</span>
+                </div>
+                <p class="project-type">Warsaw — Residential</p>
+              </div>
+            </a>
+          </article>
 
-
-      </div><!-- /projects-masonry -->
+        </div><!-- /projects-slides -->
+      </div><!-- /projects-slides-wrap -->
 
       <div class="studio-statement">
         <div class="container">
-          <p><span class="comma-desktop">"</span>Building What Time Approves<span class="comma-desktop">"</span></p>
+          <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts, Development That Matters<span class="comma-desktop">"</span></p>
         </div>
       </div>
 
@@ -203,11 +198,11 @@
     <div class="container">
 
       <div class="section-header">
-        <h2>About Us</h2>
+        <h2 data-i18n="section.about">About Us</h2>
       </div>
 
       <div class="about-intro">
-        <p>We’re a group of architects and entrepreneurs working across architecture, development, and real estate investment. At HDGR, we keep the entire process in-house, allowing ideas to move quickly from concept to reality. This approach gives us the freedom to question the established rules of the industry and redefine what real estate should be about.</p>
+        <p>We're a group of architects and entrepreneurs working across architecture, development, and real estate investment. At HDGR, we keep the entire process in-house, allowing ideas to move quickly from concept to reality. This approach gives us the freedom to question the established rules of the industry and redefine what real estate should be about.</p>
         <p>At the core of what we do lies our deep belief in timeless architecture and ethical development. We aim to create places that remain beautiful and valuable long after trends pass, working with people who believe that good buildings should age well and matter for decades.</p>
       </div>
 
@@ -217,13 +212,13 @@
           <div class="about-member">
             <div class="about-photo"><img src="team/juls.jpeg" alt="Julian"></div>
             <h3>Julian</h3>
-            <span class="about-role">Designer</span>
+            <span class="about-role" data-i18n="role.designer">Designer</span>
           </div>
 
           <div class="about-member">
             <div class="about-photo"><img src="team/nina.jpeg" alt="Nina"></div>
             <h3>Nina</h3>
-            <span class="about-role">Designer</span>
+            <span class="about-role" data-i18n="role.designer">Designer</span>
           </div>
         </div>
 
@@ -231,13 +226,13 @@
           <div class="about-member">
             <div class="about-photo"><img src="team/leon.webp" alt="Leon" style="object-position: center 15%;"></div>
             <h3>Leon</h3>
-            <span class="about-role">Business Development</span>
+            <span class="about-role" data-i18n="role.business">Business Development</span>
           </div>
 
           <div class="about-member">
             <div class="about-photo"><img src="team/franek.webp" alt="Franek"></div>
             <h3>Franek</h3>
-            <span class="about-role">Finance</span>
+            <span class="about-role" data-i18n="role.finance">Finance</span>
           </div>
         </div>
 
@@ -263,15 +258,28 @@
         <div class="footer-contact">
 
           <div>
-            <h4>Get in touch</h4>
+            <h4 data-i18n="footer.touch">Get in touch</h4>
             <p>Warsaw, Poland</p>
             <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
           </div>
 
           <div>
-            <h4>Follow us</h4>
-            <p><a href="#" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="#" rel="noopener noreferrer">LinkedIn</a></p>
+            <h4 data-i18n="footer.follow">Follow us</h4>
+            <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+
+          <div class="contact-form-wrap">
+            <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
+            <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
+              <div class="contact-form-row">
+                <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
+                <input type="text" name="lastname" data-i18n-placeholder="form.lastname" placeholder="Last name">
+              </div>
+              <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Email">
+              <textarea name="message" rows="4" data-i18n-placeholder="form.message" placeholder="Message"></textarea>
+              <button type="submit" data-i18n="form.send">Send Inquiry</button>
+            </form>
           </div>
 
         </div><!-- /footer-contact -->
@@ -289,5 +297,7 @@
   <script src="js/menu.js"></script>
   <script src="js/logo-type.js"></script>
   <script src="js/flipboard.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/contact-form.js"></script>
 </body>
 </html>
