@@ -573,6 +573,20 @@
   display: none;
 }
 
+/* "We Build" positioning: above About on desktop, below About on mobile */
+.studio-statement--below-about {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .studio-statement--above-about {
+    display: none;
+  }
+  .studio-statement--below-about {
+    display: block;
+  }
+}
+
 /* Design That Lasts — desktop only */
 @media (min-width: 769px) {
   .studio-statement:not(.projects .studio-statement) .container {
