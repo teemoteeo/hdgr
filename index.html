@@ -50,9 +50,8 @@
     <nav class="menu-nav">
       <ul>
         <li><a href="#about"><span data-i18n="nav.about">About Us</span></a></li>
-        <li><a href="investment.html"><span data-i18n="nav.investment">Investment Opportunities</span></a></li>
         <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
-        <li><a href="#"><span data-i18n="nav.contact">Contact</span></a></li>
+        <li><a href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
   </div>
@@ -110,6 +109,12 @@
   </section>
 
   <div class="studio-statement">
+    <div class="container">
+      <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
+    </div>
+  </div>
+
+  <div class="studio-statement studio-statement--mobile">
     <div class="container">
       <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
     </div>
@@ -188,12 +193,6 @@
         </div><!-- /projects-slides -->
       </div><!-- /projects-slides-wrap -->
 
-      <div class="studio-statement">
-        <div class="container">
-          <p data-i18n="statement.second"><span class="comma-desktop">"</span>We Build What Time Approves<span class="comma-desktop">"</span></p>
-        </div>
-      </div>
-
     </div><!-- /container -->
   </section>
 
@@ -245,48 +244,53 @@
     </div><!-- /container -->
   </section>
 
+  <div class="studio-statement">
+    <div class="container">
+      <p data-i18n="statement.second"><span class="comma-desktop">"</span>We Build What Time Approves<span class="comma-desktop">"</span></p>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer>
+  <footer id="contact">
     <div class="container">
 
       <div class="footer-content">
 
-        <div class="footer-logo">
-          <h3>HDGR</h3>
-          <div class="footer-bottom">
-            <small>&copy; HDGR 2026</small>
+        <div class="footer-top">
+          <div class="footer-logo">
+            <h3>HDGR</h3>
+            <div class="footer-bottom">
+              <small>&copy; HDGR 2026</small>
+            </div>
           </div>
+
+          <div class="footer-contact">
+            <div>
+              <h4 data-i18n="footer.touch">Get in touch</h4>
+              <p>Warsaw, Poland</p>
+              <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
+            </div>
+          </div>
+        </div><!-- /footer-top -->
+
+        <div class="footer-follow">
+          <h4 data-i18n="footer.follow">Follow us</h4>
+          <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+          <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
         </div>
 
-                <div class="contact-form-wrap">
-            <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
-            <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
-              <div class="contact-form-row">
-                <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
-                <input type="text" name="lastname" data-i18n-placeholder="form.lastname" placeholder="Last name">
-              </div>
-              <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Email">
-              <textarea name="message" rows="4" data-i18n-placeholder="form.message" placeholder="Message"></textarea>
-              <button type="submit" data-i18n="form.send">Send Inquiry</button>
-            </form>
-          </div>
-
-        <div class="footer-contact">
-
-          <div>
-            <h4 data-i18n="footer.touch">Get in touch</h4>
-            <p>Warsaw, Poland</p>
-            <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
-          </div>
-
-          <div>
-            <h4 data-i18n="footer.follow">Follow us</h4>
-            <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-          </div>
-
-</div><!-- /footer-contact -->
+        <div class="contact-form-wrap">
+          <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
+          <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
+            <div class="contact-form-row">
+              <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
+              <input type="text" name="lastname" data-i18n-placeholder="form.lastname" placeholder="Last name">
+            </div>
+            <input type="email" name="email" data-i18n-placeholder="form.email" placeholder="Email">
+            <textarea name="message" rows="4" data-i18n-placeholder="form.message" placeholder="Message"></textarea>
+            <button type="submit" data-i18n="form.send">Send Inquiry</button>
+          </form>
+        </div>
 
       </div><!-- /footer-content -->
 

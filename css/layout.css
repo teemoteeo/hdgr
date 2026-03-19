@@ -49,9 +49,9 @@ header .logo svg {
   display: none;
 }
 
-/* .logo-text: visibile solo su mobile, sostituisce testo plain nelle pagine non-index */
+/* .logo-text: rimosso da mobile */
 .logo-text {
-  display: none;
+  display: none !important;
   font-family: var(--font-mono);
   font-size: var(--text-body);
   letter-spacing: 0.15em;
@@ -877,10 +877,24 @@ footer {
 }
 
 .footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.footer-top {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
   align-items: start;
+}
+
+.footer-follow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
 }
 
 .footer-contact {
@@ -932,11 +946,7 @@ footer {
   }
 
   .logo-text {
-    display: inline;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: var(--step-1);
+    display: none !important;
   }
 
   header .menu-toggle span {
@@ -1175,9 +1185,22 @@ footer {
   .project-meta { grid-template-columns: 1fr 1fr; }
   .gallery-pair { grid-template-columns: 1fr; }
 
-  /* ── Altri layout mobile ──────────────────────────────── */
-  .footer-content { grid-template-columns: 1fr; }
+  /* ── Hero title centrato su mobile ─────────────────────── */
+  .hero-title {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  /* ── Footer mobile ────────────────────────────────────── */
+  .footer-top { grid-template-columns: 1fr 1fr; }
   .footer-contact { grid-template-columns: 1fr; }
+
+  .contact-form-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   footer {
     margin-inline: var(--space-8);
