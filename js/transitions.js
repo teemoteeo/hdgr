@@ -57,20 +57,20 @@ const PageTransitions = {
 
     // Forward enter — also guard gsap
     if (typeof gsap === 'undefined') {
-      this.curtain.style.transition = 'transform 0.5s ease';
+      this.curtain.style.transition = 'transform 0.65s ease';
       this.curtain.style.transform = 'translateY(-100%)';
-      setTimeout(() => { this.curtain.style.transform = 'translateY(100%)'; }, 600);
+      setTimeout(() => { this.curtain.style.transform = 'translateY(100%)'; }, 750);
       return;
     }
     gsap.to(this.curtain, {
       yPercent: -100,
-      duration: 0.5,
+      duration: 0.65,
       ease: 'power3.out',
       onComplete: () => gsap.set(this.curtain, { yPercent: 100 })
     });
   },
 
-  pageExit(url, duration = 0.4) {
+  pageExit(url, duration = 0.55) {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
@@ -79,15 +79,15 @@ const PageTransitions = {
       return;
     }
 
-    // Navigate immediately so the browser fetches the next page in parallel
-    // with the curtain animation. The arriving page's curtain (yPercent: 0 by CSS)
-    // covers the screen on entry, so pageEnter takes over cleanly.
-    window.location.href = url;
+    // Start the animation first, then navigate after 2 rAF frames.
+    // This guarantees GSAP paints its first frame before the browser
+    // begins unloading — eliminating the first-navigation stutter.
     gsap.to(this.curtain, {
       yPercent: 0,
       duration,
       ease: 'power2.in'
     });
+    requestAnimationFrame(() => requestAnimationFrame(() => { window.location.href = url; }));
   },
 
   pageBack() {
@@ -113,7 +113,7 @@ const PageTransitions = {
       link.addEventListener('click', e => {
         e.preventDefault();
         const isHeroPage = !!document.querySelector('[data-hero]');
-        this.pageExit(href, isHeroPage ? 0.6 : 0.4);
+        this.pageExit(href, isHeroPage ? 0.75 : 0.55);
       });
     });
   },

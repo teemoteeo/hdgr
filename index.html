@@ -68,20 +68,19 @@
           <p class="hero-location">Warsaw, PL</p>
 
           <div class="hero-services-group">
-            <h3 class="hero-services-title">Design Services</h3>
+            <h3 class="hero-services-title" data-i18n="services.design">Design Services</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
-              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
-              <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
+              <li class="tree-branch"><a href="projects.html" data-i18n="services.arch">Architectural Projects</a></li>
+              <li class="tree-branch"><a href="visualizations.html" data-i18n="section.visualizations">Visualizations</a></li>
+              <li class="tree-branch tree-last"><a href="interior.html" data-i18n="section.interior">Interior Design</a></li>
             </ul>
           </div>
 
           <div class="hero-services-group">
-            <h3 class="hero-services-title">Real Estate Development</h3>
+            <h3 class="hero-services-title" data-i18n="services.realestate">Real Estate Development</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
-              <li class="tree-branch">Buyer Support</li>
-              <li class="tree-branch tree-last"><a href="investment.html">Investment Opportunities</a></li>
+              <li class="tree-branch"><a href="portfolio.html" data-i18n="section.portfolio">Property Portfolio</a></li>
+              <li class="tree-branch tree-last"><a href="investment.html" data-i18n="section.investment">Investment Opportunities</a></li>
             </ul>
           </div>
         </div>
@@ -132,19 +131,20 @@
           <article class="project-slide">
             <a href="projects/nepal.html">
               <div class="project-slide-img">
-                <img src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy">
+                <img class="slide-cycle-img is-active" src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Nepal/2.webp" alt="Nepal School" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Nepal/3.webp" alt="Nepal School" loading="lazy">
                 <div class="project-slide-award">
-                  <span class="award-title">NEPAL SCHOOL CONTEST</span>
-                  <span class="award-sub">1ST PRICE ZURICH INSTITUT — 2025</span>
+                  <span class="award-title">NEPAL SCHOOL</span>
+                    <span class="award-sub">1ST PRICE ZURICH INSTITUT — 2025</span>
                 </div>
-                <div class="project-slide-quote">"This shi tuff" — Adolf Muller</div>
               </div>
               <div class="project-card-meta">
                 <div class="project-card-title">
                   <h3>Nepal School</h3>
                   <span class="project-year">2024</span>
                 </div>
-                <p class="project-type">Nepal — Public</p>
+                <p class="project-type" data-i18n="slide.nepal.type">Nepal — Public</p>
               </div>
             </a>
           </article>
@@ -153,14 +153,16 @@
           <article class="project-slide">
             <a href="projects/brick-house.html">
               <div class="project-slide-img">
-                <img src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy">
+                <img class="slide-cycle-img is-active" src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Brick House/2.webp" alt="Brick House" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Brick House/3.webp" alt="Brick House" loading="lazy">
               </div>
               <div class="project-card-meta">
                 <div class="project-card-title">
                   <h3>Brick House</h3>
                   <span class="project-year">2023</span>
                 </div>
-                <p class="project-type">Warsaw — Residential</p>
+                <p class="project-type" data-i18n="slide.warsaw.residential">Warsaw — Residential</p>
               </div>
             </a>
           </article>
@@ -169,14 +171,16 @@
           <article class="project-slide">
             <a href="projects/microhome.html">
               <div class="project-slide-img">
-                <img src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy">
+                <img class="slide-cycle-img is-active" src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Microhome/wnętrze 1.webp" alt="Microhome" loading="lazy">
+                <img class="slide-cycle-img" src="projects/Microhome/wnętrze 2.webp" alt="Microhome" loading="lazy">
               </div>
               <div class="project-card-meta">
                 <div class="project-card-title">
                   <h3>Microhome</h3>
                   <span class="project-year">2023</span>
                 </div>
-                <p class="project-type">Warsaw — Residential</p>
+                <p class="project-type" data-i18n="slide.warsaw.residential">Warsaw — Residential</p>
               </div>
             </a>
           </article>
@@ -186,7 +190,7 @@
 
       <div class="studio-statement">
         <div class="container">
-          <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts, Development That Matters<span class="comma-desktop">"</span></p>
+          <p data-i18n="statement.second"><span class="comma-desktop">"</span>We Build What Time Approves<span class="comma-desktop">"</span></p>
         </div>
       </div>
 
@@ -202,8 +206,8 @@
       </div>
 
       <div class="about-intro">
-        <p>We're a group of architects and entrepreneurs working across architecture, development, and real estate investment. At HDGR, we keep the entire process in-house, allowing ideas to move quickly from concept to reality. This approach gives us the freedom to question the established rules of the industry and redefine what real estate should be about.</p>
-        <p>At the core of what we do lies our deep belief in timeless architecture and ethical development. We aim to create places that remain beautiful and valuable long after trends pass, working with people who believe that good buildings should age well and matter for decades.</p>
+        <p data-i18n="about.intro1">We're a group of architects and entrepreneurs working across architecture, development, and real estate investment. At HDGR, we keep the entire process in-house, allowing ideas to move quickly from concept to reality. This approach gives us the freedom to question the established rules of the industry and redefine what real estate should be about.</p>
+        <p data-i18n="about.intro2">At the core of what we do lies our deep belief in timeless architecture and ethical development. We aim to create places that remain beautiful and valuable long after trends pass, working with people who believe that good buildings should age well and matter for decades.</p>
       </div>
 
       <div class="about-grid">
@@ -279,7 +283,7 @@
           <div>
             <h4 data-i18n="footer.follow">Follow us</h4>
             <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
 
 </div><!-- /footer-contact -->
@@ -299,5 +303,42 @@
   <script src="js/flipboard.js"></script>
   <script src="js/lang.js"></script>
   <script src="js/contact-form.js"></script>
+  <script>
+    document.querySelectorAll('.project-slide-img').forEach(function(wrap) {
+      var imgs = Array.from(wrap.querySelectorAll('.slide-cycle-img'));
+      if (imgs.length < 2) return;
+      var current = 0;
+      var transitioning = false;
+      var totalDist = 0;
+      var lastX = null, lastY = null;
+      var THRESHOLD = 80;
+
+      function next() {
+        if (transitioning) return;
+        transitioning = true;
+        var prev = imgs[current];
+        current = (current + 1) % imgs.length;
+        imgs[current].classList.add('is-active');
+        setTimeout(function() { prev.classList.remove('is-active'); transitioning = false; }, 900);
+      }
+
+      wrap.addEventListener('mousemove', function(e) {
+        if (lastX === null) { lastX = e.clientX; lastY = e.clientY; return; }
+        var dx = e.clientX - lastX;
+        var dy = e.clientY - lastY;
+        totalDist += Math.sqrt(dx * dx + dy * dy);
+        lastX = e.clientX;
+        lastY = e.clientY;
+        if (totalDist >= THRESHOLD) {
+          totalDist = 0;
+          next();
+        }
+      });
+
+      wrap.addEventListener('mouseleave', function() {
+        lastX = null; lastY = null; totalDist = 0;
+      });
+    });
+  </script>
 </body>
 </html>

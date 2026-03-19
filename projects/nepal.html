@@ -55,39 +55,67 @@
 
       <!-- Sidebar -->
       <aside class="project-sidebar">
-        <button class="project-back-abs">← Go back</button>
+        <button class="project-back-abs" data-i18n="btn.go-back">← Go back</button>
         <div>
           <h1 class="project-sidebar-title">Nepal School</h1>
-          <p class="project-sidebar-year">2024</p>
+          <p class="project-sidebar-year">2025</p>
         </div>
 
         <div class="project-sidebar-meta">
           <div class="project-sidebar-meta-item">
-            <h4>Type</h4>
-            <p>Public / Educational</p>
+            <h4 data-i18n="meta.type">Type</h4>
+            <p data-i18n="type.public-edu">Public / Educational</p>
           </div>
           <div class="project-sidebar-meta-item">
-            <h4>Location</h4>
+            <h4 data-i18n="meta.location">Location</h4>
             <p>Nepal</p>
           </div>
           <div class="project-sidebar-meta-item">
-            <h4>Area</h4>
-            <p>— m²</p>
+            <h4 data-i18n="meta.area">Area</h4>
+            <p>1800 m²</p>
           </div>
         </div>
 
+        <div class="project-award">
+          <span class="project-award-label">First Prize</span>
+          <p>Nepal School Project<br>Archstorming × Karmayog Foundation Nepal</p>
+          <a href="https://yearbook.archi/" target="_blank" rel="noopener noreferrer" class="project-award-book">
+            Featured in ACY — Architecture Competitions Yearbook 2025, N°07 →
+          </a>
+        </div>
+
         <div class="project-sidebar-description">
-          <p>Nepal School is a public educational facility designed for a remote mountain community, prioritizing structural resilience, natural light, and low-tech construction methods.</p>
-          <p>The project negotiates steep topography and limited material supply chains through a compact layout that maximizes usable floor area while minimizing site disturbance.</p>
+          <p data-i18n="project.nepal.desc1">A modular building system designed for rural Nepal — locally sourced materials, a repetitive structural frame, adaptable infill. The school grows with the community.</p>
+          <p data-i18n="project.nepal.desc2">A covered corridor connects classrooms and shared spaces, functioning as both a climatic buffer and an informal social spine — shaded, open, embedded in daily life.</p>
         </div>
       </aside>
 
       <!-- Image Grid -->
       <div class="project-image-grid">
-        <figure><img src="Nepal/1.webp" alt="Nepal School exterior view" loading="lazy" decoding="async"></figure>
-        <figure><img src="Nepal/2.webp" alt="Nepal School view 1" loading="lazy" decoding="async"></figure>
-        <figure><img src="Nepal/3.webp" alt="Nepal School view 2" loading="lazy" decoding="async"></figure>
-        <figure><img src="Nepal/4.webp" alt="Nepal School view 3" loading="lazy" decoding="async"></figure>
+
+        <!-- 2-image full-width row -->
+        <div class="project-row-2">
+          <figure><img src="Nepal/1.webp" alt="Nepal School exterior view" loading="lazy" decoding="async"></figure>
+          <figure><img src="Nepal/2.webp" alt="Nepal School view 1" loading="lazy" decoding="async"></figure>
+        </div>
+
+        <!-- Text + images 3 & 4 side by side -->
+        <div class="project-text-with-imgs">
+          <div class="project-text-block">
+            <h2 class="project-text-block-title">Nepal School Project — First Prize</h2>
+            <p>The proposal was awarded First Prize in the Nepal School Project international competition, organized by Archstorming in collaboration with Karmayog Foundation Nepal and Nepal Rising. The competition called for a replicable school prototype for rural communities in Nepal, addressing the urgent need for resilient educational infrastructure following the destruction caused by the 2015 Nepal earthquake and recurring monsoon floods.</p>
+            <p>The project proposes a simple modular building system designed to be easily constructed using locally available materials and labor. A repetitive structural frame forms the primary architectural element, allowing different infill materials—such as bamboo, timber, or brick—to be used depending on local availability and climatic conditions. This approach reduces construction complexity while enabling adaptability across diverse regions of Nepal.</p>
+            <p>The spatial organization is structured around a linear circulation spine that connects classrooms and shared spaces. This covered corridor functions as both a climatic buffer and a social space, providing shaded areas for informal learning, gathering, and play. The open character of the circulation encourages interaction while maintaining protection from heavy rainfall and intense sun.</p>
+            <p>The architecture prioritizes seismic resilience, passive ventilation, and material efficiency, responding directly to the environmental and economic constraints of rural Nepal. Elevated foundations and lightweight structural elements contribute to improved performance during floods and earthquakes, while the modular design allows the building to grow incrementally as community needs evolve.</p>
+            <p>Beyond its educational function, the school is conceived as a community infrastructure, capable of serving as a gathering space and emergency shelter during natural disasters. The project demonstrates how a clear structural logic and locally grounded construction methods can create durable, adaptable, and socially embedded architecture.</p>
+          </div>
+          <div class="project-text-imgs-aside">
+            <figure><img src="Nepal/3.webp" alt="Nepal School view 2" loading="lazy" decoding="async"></figure>
+            <figure><img src="Nepal/4.webp" alt="Nepal School view 3" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+
+        <!-- Remaining images -->
         <figure><img src="Nepal/5.webp" alt="Nepal School view 4" loading="lazy" decoding="async"></figure>
         <figure><img src="Nepal/6.webp" alt="Nepal School view 5" loading="lazy" decoding="async"></figure>
         <figure><img src="Nepal/14.webp" alt="Nepal School view 6" loading="lazy" decoding="async"></figure>
@@ -102,12 +130,19 @@
     </div>
   </div>
 
+  <section class="project-quote">
+    <div class="container">
+      <blockquote>
+        &#8220;A clear structural logic and locally grounded construction methods can create durable, adaptable, and socially embedded architecture.&#8221;
+      </blockquote>
+    </div>
+  </section>
 
   <!-- Next Project -->
   <section class="next-project">
     <a href="brick-house.html">
       <div class="container">
-        <span class="next-project-label">Next Project</span>
+        <span class="next-project-label" data-i18n="label.next-project">Next Project</span>
         <span class="next-project-name">Brick House</span>
         <span class="next-project-arrow">&rarr;</span>
       </div>
@@ -152,7 +187,7 @@
           <div>
             <h4 data-i18n="footer.follow">Follow us</h4>
             <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
 
 

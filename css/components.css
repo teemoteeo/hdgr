@@ -550,8 +550,8 @@
 }
 
 .studio-statement p {
-  font-size: var(--step-1);
-  font-weight: 700;
+  font-size: var(--step-2);
+  font-weight: 400;
   letter-spacing: 0.04em;
   font-style: italic;
   text-align: left;
@@ -1093,12 +1093,31 @@ header.header-dark .lang-current { color: var(--color-text); }
   transform: scale(1.04);
 }
 
+/* Cross-fade cycling images (mirrors hero pattern) */
+.slide-cycle-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease, transform var(--transition-slow);
+}
+
+.slide-cycle-img.is-active {
+  opacity: 1;
+}
+
+.project-slide:hover .slide-cycle-img {
+  transform: scale(1.04);
+}
+
 .project-slide-award {
   position: absolute;
   top: var(--space-4);
   left: var(--space-4);
-  background: var(--color-overlay);
-  color: var(--color-white);
+  background: #D4A843;
+  color: #1a1400;
   padding: 6px 12px;
   display: flex;
   flex-direction: column;
@@ -1218,7 +1237,8 @@ header.header-dark .lang-current { color: var(--color-text); }
   font-size: var(--step-0);
   line-height: 1.7;
   margin-bottom: var(--space-12);
-  max-width: 60ch;
+  max-width: 100%;
+  text-align: center;
 }
 
 .investment-tabs {
@@ -1254,9 +1274,10 @@ header.header-dark .lang-current { color: var(--color-text); }
 .investment-panel.is-active { display: block; }
 
 .investment-cta {
-  margin-top: var(--space-12);
+  margin-top: var(--space-4);
   font-size: var(--step-0);
   font-style: italic;
+  text-align: center;
 }
 
 .investment-cta a {
@@ -1266,10 +1287,10 @@ header.header-dark .lang-current { color: var(--color-text); }
 /* Investment flowchart SVG */
 .investment-flowchart {
   width: 100%;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   display: block;
-  padding: var(--space-8) 0;
+  padding: 0 0 var(--space-8);
 }
 
 @media (max-width: 768px) {
@@ -1277,4 +1298,145 @@ header.header-dark .lang-current { color: var(--color-text); }
   .inv-tab { border-bottom: 1px solid var(--color-border); text-align: left; }
   .inv-tab.is-active { border-bottom-color: var(--color-text); }
   .investment-opportunities { padding-top: calc(var(--header-height) + var(--space-20) * 1.25); }
+}
+
+/* ── Project image rows ── */
+.project-row-2 {
+  column-span: all;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.project-row-2 figure {
+  margin: 0;
+}
+
+.project-row-2 figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-row-4 {
+  column-span: all;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.project-row-4 figure {
+  margin: 0;
+}
+
+.project-row-4 figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Project text + images wrapper ── */
+.project-text-with-imgs {
+  column-span: all;
+  display: grid;
+  grid-template-columns: 3fr 2.2fr;
+  gap: var(--space-8);
+  align-items: start;
+  margin-bottom: var(--space-8);
+}
+
+.project-text-imgs-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-text-imgs-aside figure {
+  margin: 0;
+}
+
+.project-text-imgs-aside figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Project text block (inside image grid) ── */
+.project-text-block {
+  column-span: all;
+  padding: var(--space-12) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-8);
+}
+
+.project-text-with-imgs .project-text-block {
+  column-span: unset;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0;
+}
+
+.project-text-block-title {
+  font-size: var(--step-1);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+}
+
+.project-text-block p {
+  font-size: var(--step--1);
+  line-height: 1.75;
+  max-width: 80ch;
+  color: var(--color-text);
+}
+
+.project-text-block p + p {
+  margin-top: var(--space-4);
+}
+
+/* ── Project Award block ── */
+.project-award {
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid currentColor;
+}
+
+.project-award-label {
+  display: block;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.375rem;
+}
+
+.project-award p {
+  font-size: var(--step--1);
+  line-height: 1.5;
+  margin: 0 0 0.375rem;
+}
+
+.project-award-book {
+  display: inline-block;
+  font-size: var(--step--2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Project Quote section ── */
+.project-quote {
+  padding: var(--space-20) 0;
+  border-top: 1px solid currentColor;
+}
+
+.project-quote blockquote {
+  font-size: var(--step-1);
+  font-style: italic;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.5;
 }

@@ -127,6 +127,22 @@ document.addEventListener('DOMContentLoaded', () => {
         imgWrap.style.willChange = 'top, right, bottom, left';
         controlTween = gsap.to(tl, {
           progress: 0,
+          duration: 0.7,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            imgWrap.style.willChange = 'auto';
+            controlTween = null;
+          }
+        });
+      } else if (self.direction === 1) {
+        if (controlTween && !controlTween.paused()) {
+          const target = controlTween.vars && controlTween.vars.progress;
+          if (target === 1) return;
+        }
+        if (controlTween) { controlTween.kill(); controlTween = null; }
+        imgWrap.style.willChange = 'top, right, bottom, left';
+        controlTween = gsap.to(tl, {
+          progress: 1,
           duration: 1.2,
           ease: 'power3.inOut',
           onComplete: () => {
@@ -147,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imgWrap.style.willChange = 'top, right, bottom, left';
       controlTween = gsap.to(tl, {
         progress: 0,
-        duration: 1.2,
+        duration: 0.7,
         ease: 'power3.inOut',
         onComplete: () => {
           imgWrap.style.willChange = 'auto';
@@ -169,17 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
       onComplete: () => {
         imgWrap.style.willChange = 'auto';
         controlTween = null;
-        if (snapTo === 0 && fadeTl) {
-          if (fadeTween) { fadeTween.kill(); }
-          fadeTween = gsap.to(fadeTl, {
-            progress: 0,
-            duration: 0.3,
-            ease: 'power3.inOut',
-            onComplete: () => { fadeTween = null; }
-          });
-        }
       }
     });
+    if (snapTo === 0 && fadeTl) {
+      if (fadeTween) { fadeTween.kill(); }
+      fadeTween = gsap.to(fadeTl, {
+        progress: 0,
+        duration: 0.4,
+        ease: 'power3.inOut',
+        onComplete: () => { fadeTween = null; }
+      });
+    }
   });
 
   /* ── Title + explore scroll-away ── */
@@ -210,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (fadeTween) { fadeTween.kill(); fadeTween = null; }
           fadeTween = gsap.to(fadeTl, {
             progress: 0,
-            duration: 0.6,
+            duration: 0.7,
             ease: 'power3.inOut',
             onComplete: () => { fadeTween = null; }
           });
@@ -218,7 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       onLeaveBack: () => {
         if (fadeTween) { fadeTween.kill(); fadeTween = null; }
-        fadeTl.progress(0);
+        fadeTween = gsap.to(fadeTl, {
+          progress: 0,
+          duration: 0.7,
+          ease: 'power3.inOut',
+          onComplete: () => { fadeTween = null; }
+        });
       }
     });
   }

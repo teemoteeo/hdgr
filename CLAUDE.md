@@ -16,7 +16,7 @@ Domain: hdgr.eu (GoDaddy DNS → Vercel).
 File CSS: reset.css / variables.css / typography.css / layout.css / components.css / main.css
 File JS:  transitions.js / hero.js / menu.js / projects.js / logo-type.js / lightbox.js / flipboard.js / lang.js (NEW)
 
----
+-
 
 ## 1. DESIGN TOKENS
 

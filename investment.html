@@ -61,22 +61,23 @@
         <h2 data-i18n="section.investment">Investment Opportunities</h2>
       </div>
 
-      <p class="investment-intro">
+      <p class="investment-intro" data-i18n="invest.intro">
         Investment structures differ depending on the origin of the investor and the target market.
         Explore the pathway that fits your case.
       </p>
 
-      <!-- Tab switcher -->
+      <!-- Tab switcher + panels + CTA -->
+      <div class="investment-block">
       <div class="investment-tabs">
-        <button class="inv-tab is-active" data-tab="eu-eu">European investors in EU</button>
-        <button class="inv-tab" data-tab="latam-eu">LatAm investors in EU</button>
-        <button class="inv-tab" data-tab="asia-eu">Asian investors in EU</button>
-        <button class="inv-tab" data-tab="eu-latam">EU investors in LatAm/ASEAN</button>
+        <button class="inv-tab is-active" data-tab="eu-eu" data-i18n="invest.tab.eu-eu">European investors in EU</button>
+        <button class="inv-tab" data-tab="latam-eu" data-i18n="invest.tab.latam-eu">LatAm investors in EU</button>
+        <button class="inv-tab" data-tab="asia-eu" data-i18n="invest.tab.asia-eu">Asian investors in EU</button>
+        <button class="inv-tab" data-tab="eu-latam" data-i18n="invest.tab.eu-latam">EU investors in LatAm/ASEAN</button>
       </div>
 
       <!-- Panel: European investors in EU -->
       <div class="investment-panel is-active" data-panel="eu-eu">
-        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for European investors in EU">
+        <svg class="investment-flowchart" viewBox="0 0 750 310" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for European investors in EU">
           <defs>
             <marker id="arrow-eu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
@@ -101,7 +102,7 @@
           <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
 
           <!-- Curve down from Proposal -->
-          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 172 L 692 172" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eu)"/>
 
           <!-- Row 2 (right to left) -->
           <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
@@ -142,7 +143,7 @@
 
       <!-- Panel: LatAm investors in EU -->
       <div class="investment-panel" data-panel="latam-eu">
-        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for LatAm investors in EU">
+        <svg class="investment-flowchart" viewBox="0 0 750 310" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for LatAm investors in EU">
           <defs>
             <marker id="arrow-latam" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
@@ -160,7 +161,7 @@
           <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
           <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
           <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
-          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 172 L 692 172" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-latam)"/>
           <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
           <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
           <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
@@ -188,7 +189,7 @@
 
       <!-- Panel: Asian investors in EU -->
       <div class="investment-panel" data-panel="asia-eu">
-        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for Asian investors in EU">
+        <svg class="investment-flowchart" viewBox="0 0 750 310" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for Asian investors in EU">
           <defs>
             <marker id="arrow-asia" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
@@ -206,7 +207,7 @@
           <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
           <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
           <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
-          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 172 L 692 172" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-asia)"/>
           <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
           <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
           <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
@@ -234,7 +235,7 @@
 
       <!-- Panel: EU investors in LatAm/ASEAN -->
       <div class="investment-panel" data-panel="eu-latam">
-        <svg class="investment-flowchart" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for EU investors in LatAm/ASEAN">
+        <svg class="investment-flowchart" viewBox="0 0 750 310" xmlns="http://www.w3.org/2000/svg" aria-label="Investment flowchart for EU investors in LatAm/ASEAN">
           <defs>
             <marker id="arrow-eulatam" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="currentColor"/>
@@ -252,7 +253,7 @@
           <text x="590" y="35" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">IN-HOUSE ARCHITECTURE</text>
           <text x="590" y="48" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">&amp; DEVELOPMENT</text>
           <text x="590" y="58" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">PROPOSAL</text>
-          <path d="M 590 64 L 590 100 L 730 100 L 730 150" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
+          <path d="M 590 64 L 590 100 L 730 100 L 730 172 L 692 172" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#arrow-eulatam)"/>
           <rect x="490" y="150" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1"/>
           <text x="590" y="168" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">INVESTMENT</text>
           <text x="590" y="181" font-family="Space Mono, monospace" font-size="9" fill="currentColor" text-anchor="middle">AGREEMENT</text>
@@ -279,9 +280,9 @@
       </div>
 
       <p class="investment-cta">
-        <a href="portfolio.html">Click here</a> to explore available opportunities and begin crafting
-        an investment structure tailored to your goals and preferred markets.
+        <a href="portfolio.html" data-i18n="invest.cta.link">Click here</a><span data-i18n="invest.cta.after"> to explore available opportunities and begin crafting an investment structure tailored to your goals and preferred markets.</span>
       </p>
+      </div><!-- /investment-block -->
 
     </div>
   </section>
@@ -324,7 +325,7 @@
           <div>
             <h4 data-i18n="footer.follow">Follow us</h4>
             <p><a href="https://www.instagram.com/hdgr.eu/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-            <p><a href="https://www.linkedin.com/company/hdgr-architecture/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
 
 </div><!-- /footer-contact -->
