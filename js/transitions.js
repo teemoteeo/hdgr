@@ -1,3 +1,14 @@
+(function() {
+  var isBack = sessionStorage.getItem('back-nav') === '1' || window.name === 'hdgr-back';
+  if (isBack) {
+    var curtain = document.querySelector('.page-curtain');
+    if (curtain) {
+      curtain.style.transition = 'none';
+      curtain.style.transform = 'translateY(100%)';
+    }
+  }
+})();
+
 /* transitions.js - Page transition system (curtain overlay)
  *
  * FORWARD navigation (link click):

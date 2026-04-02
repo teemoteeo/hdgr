@@ -28,7 +28,7 @@
         <li data-lang-option="en" role="option">EN</li>
         <li data-lang-option="es" role="option">ES</li>
         <li data-lang-option="pl" role="option">PL</li>
-        <li data-lang-option="zh" role="option">ZH</li>
+        <li data-lang-option="zh" role="option">CN</li>
       </ul>
     </div>
     <button class="menu-toggle" aria-label="Open menu">
@@ -50,7 +50,7 @@
     <nav class="menu-nav">
       <ul>
         <li><a href="#about"><span data-i18n="nav.about">About Us</span></a></li>
-        <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
+        <li><a href="news.html"><span data-i18n="nav.news">News</span></a></li>
         <li><a href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
@@ -67,19 +67,19 @@
           <p class="hero-location">Warsaw, PL</p>
 
           <div class="hero-services-group">
-            <h3 class="hero-services-title" data-i18n="services.design">Design Services</h3>
+            <h3 class="hero-services-title">Design Services</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="projects.html" data-i18n="services.arch">Architectural Projects</a></li>
-              <li class="tree-branch"><a href="visualizations.html" data-i18n="section.visualizations">Visualizations</a></li>
-              <li class="tree-branch tree-last"><a href="interior.html" data-i18n="section.interior">Interior Design</a></li>
+              <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
+              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
+              <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
             </ul>
           </div>
 
           <div class="hero-services-group">
-            <h3 class="hero-services-title" data-i18n="services.realestate">Real Estate Development</h3>
+            <h3 class="hero-services-title">Real Estate Development</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="portfolio.html" data-i18n="section.portfolio">Property Portfolio</a></li>
-              <li class="tree-branch tree-last"><a href="investment.html" data-i18n="section.investment">Investment Opportunities</a></li>
+              <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
+              <li class="tree-branch tree-last"><a href="investment.html">Investment Opportunities</a></li>
             </ul>
           </div>
         </div>
@@ -94,7 +94,7 @@
       <div class="hero-img-wrap" data-hero-img-wrap>
         <div class="hero-title" data-hero-title>
           <h1 class="hero-new-title">HDGR</h1>
-          <p class="hero-new-subtitle" data-i18n="hero.subtitle">Design &amp; Development</p>
+          <p class="hero-new-subtitle">Design &amp; Development</p>
         </div>
         <img class="hero-cycle-img is-active" src="hero/01.webp" alt="" fetchpriority="high" decoding="async">
         <img class="hero-cycle-img" src="hero/02.webp" alt="" decoding="async" style="object-position: center top;">
@@ -110,13 +110,7 @@
 
   <div class="studio-statement">
     <div class="container">
-      <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
-    </div>
-  </div>
-
-  <div class="studio-statement studio-statement--mobile">
-    <div class="container">
-      <p data-i18n="statement.main"><span class="comma-desktop">"</span>Design That Lasts<span class="comma-desktop">, </span><br>Development That Matters<span class="comma-desktop">"</span></p>
+      <p data-i18n="statement.main">"Design That Lasts, Development That Matters"</p>
     </div>
   </div>
 
@@ -130,6 +124,8 @@
       </div>
 
       <div class="projects-slides-wrap">
+        <button class="slides-arrow slides-arrow--prev" aria-label="Previous project">←</button>
+        <button class="slides-arrow slides-arrow--next" aria-label="Next project">→</button>
         <div class="projects-slides">
 
           <!-- Nepal School — con badge award -->
@@ -198,7 +194,7 @@
 
   <div class="studio-statement studio-statement--above-about">
     <div class="container">
-      <p data-i18n="statement.second"><span class="comma-desktop">"</span>We Build What Time Approves<span class="comma-desktop">"</span></p>
+      <p data-i18n="statement.second">"Design That Lasts, Development That Matters"</p>
     </div>
   </div>
 
@@ -216,47 +212,36 @@
       </div>
 
       <div class="about-grid">
-
-        <div class="about-row about-row--three">
-          <div class="about-member">
-            <div class="about-photo"><img src="team/juls.jpeg" alt="Julian"></div>
-            <h3>Julian</h3>
-            <span class="about-role" data-i18n="role.designer">Designer</span>
-          </div>
-
-          <div class="about-member">
-            <div class="about-photo"><img src="team/nina.jpeg" alt="Nina"></div>
-            <h3>Nina</h3>
-            <span class="about-role" data-i18n="role.designer">Designer</span>
-          </div>
-
-          <div class="about-member">
-            <div class="about-photo"><img src="team/czarek.jpeg" alt="Czarek"></div>
-            <h3>Czarek</h3>
-            <span class="about-role" data-i18n="role.designer">Designer</span>
-          </div>
-
-          <div class="about-member">
-            <div class="about-photo"><img src="team/emilya.jpeg" alt="Emilya"></div>
-            <h3>Emilya</h3>
-            <span class="about-role" data-i18n="role.designer">Designer</span>
-          </div>
+        <div class="about-member">
+          <div class="about-photo"><img src="team/juls.jpeg" alt="Julian"></div>
+          <h3>Julian</h3>
+          <span class="about-role" data-i18n="role.designer">Designer</span>
         </div>
-
-        <div class="about-row about-row--two">
-          <div class="about-member">
-            <div class="about-photo"><img src="team/leon.webp" alt="Leon" style="object-position: center 15%;"></div>
-            <h3>Leon</h3>
-            <span class="about-role" data-i18n="role.business">Business Development</span>
-          </div>
-
-          <div class="about-member">
-            <div class="about-photo"><img src="team/franek.webp" alt="Franek"></div>
-            <h3>Franek</h3>
-            <span class="about-role" data-i18n="role.finance">Finance</span>
-          </div>
+        <div class="about-member">
+          <div class="about-photo"><img src="team/nina.jpeg" alt="Nina"></div>
+          <h3>Nina</h3>
+          <span class="about-role" data-i18n="role.designer">Designer</span>
         </div>
-
+        <div class="about-member">
+          <div class="about-photo"><img src="team/czarek.jpeg" alt="Czarek"></div>
+          <h3>Czarek</h3>
+          <span class="about-role" data-i18n="role.designer">Designer</span>
+        </div>
+        <div class="about-member">
+          <div class="about-photo"><img src="team/emilya.jpeg" alt="Emilya"></div>
+          <h3>Emilya</h3>
+          <span class="about-role" data-i18n="role.designer">Designer</span>
+        </div>
+        <div class="about-member">
+          <div class="about-photo"><img src="team/leon.webp" alt="Leon" style="object-position: center 15%;"></div>
+          <h3>Leon</h3>
+          <span class="about-role" data-i18n="role.business">Business Development</span>
+        </div>
+        <div class="about-member">
+          <div class="about-photo"><img src="team/franek.webp" alt="Franek"></div>
+          <h3>Franek</h3>
+          <span class="about-role" data-i18n="role.finance">Finance</span>
+        </div>
       </div><!-- /about-grid -->
 
     </div><!-- /container -->
@@ -264,7 +249,7 @@
 
   <div class="studio-statement studio-statement--below-about">
     <div class="container">
-      <p data-i18n="statement.second"><span class="comma-desktop">"</span>We Build What Time Approves<span class="comma-desktop">"</span></p>
+      <p data-i18n="statement.second">"Design That Lasts, Development That Matters"</p>
     </div>
   </div>
 
@@ -358,6 +343,29 @@
         lastX = null; lastY = null; totalDist = 0;
       });
     });
+  </script>
+
+  <script>
+    (function() {
+      var wrap = document.querySelector('.projects-slides');
+      var prev = document.querySelector('.slides-arrow--prev');
+      var next = document.querySelector('.slides-arrow--next');
+      if (!wrap || !prev || !next) return;
+
+      function getSlideWidth() {
+        var slide = wrap.querySelector('.project-slide');
+        if (!slide) return 0;
+        var gap = parseInt(getComputedStyle(wrap).gap) || 0;
+        return slide.offsetWidth + gap;
+      }
+
+      next.addEventListener('click', function() {
+        wrap.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+      });
+      prev.addEventListener('click', function() {
+        wrap.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>

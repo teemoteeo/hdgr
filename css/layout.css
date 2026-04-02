@@ -1095,39 +1095,15 @@ footer {
   }
 
   .about-grid {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
-    overflow-x: scroll;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* Full-bleed: escape container to span full viewport */
-    width: 100vw;
-    position: relative;
-    left: calc(-1 * var(--space-4));
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
-    padding-bottom: var(--space-4);
-    box-sizing: border-box;
-  }
-
-  .about-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .about-row {
-    display: contents;
-  }
-
-  .about-row--three,
-  .about-row--two {
-    display: contents;
-  }
-
-  .about-grid .about-member {
-    flex: 0 0 42vw;
-    min-width: 42vw;
+    overflow-x: unset;
+    width: auto;
+    position: static;
+    left: auto;
+    padding: 0;
+    box-sizing: content-box;
   }
 
   .hero + .studio-statement { display: none; }

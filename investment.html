@@ -23,7 +23,7 @@
         <li data-lang-option="en" role="option">EN</li>
         <li data-lang-option="es" role="option">ES</li>
         <li data-lang-option="pl" role="option">PL</li>
-        <li data-lang-option="zh" role="option">ZH</li>
+        <li data-lang-option="zh" role="option">CN</li>
       </ul>
     </div>
     <button class="menu-toggle" aria-label="Open menu">
@@ -46,7 +46,7 @@
     <nav class="menu-nav">
       <ul>
         <li><a href="index.html#about"><span data-i18n="nav.about">About Us</span></a></li>
-        <li><a href="#"><span data-i18n="nav.news">News</span></a></li>
+        <li><a href="news.html"><span data-i18n="nav.news">News</span></a></li>
         <li><a href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
@@ -281,6 +281,20 @@
       <p class="investment-cta">
         <a href="portfolio.html" data-i18n="invest.cta.link">Click here</a><span data-i18n="invest.cta.after"> to explore available opportunities and begin crafting an investment structure tailored to your goals and preferred markets.</span>
       </p>
+
+      <div class="investment-contact">
+        <h4>Contact Our Team</h4>
+        <form class="contact-form" action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
+          <div class="contact-form-row">
+            <input type="text" name="firstname" placeholder="First name" data-i18n-placeholder="form.firstname">
+            <input type="text" name="lastname" placeholder="Last name" data-i18n-placeholder="form.lastname">
+          </div>
+          <input type="email" name="email" placeholder="Email" data-i18n-placeholder="form.email">
+          <textarea name="message" rows="4" placeholder="Message" data-i18n-placeholder="form.message"></textarea>
+          <button type="submit" data-i18n="form.send">Send Inquiry</button>
+        </form>
+      </div>
+
       </div><!-- /investment-block -->
 
     </div>

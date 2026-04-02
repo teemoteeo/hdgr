@@ -436,7 +436,7 @@ const TRANSLATIONS = {
     document.documentElement.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : lang);
     const btn = document.querySelector('.lang-current');
-    if (btn) btn.textContent = lang.toUpperCase();
+    if (btn) btn.textContent = lang === 'zh' ? 'CN' : lang.toUpperCase();
   }
 
   function init() {
