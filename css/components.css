@@ -541,6 +541,7 @@
 /* ── Studio Statement ── */
 .studio-statement {
   padding: var(--space-16) 0;
+  text-align: center;
 }
 
 .statement-rule {
@@ -551,56 +552,33 @@
 
 .studio-statement p {
   font-size: var(--step-2);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.04em;
   font-style: italic;
-  text-align: left;
+  text-align: center;
   color: var(--color-text);
-  padding: 0;
   line-height: 1.3;
 }
 
-.projects .studio-statement {
-  padding-top: calc(var(--space-16) - var(--space-8));
-}
-
-.projects .studio-statement p {
-  text-align: center;
-}
-
-/* Mobile-only clone — hidden on desktop */
-.studio-statement--mobile {
-  display: none;
-}
-
-/* "We Build" positioning: above About on desktop, below About on mobile */
-.studio-statement--below-about {
-  display: none;
-}
+.studio-statement--mobile { display: none; }
+.studio-statement--above-about { display: block; }
+.studio-statement--below-about { display: none; }
 
 @media (max-width: 768px) {
-  .studio-statement--above-about {
-    display: none;
-  }
+  /* hide the one above projects on mobile */
+  .hero + .studio-statement { display: none; }
+  .studio-statement--above-about { display: none; }
   .studio-statement--below-about {
     display: block;
+    border-top: none;
+    border-bottom: none;
+    margin-inline: 0;
+    padding: var(--space-8) 0;
   }
-}
-
-/* Design That Lasts — desktop only */
-@media (min-width: 769px) {
-  .studio-statement:not(.projects .studio-statement) .container {
-    padding-left: calc(var(--space-12) * 6);
-  }
-
-  .studio-statement:not(.projects .studio-statement) p br {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .studio-statement--mobile {
-    display: block !important;
+  .studio-statement--below-about p {
+    text-align: center;
+    font-style: italic;
+    font-size: var(--step-1);
   }
 }
 
