@@ -130,6 +130,8 @@
       </div>
 
       <div class="projects-slides-wrap">
+        <button class="slides-arrow slides-arrow--prev" aria-label="Previous project">←</button>
+        <button class="slides-arrow slides-arrow--next" aria-label="Next project">→</button>
         <div class="projects-slides">
 
           <!-- Nepal School — con badge award -->
@@ -358,6 +360,29 @@
         lastX = null; lastY = null; totalDist = 0;
       });
     });
+  </script>
+
+  <script>
+    (function() {
+      var wrap = document.querySelector('.projects-slides');
+      var prev = document.querySelector('.slides-arrow--prev');
+      var next = document.querySelector('.slides-arrow--next');
+      if (!wrap || !prev || !next) return;
+
+      function getSlideWidth() {
+        var slide = wrap.querySelector('.project-slide');
+        if (!slide) return 0;
+        var gap = parseInt(getComputedStyle(wrap).gap) || 0;
+        return slide.offsetWidth + gap;
+      }
+
+      next.addEventListener('click', function() {
+        wrap.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
+      });
+      prev.addEventListener('click', function() {
+        wrap.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>

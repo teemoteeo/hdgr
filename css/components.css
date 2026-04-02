@@ -1112,6 +1112,43 @@ header.header-dark .lang-current { color: var(--color-text); }
 .project-slide a { display: block; }
 .project-slide a:hover { opacity: 1; }
 
+/* ── Slides arrows ── */
+.slides-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: var(--space-4);
+  z-index: 2;
+  transition: opacity var(--transition-base);
+  line-height: 1;
+}
+
+.slides-arrow:hover { opacity: 0.4; }
+
+.slides-arrow--prev {
+  left: calc(-1 * var(--space-12));
+}
+
+.slides-arrow--next {
+  right: calc(-1 * var(--space-12));
+}
+
+@media (max-width: 768px) {
+  .slides-arrow--prev { left: 0; }
+  .slides-arrow--next { right: 0; }
+  .slides-arrow {
+    top: 35%;
+    background: var(--color-bg);
+    padding: var(--space-4) 6px;
+  }
+}
+
 .project-slide-img {
   position: relative;
   overflow: hidden;
