@@ -871,7 +871,7 @@ body:has(.projects-archive) {
 /* ─── FOOTER ──────────────────────────────────────────────────────── */
 
 footer {
-  padding: calc(var(--space-20) / 2) 0 calc(var(--space-8) / 2);
+  padding: calc(var(--space-20) / 2) 0 var(--space-16);
   margin-top: calc(var(--space-16) / 4);
   border-top: 1px solid var(--color-border);
 }
@@ -1174,12 +1174,41 @@ footer {
   }
 
   /* ── Footer mobile ────────────────────────────────────── */
-  .footer-contact { grid-template-columns: 1fr; }
+  footer { border-top: none; }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: start;
+    gap: var(--space-8);
+  }
+
+  .footer-logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footer-contact {
+    display: contents;
+  }
+
+  .footer-contact > div:first-child {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .footer-contact > div:last-child {
+    grid-column: 2;
+    grid-row: 2;
+  }
 
   .contact-form-wrap {
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
   }
 
   footer {

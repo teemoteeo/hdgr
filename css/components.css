@@ -877,6 +877,10 @@
     grid-template-columns: 1fr;
   }
 
+  .about-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .studio-statement {
     border-top: none;
     margin-inline: var(--space-8);
@@ -1111,15 +1115,12 @@ header.header-dark .lang-current { color: var(--color-text); }
   .projects-slides-wrap {
     width: 100%;
     margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .projects-slides {
     width: 100%;
     padding: 0 12vw;
-    gap: var(--space-4);
+    gap: 8vw;
     scroll-padding: 0 12vw;
     box-sizing: border-box;
   }
@@ -1138,6 +1139,11 @@ header.header-dark .lang-current { color: var(--color-text); }
     color: var(--color-text);
     text-shadow: none;
     font-size: var(--step-0);
+    transition: opacity 0.3s ease;
+  }
+  .slides-arrow.is-hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -1150,16 +1156,16 @@ header.header-dark .lang-current { color: var(--color-text); }
   .slides-dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin-top: var(--space-4);
+    gap: 14px;
+    margin-top: var(--space-8);
   }
 
   .slides-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 0;
-    background: var(--color-border);
-    border: 1px solid var(--color-text);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(10, 10, 10, 0.25);
+    border: none;
     cursor: pointer;
     transition: background var(--transition-base);
     padding: 0;
