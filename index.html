@@ -187,6 +187,11 @@
           </article>
 
         </div><!-- /projects-slides -->
+        <div class="slides-dots">
+          <button class="slides-dot is-active" aria-label="Go to slide 1"></button>
+          <button class="slides-dot" aria-label="Go to slide 2"></button>
+          <button class="slides-dot" aria-label="Go to slide 3"></button>
+        </div>
       </div><!-- /projects-slides-wrap -->
 
     </div><!-- /container -->
@@ -360,6 +365,7 @@
       var wrap = document.querySelector('.projects-slides');
       var prev = document.querySelector('.slides-arrow--prev');
       var next = document.querySelector('.slides-arrow--next');
+      var dots = Array.from(document.querySelectorAll('.slides-dot'));
       if (!wrap || !prev || !next) return;
 
       function getSlideWidth() {
@@ -369,20 +375,44 @@
         return slide.offsetWidth + gap;
       }
 
+      function getActiveIndex() {
+        var slideWidth = getSlideWidth();
+        if (!slideWidth) return 0;
+        return Math.round(wrap.scrollLeft / slideWidth);
+      }
+
       function updateArrows() {
         prev.style.visibility = wrap.scrollLeft < 1 ? 'hidden' : 'visible';
         next.style.visibility = Math.abs(wrap.scrollLeft + wrap.clientWidth - wrap.scrollWidth) < 2
           ? 'hidden' : 'visible';
       }
 
-      wrap.addEventListener('scroll', updateArrows, { passive: true });
+      function updateDots() {
+        var idx = getActiveIndex();
+        dots.forEach(function(dot, i) {
+          dot.classList.toggle('is-active', i === idx);
+        });
+      }
+
+      wrap.addEventListener('scroll', function() {
+        updateArrows();
+        updateDots();
+      }, { passive: true });
+
       updateArrows();
+      updateDots();
 
       next.addEventListener('click', function() {
         wrap.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
       });
       prev.addEventListener('click', function() {
         wrap.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
+      });
+
+      dots.forEach(function(dot, i) {
+        dot.addEventListener('click', function() {
+          wrap.scrollTo({ left: getSlideWidth() * i, behavior: 'smooth' });
+        });
       });
     })();
   </script>
