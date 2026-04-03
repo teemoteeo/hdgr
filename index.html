@@ -366,54 +366,49 @@
       var prev = document.querySelector('.slides-arrow--prev');
       var next = document.querySelector('.slides-arrow--next');
       var dots = Array.from(document.querySelectorAll('.slides-dot'));
-      if (!wrap || !prev || !next) return;
+      var slides = Array.from(document.querySelectorAll('.project-slide'));
+      if (!wrap || !prev || !next || !slides.length) return;
 
-      function getSlideWidth() {
-        var slide = wrap.querySelector('.project-slide');
-        if (!slide) return 0;
-        var gap = parseInt(getComputedStyle(wrap).gap) || 0;
-        return slide.offsetWidth + gap;
+      var current = 0;
+      var total = slides.length;
+
+      function goTo(idx) {
+        current = Math.max(0, Math.min(idx, total - 1));
+        wrap.scrollTo({ left: slides[current].offsetLeft, behavior: 'smooth' });
+        update();
       }
 
-      function getActiveIndex() {
-        var slideWidth = getSlideWidth();
-        if (!slideWidth) return 0;
-        return Math.round(wrap.scrollLeft / slideWidth);
-      }
-
-      function updateArrows() {
-        prev.style.visibility = wrap.scrollLeft < 1 ? 'hidden' : 'visible';
-        next.style.visibility = Math.abs(wrap.scrollLeft + wrap.clientWidth - wrap.scrollWidth) < 2
-          ? 'hidden' : 'visible';
-      }
-
-      function updateDots() {
-        var idx = getActiveIndex();
+      function update() {
+        prev.style.visibility = current === 0 ? 'hidden' : 'visible';
+        next.style.visibility = current === total - 1 ? 'hidden' : 'visible';
         dots.forEach(function(dot, i) {
-          dot.classList.toggle('is-active', i === idx);
+          dot.classList.toggle('is-active', i === current);
         });
       }
 
-      wrap.addEventListener('scroll', function() {
-        updateArrows();
-        updateDots();
-      }, { passive: true });
-
-      updateArrows();
-      updateDots();
-
-      next.addEventListener('click', function() {
-        wrap.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
-      });
-      prev.addEventListener('click', function() {
-        wrap.scrollBy({ left: -getSlideWidth(), behavior: 'smooth' });
-      });
+      prev.addEventListener('click', function() { goTo(current - 1); });
+      next.addEventListener('click', function() { goTo(current + 1); });
 
       dots.forEach(function(dot, i) {
-        dot.addEventListener('click', function() {
-          wrap.scrollTo({ left: getSlideWidth() * i, behavior: 'smooth' });
-        });
+        dot.addEventListener('click', function() { goTo(i); });
       });
+
+      // Sync after swipe gesture settles
+      var scrollTimer;
+      wrap.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          var closest = 0;
+          var minDist = Infinity;
+          slides.forEach(function(slide, i) {
+            var dist = Math.abs(slide.offsetLeft - wrap.scrollLeft);
+            if (dist < minDist) { minDist = dist; closest = i; }
+          });
+          if (closest !== current) { current = closest; update(); }
+        }, 80);
+      }, { passive: true });
+
+      update();
     })();
   </script>
 </body>
