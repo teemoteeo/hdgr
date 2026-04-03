@@ -1094,27 +1094,11 @@ footer {
     margin-bottom: 0;
   }
 
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    overflow-x: unset;
-    width: auto;
-    position: static;
-    left: auto;
-    padding: 0;
-    box-sizing: content-box;
-  }
-
   .hero + .studio-statement { display: none; }
 
   body {
     overflow-x: hidden;
     max-width: 100vw;
-  }
-
-  .about-photo {
-    aspect-ratio: 1/1;
   }
 
   .studio-statement p {
