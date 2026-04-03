@@ -49,9 +49,9 @@
     </div>
     <nav class="menu-nav">
       <ul>
-        <li><a href="#about"><span data-i18n="nav.about">About Us</span></a></li>
-        <li><a href="news.html"><span data-i18n="nav.news">News</span></a></li>
-        <li><a href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -69,24 +69,24 @@
           <div class="hero-services-group">
             <h3 class="hero-services-title">Design Services</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="projects.html" data-i18n="services.arch">Architectural Projects</a></li>
-              <li class="tree-branch"><a href="visualizations.html" data-i18n="section.visualizations">Visualizations</a></li>
-              <li class="tree-branch tree-last"><a href="interior.html" data-i18n="section.interior">Interior Design</a></li>
+              <li class="tree-branch"><a href="projects.html">Architectural Projects</a></li>
+              <li class="tree-branch"><a href="visualizations.html">Visualizations</a></li>
+              <li class="tree-branch tree-last"><a href="interior.html">Interior Design</a></li>
             </ul>
           </div>
 
           <div class="hero-services-group">
             <h3 class="hero-services-title">Real Estate Development</h3>
             <ul class="hero-services-tree">
-              <li class="tree-branch"><a href="portfolio.html" data-i18n="section.portfolio">Property Portfolio</a></li>
-              <li class="tree-branch tree-last"><a href="investment.html" data-i18n="section.investment">Investment Opportunities</a></li>
+              <li class="tree-branch"><a href="portfolio.html">Property Portfolio</a></li>
+              <li class="tree-branch tree-last"><a href="investment.html">Investment Opportunities</a></li>
             </ul>
           </div>
         </div>
       </div>
 
       <button class="hero-new-scroll" data-hero-explore>
-        <span class="hero-new-scroll-label" data-i18n="btn.explore">Explore</span>
+        <span class="hero-new-scroll-label">Explore</span>
         <span class="hero-new-scroll-arrow" aria-hidden="true">&gt;</span>
       </button>
 
@@ -120,7 +120,7 @@
 
       <div class="section-header">
         <h2 data-i18n="section.projects">Award-Winning Projects</h2>
-        <a href="projects.html" class="view-all" data-i18n="btn.all-projects">All projects &rarr;</a>
+        <a href="projects.html" class="view-all">All projects &rarr;</a>
       </div>
 
       <div class="projects-slides-wrap">
@@ -278,19 +278,19 @@
 
         <div class="footer-contact">
           <div>
-            <h4 data-i18n="footer.touch">Get in touch</h4>
+            <h4>Get in touch</h4>
             <p>Warsaw, Poland</p>
             <p><a href="mailto:contact@hdgr.eu">contact@hdgr.eu</a></p>
           </div>
           <div>
-            <h4 data-i18n="footer.follow">Follow us</h4>
+            <h4>Follow us</h4>
             <p><a href="https://www.instagram.com/hdgr_design_development/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
             <p><a href="https://www.linkedin.com/company/hdgr-design-development/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
         </div><!-- /footer-contact -->
 
         <div class="contact-form-wrap">
-          <button class="contact-form-toggle" data-i18n="footer.contact-btn">Contact Our Team</button>
+          <button class="contact-form-toggle">Contact Our Team</button>
           <form class="contact-form" hidden action="mailto:contact@hdgr.eu" method="POST" enctype="text/plain">
             <div class="contact-form-row">
               <input type="text" name="firstname" data-i18n-placeholder="form.firstname" placeholder="First name">
@@ -368,6 +368,15 @@
         var gap = parseInt(getComputedStyle(wrap).gap) || 0;
         return slide.offsetWidth + gap;
       }
+
+      function updateArrows() {
+        prev.style.visibility = wrap.scrollLeft < 1 ? 'hidden' : 'visible';
+        next.style.visibility = Math.abs(wrap.scrollLeft + wrap.clientWidth - wrap.scrollWidth) < 2
+          ? 'hidden' : 'visible';
+      }
+
+      wrap.addEventListener('scroll', updateArrows, { passive: true });
+      updateArrows();
 
       next.addEventListener('click', function() {
         wrap.scrollBy({ left: getSlideWidth(), behavior: 'smooth' });
