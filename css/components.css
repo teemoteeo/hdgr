@@ -1109,12 +1109,23 @@ header.header-dark .lang-current { color: var(--color-text); }
 }
 
 @media (max-width: 768px) {
-  .slides-arrow--prev { left: 0; }
-  .slides-arrow--next { right: 0; }
+  .projects-slides-wrap {
+    width: 100vw;
+    margin-left: -5vw;
+  }
+
+  .project-slide {
+    flex: 0 0 100vw;
+  }
+
+  .slides-arrow--prev { left: var(--space-4); }
+  .slides-arrow--next { right: var(--space-4); }
   .slides-arrow {
     top: 35%;
-    background: var(--color-bg);
-    padding: var(--space-4) 6px;
+    background: none;
+    padding: var(--space-2) var(--space-4);
+    color: var(--color-white);
+    text-shadow: 0 0 8px rgba(10, 10, 10, 0.8);
   }
 }
 
