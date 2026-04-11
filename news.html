@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HDGR — News.">
+  <meta name="description" content="HDGR — News. Market research, company updates and insights.">
   <title>HDGR — News</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
       <span></span>
     </button>
   </header>
-  <button class="project-back-fixed">← Go back</button>
+  <button class="project-back-fixed" data-back-url="index.html">← Go back</button>
 
   <!-- Menu Overlay -->
   <div class="menu-overlay">
@@ -54,15 +54,51 @@
 
 
   <!-- News -->
-  <section class="projects-archive">
+  <section class="news-section">
     <div class="container">
-      <div class="section-header section-header--centered">
+
+      <div class="section-header">
         <h2>News</h2>
       </div>
-      <p style="text-align:center; color: var(--color-text-muted); margin-top: var(--space-16); font-size: var(--step-0);">
-        Coming soon.
-      </p>
-    </div>
+
+      <div class="news-feed">
+
+        <!-- Article 1 -->
+        <article class="news-article">
+          <div class="news-article-meta">
+            <span class="news-article-author">Leon</span>
+            <span class="news-article-sep">·</span>
+            <span class="news-article-category">Company Update</span>
+            <span class="news-article-sep">·</span>
+            <span class="news-article-date">April 2026</span>
+          </div>
+          <h3 class="news-article-title">HDGR Secures First Property Acquisition</h3>
+          <div class="news-article-body">
+            <p>We are happy to announce the successful acquisition of our first property, marking an important milestone in the company's development. The opportunity arose due to the financial difficulties of the previous owner, which created the conditions for a timely and well-structured transaction. With the support of external investors, and thanks to a quick reaction and smooth handling of the legal and administrative process, the acquisition was completed efficiently.</p>
+            <p>The property is a house located in the Lubelszczyzna region of eastern Poland, in a strategically positioned area with long-term potential. Rather than an immediate redevelopment project, the property is intended to be held as part of the company's growing portfolio of assets.</p>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="news-article">
+          <div class="news-article-meta">
+            <span class="news-article-author">Franek</span>
+            <span class="news-article-sep">·</span>
+            <span class="news-article-category">Market Analysis</span>
+            <span class="news-article-sep">·</span>
+            <span class="news-article-date">April 2026</span>
+          </div>
+          <h3 class="news-article-title">Valencia, ES</h3>
+          <div class="news-article-body">
+            <p>In recent years, Valencia has experienced a strong increase in population due to domestic and international migration. According to Spain's National Statistics Institute (INE), the city's population reached around 841,000 inhabitants in 2025, increasing by roughly 18,500 people in just one year (INE, 2025; Cadena SER, 2025). This growth is largely driven by immigration and the city's attractiveness for foreign residents and workers.</p>
+            <p>More broadly, migration flows into the Valencian Community have been among the highest in Spain. In 2024 the region recorded net external migration of about 104,776 people, one of the largest increases in the country (INE, 2024). However, housing construction has not kept pace with this rapid population growth. The supply of new housing in the city is extremely limited. A recent market analysis found that Valencia had only 43 new residential developments totaling about 2,072 homes, with just 839 units still available for sale — a very small stock for a city of nearly 850,000 residents (Idealista, 2026).</p>
+            <p>Other studies highlight an even more severe structural shortage. According to the Housing Observatory of the Universitat Politècnica de València, the effective supply of new-build housing has fallen by more than 80% in recent years, while prices have surged dramatically (UPV, 2024). As a result of this imbalance between demand and supply, the housing deficit is expected to continue growing. Estimates suggest the province of Valencia could face a shortage of more than 133,000 homes by 2030 if construction does not accelerate (El País, 2025).</p>
+            <p>Overall, the combination of rapid population growth and insufficient housing development has intensified pressure on the local housing market, contributing to rising prices and increasing difficulties for residents seeking affordable housing.</p>
+          </div>
+        </article>
+
+      </div><!-- /news-feed -->
+    </div><!-- /container -->
   </section>
 
 
