@@ -397,7 +397,7 @@
 .next-project .container {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  gap: var(--space-4);
   position: relative;
   z-index: 1;
 }
@@ -408,6 +408,7 @@
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color 0.4s var(--ease-expo-out);
+  margin-right: auto;
 }
 
 .next-project:hover .next-project-label {
@@ -422,7 +423,7 @@
 }
 
 .next-project-arrow {
-  font-size: var(--text-section);
+  font-size: var(--text-page);
   transition: transform 0.4s var(--ease-expo-out);
 }
 

@@ -131,7 +131,14 @@ const PageTransitions = {
 
   bindBackButtons() {
     document.querySelectorAll('.project-back, .project-back-fixed, .project-back-abs').forEach(btn => {
-      btn.addEventListener('click', () => this.pageBack());
+      btn.addEventListener('click', () => {
+        const backUrl = btn.dataset.backUrl;
+        if (backUrl) {
+          this.pageExit(backUrl, 0.55);
+        } else {
+          this.pageBack();
+        }
+      });
     });
   },
 
