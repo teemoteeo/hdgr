@@ -369,7 +369,7 @@
 
 .next-project a {
   display: block;
-  padding: var(--space-16) 0;
+  padding: var(--space-8) 0;
   position: relative;
   z-index: 1;
   transition: color 0.4s var(--ease-expo-out);
@@ -396,19 +396,25 @@
 
 .next-project .container {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: var(--space-4);
+  gap: 0 var(--space-4);
   position: relative;
   z-index: 1;
 }
 
 .next-project-label {
+  flex-basis: 100%;
   font-size: var(--text-body);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color 0.4s var(--ease-expo-out);
-  margin-right: auto;
+  margin-bottom: var(--space-4);
+}
+
+.next-project + footer {
+  border-top: none;
 }
 
 .next-project:hover .next-project-label {
