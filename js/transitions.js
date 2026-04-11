@@ -85,6 +85,16 @@ const PageTransitions = {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
+    // Store current page as referrer only if it's a list/root page.
+    // Project detail pages (/projects/*.html, /interior/*.html) are excluded
+    // so that next-project chaining doesn't pollute the referrer.
+    const currentPath = window.location.pathname;
+    const isDetailPage = /\/(projects|interior)\/[^/]+\.html$/.test(currentPath);
+    if (!isDetailPage) {
+      const filename = currentPath.split('/').pop() || 'index.html';
+      sessionStorage.setItem('hdgr-list-ref', filename || 'index.html');
+    }
+
     if (this.prefersReducedMotion) {
       window.location.href = url;
       return;
@@ -133,8 +143,14 @@ const PageTransitions = {
     document.querySelectorAll('.project-back, .project-back-fixed, .project-back-abs').forEach(btn => {
       btn.addEventListener('click', () => {
         const backUrl = btn.dataset.backUrl;
-        if (backUrl) {
-          this.pageExit(backUrl, 0.55);
+        const listRef = sessionStorage.getItem('hdgr-list-ref');
+        sessionStorage.removeItem('hdgr-list-ref');
+
+        // If user came from a known list page, honour that referrer.
+        // Detail pages are one level deep, so prefix with ../
+        const target = listRef ? ('../' + listRef) : backUrl;
+        if (target) {
+          this.pageExit(target, 0.55);
         } else {
           this.pageBack();
         }
