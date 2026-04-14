@@ -116,11 +116,17 @@ const PageTransitions = {
     // Start the animation first, then navigate after 2 rAF frames.
     // This guarantees GSAP paints its first frame before the browser
     // begins unloading — eliminating the first-navigation stutter.
-    gsap.to(this.curtain, {
-      yPercent: 0,
-      duration,
-      ease: 'power2.in'
-    });
+    // Guard: GSAP may be blocked (e.g. GFW). Fallback to CSS transition.
+    if (typeof gsap !== 'undefined') {
+      gsap.to(this.curtain, {
+        yPercent: 0,
+        duration,
+        ease: 'power2.in'
+      });
+    } else {
+      this.curtain.style.transition = `transform ${duration}s ease-in`;
+      this.curtain.style.transform = 'translateY(0%)';
+    }
     requestAnimationFrame(() => requestAnimationFrame(() => { window.location.href = url; }));
   },
 

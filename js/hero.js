@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  // Guard: GSAP / ScrollTrigger may fail to load (e.g. CDN blocked by GFW).
+  // All GSAP-dependent code is wrapped — explore-click + mousemove cycle below still run.
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
 
@@ -252,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  } // end GSAP guard
 
   /* ── Explore button click ── */
   if (exploreBtnEl) {
