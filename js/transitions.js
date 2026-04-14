@@ -63,6 +63,18 @@ const PageTransitions = {
         gsap.killTweensOf(this.curtain);
         gsap.set(this.curtain, { yPercent: 100 });
       }
+
+      // Restore scroll position saved before leaving this page
+      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+      const savedY = sessionStorage.getItem('hdgr-scroll-' + currentFile);
+      if (savedY !== null) {
+        sessionStorage.removeItem('hdgr-scroll-' + currentFile);
+        // Delay past ScrollTrigger init so it doesn't override scroll
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          window.scrollTo({ top: parseInt(savedY, 10), behavior: 'instant' });
+        }));
+      }
+
       return;
     }
 
@@ -93,6 +105,7 @@ const PageTransitions = {
     if (!isDetailPage) {
       const filename = currentPath.split('/').pop() || 'index.html';
       sessionStorage.setItem('hdgr-list-ref', filename || 'index.html');
+      sessionStorage.setItem('hdgr-scroll-' + (filename || 'index.html'), window.scrollY);
     }
 
     if (this.prefersReducedMotion) {
@@ -150,6 +163,7 @@ const PageTransitions = {
         // Detail pages are one level deep, so prefix with ../
         const target = listRef ? ('../' + listRef) : backUrl;
         if (target) {
+          sessionStorage.setItem('back-nav', '1');
           this.pageExit(target, 0.55);
         } else {
           this.pageBack();

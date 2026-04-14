@@ -133,8 +133,6 @@
             <a href="projects/nepal.html">
               <div class="project-slide-img">
                 <img class="slide-cycle-img is-active" src="projects/Nepal/1.webp" alt="Nepal School" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Nepal/2.webp" alt="Nepal School" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Nepal/3.webp" alt="Nepal School" loading="lazy">
                 <div class="project-slide-award">
                   <span class="award-title">NEPAL SCHOOL</span>
                     <span class="award-sub">1ST PRICE ZURICH INSTITUT — 2025</span>
@@ -155,8 +153,6 @@
             <a href="projects/brick-house.html">
               <div class="project-slide-img">
                 <img class="slide-cycle-img is-active" src="projects/Brick House/show1.webp" alt="Brick House" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Brick House/2.webp" alt="Brick House" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Brick House/3.webp" alt="Brick House" loading="lazy">
               </div>
               <div class="project-card-meta">
                 <div class="project-card-title">
@@ -173,8 +169,6 @@
             <a href="projects/microhome.html">
               <div class="project-slide-img">
                 <img class="slide-cycle-img is-active" src="projects/Microhome/show4.webp" alt="Microhome" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Microhome/interior-1.webp" alt="Microhome" loading="lazy">
-                <img class="slide-cycle-img" src="projects/Microhome/interior-2.webp" alt="Microhome" loading="lazy">
               </div>
               <div class="project-card-meta">
                 <div class="project-card-title">
@@ -323,43 +317,6 @@
   <script src="js/flipboard.js"></script>
   <script src="js/lang.js"></script>
   <script src="js/contact-form.js"></script>
-  <script>
-    document.querySelectorAll('.project-slide-img').forEach(function(wrap) {
-      var imgs = Array.from(wrap.querySelectorAll('.slide-cycle-img'));
-      if (imgs.length < 2) return;
-      var current = 0;
-      var transitioning = false;
-      var totalDist = 0;
-      var lastX = null, lastY = null;
-      var THRESHOLD = 80;
-
-      function next() {
-        if (transitioning) return;
-        transitioning = true;
-        var prev = imgs[current];
-        current = (current + 1) % imgs.length;
-        imgs[current].classList.add('is-active');
-        setTimeout(function() { prev.classList.remove('is-active'); transitioning = false; }, 900);
-      }
-
-      wrap.addEventListener('mousemove', function(e) {
-        if (lastX === null) { lastX = e.clientX; lastY = e.clientY; return; }
-        var dx = e.clientX - lastX;
-        var dy = e.clientY - lastY;
-        totalDist += Math.sqrt(dx * dx + dy * dy);
-        lastX = e.clientX;
-        lastY = e.clientY;
-        if (totalDist >= THRESHOLD) {
-          totalDist = 0;
-          next();
-        }
-      });
-
-      wrap.addEventListener('mouseleave', function() {
-        lastX = null; lastY = null; totalDist = 0;
-      });
-    });
-  </script>
 
   <script>
     (function() {
