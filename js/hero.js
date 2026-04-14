@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imgWrap.style.willChange = 'top, right, bottom, left';
       controlTween = gsap.to(tl, {
         progress: 1,
-        duration: 1.2,
+        duration: 0.96,
         ease: 'power3.inOut',
         onComplete: () => {
           imgWrap.style.willChange = 'auto';
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgWrap.style.willChange = 'top, right, bottom, left';
         controlTween = gsap.to(tl, {
           progress: 0,
-          duration: 0.7,
+          duration: 0.56,
           ease: 'power3.inOut',
           onComplete: () => {
             imgWrap.style.willChange = 'auto';
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgWrap.style.willChange = 'top, right, bottom, left';
         controlTween = gsap.to(tl, {
           progress: 1,
-          duration: 1.2,
+          duration: 0.96,
           ease: 'power3.inOut',
           onComplete: () => {
             imgWrap.style.willChange = 'auto';
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imgWrap.style.willChange = 'top, right, bottom, left';
       controlTween = gsap.to(tl, {
         progress: 0,
-        duration: 0.7,
+        duration: 0.56,
         ease: 'power3.inOut',
         onComplete: () => {
           imgWrap.style.willChange = 'auto';
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const snapTo = p < 0.5 ? 0 : 1;
     controlTween = gsap.to(tl, {
       progress: snapTo,
-      duration: 0.4,
+      duration: 0.32,
       ease: 'power3.inOut',
       onComplete: () => {
         imgWrap.style.willChange = 'auto';
@@ -191,6 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (fadeTween) { fadeTween.kill(); }
       fadeTween = gsap.to(fadeTl, {
         progress: 0,
+        duration: 0.4,
+        ease: 'power3.inOut',
+        onComplete: () => { fadeTween = null; }
+      });
+    }
+    if (snapTo === 1 && fadeTl) {
+      if (fadeTween) { fadeTween.kill(); }
+      fadeTween = gsap.to(fadeTl, {
+        progress: 1,
         duration: 0.4,
         ease: 'power3.inOut',
         onComplete: () => { fadeTween = null; }
@@ -226,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (fadeTween) { fadeTween.kill(); fadeTween = null; }
           fadeTween = gsap.to(fadeTl, {
             progress: 0,
-            duration: 0.7,
+            duration: 0.56,
             ease: 'power3.inOut',
             onComplete: () => { fadeTween = null; }
           });
@@ -236,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fadeTween) { fadeTween.kill(); fadeTween = null; }
         fadeTween = gsap.to(fadeTl, {
           progress: 0,
-          duration: 0.7,
+          duration: 0.56,
           ease: 'power3.inOut',
           onComplete: () => { fadeTween = null; }
         });
