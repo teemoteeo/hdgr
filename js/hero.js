@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   }
 
+  function measureVar(varName) {
+    const el = document.createElement('div');
+    el.style.cssText = `position:absolute;width:var(${varName});visibility:hidden;pointer-events:none;`;
+    document.body.appendChild(el);
+    const val = el.offsetWidth;
+    document.body.removeChild(el);
+    return val;
+  }
+
   /* ── Mobile: auto-rotate every 3s ── */
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   if (isMobile) {
@@ -73,15 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.config({ ignoreMobileResize: true });
-
-  function measureVar(varName) {
-    const el = document.createElement('div');
-    el.style.cssText = `position:absolute;width:var(${varName});visibility:hidden;pointer-events:none;`;
-    document.body.appendChild(el);
-    const val = el.offsetWidth;
-    document.body.removeChild(el);
-    return val;
-  }
 
   const space8 = measureVar('--space-8');
 
