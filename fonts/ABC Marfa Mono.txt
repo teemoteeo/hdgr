@@ -1,0 +1,15 @@
+ABC Marfa Mono
+
+Font usato in precedenza su questo progetto, prima del passaggio a Space Mono.
+
+STATO LICENZA: i file presenti in questa cartella (ABCMarfaMono-*-Trial.woff2)
+sono versioni "Unlicensed Trial" di ABC Dinamo (abcdinamo.com/typefaces/marfa).
+Sono concessi SOLO per test/mockup, NON per uso in produzione su un sito
+commerciale come hdgr.eu. Per usarli sul sito serve acquistare la licenza web
+da ABC Dinamo.
+
+FONT ATTUALE IN USO: Space Mono (SIL Open Font License, libera anche per uso
+commerciale). Self-hostata in questa cartella come SpaceMono-*.woff2 e caricata
+via @font-face in css/typography.css.
+
+Non referenziare i file Marfa-Trial nel CSS.

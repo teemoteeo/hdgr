@@ -1237,12 +1237,6 @@ footer {
 /* ─── REDUCED MOTION ──────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-img-wrap {
-    top: 100px !important;
-    right: 50px !important;
-    bottom: 100px !important;
-    left: 33.333% !important;
-  }
   .hero-img-wrap img { transform: none; }
   .hero-services { opacity: 1; pointer-events: auto; }
   .hero-logo { opacity: 0; }

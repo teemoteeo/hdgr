@@ -10,6 +10,25 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Clear any stale GSAP inline styles from bfcache
+  const imgWrapEarly = document.querySelector('[data-hero-img-wrap]');
+  if (imgWrapEarly) imgWrapEarly.removeAttribute('style');
+  const heroLeftEarly = document.querySelector('[data-hero-left]');
+  if (heroLeftEarly) heroLeftEarly.style.opacity = '';
+  initHero();
+});
+
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    const imgWrapEarly = document.querySelector('[data-hero-img-wrap]');
+    if (imgWrapEarly) imgWrapEarly.removeAttribute('style');
+    const heroLeftEarly = document.querySelector('[data-hero-left]');
+    if (heroLeftEarly) heroLeftEarly.style.opacity = '';
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  }
+});
+
+function initHero() {
   const heroEl = document.querySelector('[data-hero]');
   if (!heroEl) return;
 
@@ -57,25 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── Desktop only from here ── */
-  const prefersReducedMotion =
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+  // Note: reduced-motion users get the same scrub animation. It is user-driven,
+  // non-autoplaying, and gentle, so we treat it as acceptable rather than
+  // maintaining a separate static layout.
   const header   = document.querySelector('header');
   const heroLeft = heroEl.querySelector('[data-hero-left]');
   const heroTitle  = heroEl.querySelector('[data-hero-title]');
   const exploreBtnEl = heroEl.querySelector('[data-hero-explore]');
-
-  if (prefersReducedMotion) {
-    if (imgWrap) {
-      const s = measureVar('--space-8');
-      imgWrap.style.top    = s + 'px';
-      imgWrap.style.right  = '16.666%';
-      imgWrap.style.bottom = '0px';
-      imgWrap.style.left   = '16.666%';
-    }
-    if (heroLeft) heroLeft.style.opacity = '1';
-    return;
-  }
 
   // Guard: GSAP / ScrollTrigger may fail to load (e.g. CDN blocked by GFW).
   // All GSAP-dependent code is wrapped — explore-click + mousemove cycle below still run.
@@ -85,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const space8 = measureVar('--space-8');
 
-  /* ── Shrink timeline (paused — driven manually) ── */
-  const tl = gsap.timeline({ paused: true });
+  /* ── Shrink timeline (scrub-driven) ── */
+  const tl = gsap.timeline({ paused: false });
 
   tl.fromTo(imgWrap,
     { top: 0, right: 0, bottom: 0, left: '0%' },
@@ -97,117 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
     tl.to(heroLeft, { opacity: 1, ease: 'none', duration: 0.6 }, 0.4);
   }
 
-  let controlTween = null;
   let fadeTl = null;
   let fadeTween = null;
 
   ScrollTrigger.create({
     trigger: heroEl,
     start: 'top top',
-    end: 'bottom bottom',
-    onEnter: () => {
-      if (header) header.classList.add('header-dark');
-      if (controlTween) { controlTween.kill(); }
-      imgWrap.style.willChange = 'top, right, bottom, left';
-      controlTween = gsap.to(tl, {
-        progress: 1,
-        duration: 0.96,
-        ease: 'power3.inOut',
-        onComplete: () => {
-          imgWrap.style.willChange = 'auto';
-          controlTween = null;
-        }
-      });
-    },
-    onUpdate: (self) => {
-      if (self.direction === -1) {
-        if (controlTween && !controlTween.paused() &&
-            tl.progress() > 0 && tl.progress() < 1) {
-          const target = controlTween.vars && controlTween.vars.progress;
-          if (target === 0) return;
-        }
-        if (controlTween) { controlTween.kill(); controlTween = null; }
-        imgWrap.style.willChange = 'top, right, bottom, left';
-        controlTween = gsap.to(tl, {
-          progress: 0,
-          duration: 0.56,
-          ease: 'power3.inOut',
-          onComplete: () => {
-            imgWrap.style.willChange = 'auto';
-            controlTween = null;
-          }
-        });
-      } else if (self.direction === 1) {
-        if (controlTween && !controlTween.paused()) {
-          const target = controlTween.vars && controlTween.vars.progress;
-          if (target === 1) return;
-        }
-        if (controlTween) { controlTween.kill(); controlTween = null; }
-        imgWrap.style.willChange = 'top, right, bottom, left';
-        controlTween = gsap.to(tl, {
-          progress: 1,
-          duration: 0.96,
-          ease: 'power3.inOut',
-          onComplete: () => {
-            imgWrap.style.willChange = 'auto';
-            controlTween = null;
-          }
-        });
-      }
-    },
-    onLeaveBack: () => {
-      if (header) header.classList.remove('header-dark');
-      // If already tweening to 0, let it finish — don't snap
-      if (controlTween && !controlTween.paused()) {
-        const target = controlTween.vars && controlTween.vars.progress;
-        if (target === 0) return;
-      }
-      if (controlTween) { controlTween.kill(); controlTween = null; }
-      imgWrap.style.willChange = 'top, right, bottom, left';
-      controlTween = gsap.to(tl, {
-        progress: 0,
-        duration: 0.56,
-        ease: 'power3.inOut',
-        onComplete: () => {
-          imgWrap.style.willChange = 'auto';
-          controlTween = null;
-        }
-      });
-    }
-  });
-
-  ScrollTrigger.addEventListener('scrollEnd', () => {
-    if (controlTween) return;
-    const p = tl.progress();
-    if (p <= 0 || p >= 1) return;
-    const snapTo = p < 0.5 ? 0 : 1;
-    controlTween = gsap.to(tl, {
-      progress: snapTo,
-      duration: 0.32,
-      ease: 'power3.inOut',
-      onComplete: () => {
-        imgWrap.style.willChange = 'auto';
-        controlTween = null;
-      }
-    });
-    if (snapTo === 0 && fadeTl) {
-      if (fadeTween) { fadeTween.kill(); }
-      fadeTween = gsap.to(fadeTl, {
-        progress: 0,
-        duration: 0.4,
-        ease: 'power3.inOut',
-        onComplete: () => { fadeTween = null; }
-      });
-    }
-    if (snapTo === 1 && fadeTl) {
-      if (fadeTween) { fadeTween.kill(); }
-      fadeTween = gsap.to(fadeTl, {
-        progress: 1,
-        duration: 0.4,
-        ease: 'power3.inOut',
-        onComplete: () => { fadeTween = null; }
-      });
-    }
+    end: '50% top',
+    scrub: true,
+    animation: tl,
+    onEnter: () => { if (header) header.classList.add('header-dark'); },
+    onLeaveBack: () => { if (header) header.classList.remove('header-dark'); }
   });
 
   /* ── Title + explore scroll-away ── */
@@ -295,4 +202,4 @@ document.addEventListener('DOMContentLoaded', () => {
   imgWrap.addEventListener('mouseleave', () => {
     lastX = null; lastY = null; totalDistance = 0;
   });
-});
+}
